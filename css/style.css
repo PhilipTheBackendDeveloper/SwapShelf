@@ -23548,7 +23548,7 @@ body.woo-variation-swatches .variable-items-wrapper .variable-item:not(.radio-va
       .site-header .extra-nav .woocommerce a.button, .woocommerce .site-header .extra-nav a.button,
       .site-header .extra-nav .woocommerce button.button, .woocommerce .site-header .extra-nav button.button,
       .site-header .extra-nav .woocommerce input.button, .woocommerce .site-header .extra-nav input.button,
-      .site-header .extra-nav .woocommerce #place_order, .woocommerce .site-header .extra-nav #place_order {
+      .site-header .extra-nav .woocommerce #place_order, .woocommerce .site-header .extra-nav,.site-header .extra-nav-01 #place_order {
         padding-left: 15px;
         padding-right: 15px; } }
     .site-header .extra-nav ul li {
