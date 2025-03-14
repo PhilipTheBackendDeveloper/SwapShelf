@@ -1,0 +1,416 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Policy Editor - Admin Dashboard</title>
+  <link rel="stylesheet" href="styles.css">
+  <link rel="stylesheet" href="policy-styles.css">
+  <link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Poppins:wght@300;400;500;600;700&display=swap">
+  <!-- Include Quill.js for rich text editing -->
+  <link href="https://cdn.quilljs.com/1.3.6/quill.snow.css" rel="stylesheet">
+</head>
+<body>
+  <div class="admin-layout">
+    <!-- Sidebar Navigation -->
+    <aside class="admin-sidebar">
+      <div class="admin-sidebar-header">
+        <h1>Book<span>Connect</span></h1>
+        <p>Admin Portal</p>
+      </div>
+      
+      <nav class="admin-nav">
+        <div class="admin-nav-section">
+          <h3>Main</h3>
+          <ul>
+            <li>
+              <a href="#" class="admin-nav-item">
+                <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M3 9l9-7 9 7v11a2 2 0 0 1-2 2H5a2 2 0 0 1-2-2z"></path><polyline points="9 22 9 12 15 12 15 22"></polyline></svg>
+                Dashboard
+              </a>
+            </li>
+            <li>
+              <a href="#" class="admin-nav-item">
+                <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M17 21v-2a4 4 0 0 0-4-4H5a4 4 0 0 0-4 4v2"></path><circle cx="9" cy="7" r="4"></circle><path d="M23 21v-2a4 4 0 0 0-3-3.87"></path><path d="M16 3.13a4 4 0 0 1 0 7.75"></path></svg>
+                Users
+              </a>
+            </li>
+            <li>
+              <a href="#" class="admin-nav-item">
+                <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M4 19.5A2.5 2.5 0 0 1 6.5 17H20"></path><path d="M6.5 2H20v20H6.5A2.5 2.5 0 0 1 4 19.5v-15A2.5 2.5 0 0 1 6.5 2z"></path></svg>
+                Books
+              </a>
+            </li>
+            <li>
+              <a href="#" class="admin-nav-item">
+                <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><rect x="1" y="4" width="22" height="16" rx="2" ry="2"></rect><line x1="1" y1="10" x2="23" y2="10"></line></svg>
+                Transactions
+              </a>
+            </li>
+          </ul>
+        </div>
+        
+        <div class="admin-nav-section">
+          <h3>Administration</h3>
+          <ul>
+            <li>
+              <a href="policy-management.html" class="admin-nav-item active">
+                <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M14 2H6a2 2 0 0 0-2 2v16a2 2 0 0 0 2 2h12a2 2 0 0 0 2-2V8z"></path><polyline points="14 2 14 8 20 8"></polyline><line x1="16" y1="13" x2="8" y2="13"></line><line x1="16" y1="17" x2="8" y2="17"></line><polyline points="10 9 9 9 8 9"></polyline></svg>
+                Policies
+              </a>
+            </li>
+            <li>
+              <a href="#" class="admin-nav-item">
+                <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><circle cx="12" cy="12" r="3"></circle><path d="M19.4 15a1.65 1.65 0 0 0 .33 1.82l.06.06a2 2 0 0 1 0 2.83 2 2 0 0 1-2.83 0l-.06-.06a1.65 1.65 0 0 0-1.82-.33 1.65 1.65 0 0 0-1 1.51V21a2 2 0 0 1-2 2 2 2 0 0 1-2-2v-.09A1.65 1.65 0 0 0 9 19.4a1.65 1.65 0 0 0-1.82.33l-.06.06a2 2 0 0 1-2.83 0 2 2 0 0 1 0-2.83l.06-.06a1.65 1.65 0 0 0 .33-1.82 1.65 1.65 0 0 0-1.51-1H3a2 2 0 0 1-2-2 2 2 0 0 1 2-2h.09A1.65 1.65 0 0 0 4.6 9a1.65 1.65 0 0 0-.33-1.82l-.06-.06a2 2 0 0 1 0-2.83 2 2 0 0 1 2.83 0l.06.06a1.65 1.65 0 0 0 1.82.33H9a1.65 1.65 0 0 0 1-1.51V3a2 2 0 0 1 2-2 2 2 0 0 1 2 2v.09a1.65 1.65 0 0 0 1 1.51 1.65 1.65 0 0 0 1.82-.33l.06-.06a2 2 0 0 1 2.83 0 2 2 0 0 1 0 2.83l-.06.06a1.65 1.65 0 0 0-.33 1.82V9a1.65 1.65 0 0 0 1.51 1H21a2 2 0 0 1 2 2 2 2 0 0 1-2 2h-.09a1.65 1.65 0 0 0-1.51 1z"></path></svg>
+                Settings
+              </a>
+            </li>
+            <li>
+              <a href="#" class="admin-nav-item">
+                <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M13 2H6a2 2 0 0 0-2 2v16a2 2 0 0 0 2 2h12a2 2 0 0 0 2-2V9z"></path><polyline points="13 2 13 9 20 9"></polyline></svg>
+                Reports
+              </a>
+            </li>
+          </ul>
+        </div>
+        
+        <div class="admin-nav-section">
+          <h3>Account</h3>
+          <ul>
+            <li>
+              <a href="#" class="admin-nav-item">
+                <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M20 21v-2a4 4 0 0 0-4-4H8a4 4 0 0 0-4 4v2"></path><circle cx="12" cy="7" r="4"></circle></svg>
+                Profile
+              </a>
+            </li>
+            <li>
+              <a href="#" class="admin-nav-item">
+                <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M9 21H5a2 2 0 0 1-2-2V5a2 2 0 0 1 2-2h4"></path><polyline points="16 17 21 12 16 7"></polyline><line x1="21" y1="12" x2="9" y2="12"></line></svg>
+                Logout
+              </a>
+            </li>
+          </ul>
+        </div>
+      </nav>
+    </aside>
+
+    <!-- Main Content Area -->
+    <main class="admin-main">
+      <!-- Top Header -->
+      <header class="admin-header">
+        <div class="admin-header-left">
+          <button class="sidebar-toggle">
+            <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><line x1="3" y1="12" x2="21" y2="12"></line><line x1="3" y1="6" x2="21" y2="6"></line><line x1="3" y1="18" x2="21" y2="18"></line></svg>
+          </button>
+          <h2>Policy Editor</h2>
+        </div>
+        
+        <div class="admin-header-right">
+          <div class="editor-actions">
+            <button id="preview-btn" class="btn btn-outline">
+              <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M1 12s4-8 11-8 11 8 11 8-4 8-11 8-11-8-11-8z"></path><circle cx="12" cy="12" r="3"></circle></svg>
+              Preview
+            </button>
+            <button id="save-draft-btn" class="btn btn-outline">
+              <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M19 21H5a2 2 0 0 1-2-2V5a2 2 0 0 1 2-2h11l5 5v11a2 2 0 0 1-2 2z"></path><polyline points="17 21 17 13 7 13 7 21"></polyline><polyline points="7 3 7 8 15 8"></polyline></svg>
+              Save Draft
+            </button>
+            <button id="publish-btn" class="btn btn-primary">
+              <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M22 2v16h-5.5l-7 4v-4H2V2z"></path></svg>
+              Publish
+            </button>
+          </div>
+          
+          <div class="admin-profile">
+            <button class="profile-btn">
+              <img src="https://via.placeholder.com/40" alt="Admin Profile">
+              <span>Admin User</span>
+              <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><polyline points="6 9 12 15 18 9"></polyline></svg>
+            </button>
+          </div>
+        </div>
+      </header>
+
+      <!-- Page Content -->
+      <div class="admin-content">
+        <div class="editor-container">
+          <div class="editor-sidebar">
+            <div class="editor-sidebar-section">
+              <h3>Policy Details</h3>
+              
+              <div class="form-group">
+                <label for="policy-title">Title</label>
+                <input type="text" id="policy-title" placeholder="Enter policy title" value="Terms of Service">
+              </div>
+              
+              <div class="form-group">
+                <label for="policy-category">Category</label>
+                <select id="policy-category">
+                  <option value="terms" selected>Terms of Service</option>
+                  <option value="privacy">Privacy</option>
+                  <option value="community">Community Guidelines</option>
+                  <option value="exchange">Exchange Rules</option>
+                  <option value="refund">Refund Policy</option>
+                  <option value="other">Other</option>
+                </select>
+              </div>
+              
+              <div class="form-group">
+                <label for="policy-status">Status</label>
+                <select id="policy-status">
+                  <option value="draft">Draft</option>
+                  <option value="published" selected>Published</option>
+                  <option value="archived">Archived</option>
+                </select>
+              </div>
+              
+              <div class="form-group">
+                <label for="policy-version">Version</label>
+                <input type="text" id="policy-version" placeholder="e.g. 1.0" value="2.1">
+              </div>
+              
+              <div class="form-group">
+                <label for="policy-summary">Summary</label>
+                <textarea id="policy-summary" rows="3" placeholder="Brief summary of this policy">Our terms of service outline the rules and guidelines for using the BookConnect platform, including user responsibilities and platform limitations.</textarea>
+              </div>
+            </div>
+            
+            <div class="editor-sidebar-section">
+              <h3>Publishing Options</h3>
+              
+              <div class="form-group">
+                <label for="effective-date">Effective Date</label>
+                <input type="date" id="effective-date" value="2025-03-15">
+              </div>
+              
+              <div class="form-group">
+                <div class="checkbox-item">
+                  <input type="checkbox" id="notify-users" checked>
+                  <label for="notify-users">Notify users of changes</label>
+                </div>
+              </div>
+              
+              <div class="form-group">
+                <div class="checkbox-item">
+                  <input type="checkbox" id="require-acceptance">
+                  <label for="require-acceptance">Require user acceptance</label>
+                </div>
+              </div>
+              
+              <div class="form-group">
+                <label for="visibility">Visibility</label>
+                <select id="visibility">
+                  <option value="public" selected>Public</option>
+                  <option value="members">Members Only</option>
+                  <option value="admin">Admin Only</option>
+                </select>
+              </div>
+            </div>
+            
+            <div class="editor-sidebar-section">
+              <h3>Version History</h3>
+              
+              <div class="version-list">
+                <div class="version-item active">
+                  <div class="version-info">
+                    <span class="version-number">v2.1</span>
+                    <span class="version-date">Mar 15, 2025</span>
+                  </div>
+                  <span class="version-status published">Current</span>
+                </div>
+                
+                <div class="version-item">
+                  <div class="version-info">
+                    <span class="version-number">v2.0</span>
+                    <span class="version-date">Jan 05, 2025</span>
+                  </div>
+                  <span class="version-status archived">Archived</span>
+                </div>
+                
+                <div class="version-item">
+                  <div class="version-info">
+                    <span class="version-number">v1.5</span>
+                    <span class="version-date">Oct 12, 2024</span>
+                  </div>
+                  <span class="version-status archived">Archived</span>
+                </div>
+              </div>
+              
+              <button class="btn btn-outline btn-sm btn-block">
+                <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><polyline points="1 4 1 10 7 10"></polyline><path d="M3.51 15a9 9 0 1 0 2.13-9.36L1 10"></path></svg>
+                Compare Versions
+              </button>
+            </div>
+          </div>
+          
+          <div class="editor-main">
+            <div class="editor-toolbar">
+              <div class="toolbar-section">
+                <button class="toolbar-btn" title="Bold">
+                  <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M6 4h8a4 4 0 0 1 4 4 4 4 0 0 1-4 4H6z"></path><path d="M6 12h9a4 4 0 0 1 4 4 4 4 0 0 1-4 4H6z"></path></svg>
+                </button>
+                <button class="toolbar-btn" title="Italic">
+                  <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><line x1="19" y1="4" x2="10" y2="4"></line><line x1="14" y1="20" x2="5" y2="20"></line><line x1="15" y1="4" x2="9" y2="20"></line></svg>
+                </button>
+                <button class="toolbar-btn" title="Underline">
+                  <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M6 3v7a6 6 0 0 0 6 6 6 6 0 0 0 6-6V3"></path><line x1="4" y1="21" x2="20" y2="21"></line></svg>
+                </button>
+              </div>
+              
+              <div class="toolbar-section">
+                <button class="toolbar-btn" title="Heading 1">H1</button>
+                <button class="toolbar-btn" title="Heading 2">H2</button>
+                <button class="toolbar-btn" title="Heading 3">H3</button>
+              </div>
+              
+              <div class="toolbar-section">
+                <button class="toolbar-btn" title="Bulleted List">
+                  <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><line x1="8" y1="6" x2="21" y2="6"></line><line x1="8" y1="12" x2="21" y2="12"></line><line x1="8" y1="18" x2="21" y2="18"></line><line x1="3" y1="6" x2="3.01" y2="6"></line><line x1="3" y1="12" x2="3.01" y2="12"></line><line x1="3" y1="18" x2="3.01" y2="18"></line></svg>
+                </button>
+                <button class="toolbar-btn" title="Numbered List">
+                  <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><line x1="10" y1="6" x2="21" y2="6"></line><line x1="10" y1="12" x2="21" y2="12"></line><line x1="10" y1="18" x2="21" y2="18"></line><path d="M4 6h1v4"></path><path d="M4 10h2"></path><path d="M6 18H4c0-1 2-2 2-3s-1-1.5-2-1"></path></svg>
+                </button>
+              </div>
+              
+              <div class="toolbar-section">
+                <button class="toolbar-btn" title="Insert Link">
+                  <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M10 13a5 5 0 0 0 7.54.54l3-3a5 5 0 0 0-7.07-7.07l-1.72  stroke-linejoin="round"><path d="M10 13a5 5 0 0 0 7.54.54l3-3a5 5 0 0 0-7.07-7.07l-1.72 1.71"></path><path d="M14 11a5 5 0 0 0-7.54-.54l-3 3a5 5 0 0 0 7.07 7.07l1.71-1.71"></path></svg>
+                </button>
+                <button class="toolbar-btn" title="Insert Image">
+                  <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><rect x="3" y="3" width="18" height="18" rx="2" ry="2"></rect><circle cx="8.5" cy="8.5" r="1.5"></circle><polyline points="21 15 16 10 5 21"></polyline></svg>
+                </button>
+                <button class="toolbar-btn" title="Insert Table">
+                  <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><rect x="3" y="3" width="18" height="18" rx="2" ry="2"></rect><line x1="3" y1="9" x2="21" y2="9"></line><line x1="3" y1="15" x2="21" y2="15"></line><line x1="9" y1="3" x2="9" y2="21"></line><line x1="15" y1="3" x2="15" y2="21"></line></svg>
+                </button>
+              </div>
+            </div>
+            
+            <div id="editor">
+              <h1>Terms of Service</h1>
+              <p>Last Updated: March 15, 2025</p>
+              <p>Welcome to BookConnect, a platform that enables students to exchange books with each other. These Terms of Service ("Terms") govern your access to and use of the BookConnect website, mobile application, and services (collectively, the "Service").</p>
+              
+              <h2>1. Acceptance of Terms</h2>
+              <p>By accessing or using the Service, you agree to be bound by these Terms. If you do not agree to these Terms, you may not access or use the Service.</p>
+              
+              <h2>2. Eligibility</h2>
+              <p>You must be at least 13 years old to use the Service. If you are under 18, you represent that you have your parent or guardian's permission to use the Service and that they have read and agree to these Terms on your behalf.</p>
+              
+              <h2>3. User Accounts</h2>
+              <p>To access certain features of the Service, you must register for an account. You agree to provide accurate, current, and complete information during the registration process and to update such information to keep it accurate, current, and complete.</p>
+              <p>You are responsible for safeguarding your password and for all activities that occur under your account. You agree to notify us immediately of any unauthorized use of your account.</p>
+              
+              <h2>4. Book Exchange Rules</h2>
+              <p>BookConnect facilitates the exchange of books between users. When listing a book for exchange, you agree to:</p>
+              <ul>
+                <li>Provide accurate information about the book's condition</li>
+                <li>Only list books that you legally own and have the right to exchange</li>
+                <li>Honor exchange agreements you make with other users</li>
+                <li>Ship or deliver books in a timely manner once an exchange is confirmed</li>
+              </ul>
+              
+              <h2>5. Prohibited Conduct</h2>
+              <p>You agree not to:</p>
+              <ul>
+                <li>Violate any applicable law or regulation</li>
+                <li>Impersonate any person or entity</li>
+                <li>Harass, abuse, or harm another person</li>
+                <li>Use the Service for any illegal or unauthorized purpose</li>
+                <li>Interfere with or disrupt the Service or servers or networks connected to the Service</li>
+                <li>Attempt to gain unauthorized access to any portion of the Service</li>
+              </ul>
+              
+              <h2>6. Content Ownership</h2>
+              <p>You retain all rights to any content you submit, post, or display on or through the Service. By submitting, posting, or displaying content on or through the Service, you grant us a worldwide, non-exclusive, royalty-free license to use, copy, reproduce, process, adapt, modify, publish, transmit, display, and distribute such content.</p>
+              
+              <h2>7. Termination</h2>
+              <p>We reserve the right to terminate or suspend your account and access to the Service at our sole discretion, without notice, for conduct that we believe violates these Terms or is harmful to other users of the Service, us, or third parties, or for any other reason.</p>
+              
+              <h2>8. Disclaimer of Warranties</h2>
+              <p>THE SERVICE IS PROVIDED "AS IS" AND "AS AVAILABLE" WITHOUT WARRANTIES OF ANY KIND, EITHER EXPRESS OR IMPLIED, INCLUDING, BUT NOT LIMITED TO, IMPLIED WARRANTIES OF MERCHANTABILITY, FITNESS FOR A PARTICULAR PURPOSE, TITLE, AND NON-INFRINGEMENT.</p>
+              
+              <h2>9. Limitation of Liability</h2>
+              <p>IN NO EVENT SHALL WE BE LIABLE FOR ANY INDIRECT, INCIDENTAL, SPECIAL, CONSEQUENTIAL, OR PUNITIVE DAMAGES, INCLUDING WITHOUT LIMITATION, LOSS OF PROFITS, DATA, USE, GOODWILL, OR OTHER INTANGIBLE LOSSES, RESULTING FROM YOUR ACCESS TO OR USE OF OR INABILITY TO ACCESS OR USE THE SERVICE.</p>
+              
+              <h2>10. Changes to Terms</h2>
+              <p>We reserve the right to modify or replace these Terms at any time. If a revision is material, we will provide at least 30 days' notice prior to any new terms taking effect. What constitutes a material change will be determined at our sole discretion.</p>
+              
+              <h2>11. Contact Information</h2>
+              <p>If you have any questions about these Terms, please contact us at legal@bookconnect.com.</p>
+            </div>
+          </div>
+        </div>
+        
+        <!-- Preview Modal -->
+        <div id="preview-modal" class="modal">
+          <div class="modal-content">
+            <div class="modal-header">
+              <h2>Policy Preview</h2>
+              <button class="modal-close">
+                <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><line x1="18" y1="6" x2="6" y2="18"></line><line x1="6" y1="6" x2="18" y2="18"></line></svg>
+              </button>
+            </div>
+            <div class="modal-body">
+              <div class="preview-container">
+                <div class="preview-header">
+                  <h1 id="preview-title">Terms of Service</h1>
+                  <p>Last Updated: <span id="preview-date">March 15, 2025</span></p>
+                </div>
+                <div id="preview-content" class="preview-content">
+                  <!-- Content will be loaded here -->
+                </div>
+              </div>
+            </div>
+            <div class="modal-footer">
+              <button class="btn btn-outline modal-close">Close</button>
+              <button class="btn btn-primary" id="publish-from-preview">Publish</button>
+            </div>
+          </div>
+        </div>
+        
+        <!-- Publish Confirmation Modal -->
+        <div id="publish-modal" class="modal">
+          <div class="modal-content">
+            <div class="modal-header">
+              <h2>Publish Policy</h2>
+              <button class="modal-close">
+                <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><line x1="18" y1="6" x2="6" y2="18"></line><line x1="6" y1="6" x2="18" y2="18"></line></svg>
+              </button>
+            </div>
+            <div class="modal-body">
+              <p>Are you sure you want to publish this policy? This will make it visible to users according to your visibility settings.</p>
+              
+              <div class="form-group">
+                <div class="checkbox-item">
+                  <input type="checkbox" id="confirm-notify-users" checked>
+                  <label for="confirm-notify-users">Notify users of this policy update</label>
+                </div>
+              </div>
+              
+              <div class="form-group">
+                <div class="checkbox-item">
+                  <input type="checkbox" id="confirm-version">
+                  <label for="confirm-version">Create new version (current: v2.1)</label>
+                </div>
+              </div>
+              
+              <div class="form-group">
+                <label for="publish-notes">Publication Notes (optional)</label>
+                <textarea id="publish-notes" rows="3" placeholder="Enter notes about this update"></textarea>
+              </div>
+            </div>
+            <div class="modal-footer">
+              <button class="btn btn-outline modal-close">Cancel</button>
+              <button class="btn btn-primary" id="confirm-publish">Publish</button>
+            </div>
+          </div>
+        </div>
+      </div>
+    </main>
+  </div>
+
+  <!-- Include Quill.js for rich text editing -->
+  <script src="https://cdn.quilljs.com/1.3.6/quill.min.js"></script>
+  <script src="policy-scripts.js"></script>
+</body>
+</html>

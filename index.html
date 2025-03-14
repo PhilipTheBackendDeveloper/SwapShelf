@@ -8,11 +8,11 @@
 	<meta charset="utf-8">
 	<meta http-equiv="X-UA-Compatible" content="IE=edge">
 	<meta name="keywords" content="" />
-	<meta name="author" content="DexignZone" />
+	<meta name="author" content="Group 15" />
 	<meta name="robots" content="" />
-	<meta name="description" content="Bookland-Book Store Ecommerce Website"/>
-	<meta property="og:title" content="Bookland-Book Store Ecommerce Website"/>
-	<meta property="og:description" content="Bookland-Book Store Ecommerce Website"/>
+	<meta name="description" content="BookConnect-Book Store Ecommerce Website"/>
+	<meta property="og:title" content="BookConnect-Book Store Ecommerce Website"/>
+	<meta property="og:description" content="BookConnect-Book Store Ecommerce Website"/>
 	<meta property="og:image" content="social-image.png"/>
 	<meta name="format-detection" content="telephone=no">
 	
@@ -20,26 +20,26 @@
 	<link rel="icon" type="image/x-icon" href="images/favicon.png"/>
 	
 	<!-- PAGE TITLE HERE -->
-	<title>Bookland Book Store Ecommerce Website</title>
+	<title>BookConnect Book Store Ecommerce Website</title>
 	
 	<!-- MOBILE SPECIFIC -->
 	<meta name="viewport" content="width=device-width, initial-scale=1">
 	
 	<!-- STYLESHEETS -->
-	<link rel="stylesheet" type="text/css" href="vendor/bootstrap-select/dist/css/bootstrap-select.min.css">
+	<link rel="stylesheet" type="text/css" href="css/style.css">
 	<link rel="stylesheet" type="text/css" href="icons/fontawesome/css/all.min.css">
 	<link rel="stylesheet" type="text/css" href="vendor/swiper/swiper-bundle.min.css">
 	<link rel="stylesheet" type="text/css" href="vendor/animate/animate.css">
-	<link rel="stylesheet" type="text/css" href="css/style.css">
-	
+	<link rel="stylesheet" type="text/css" href="vendor/bootstrap-select/dist/css/bootstrap-select.min.css">	
 	<!-- GOOGLE FONTS-->
 	<link rel="preconnect" href="https://fonts.googleapis.com/">
 	<link rel="preconnect" href="https://fonts.gstatic.com/" crossorigin>
 	<link href="https://fonts.googleapis.com/css2?family=Open+Sans:wght@300;400;500;600;700;800&amp;family=Poppins:wght@100;200;300;400;500;600;700;800;900&amp;display=swap" rel="stylesheet">
+	<link rel="stylesheet" href="path-to-your-flaticon.css">
+
 
 </head>	
 <body>
-
 <div class="page-wraper">
 	<div id="loading-area" class="preloader-wrapper-1">
 		<div class="preloader-inner">
@@ -49,870 +49,590 @@
 			<div class="preloader-wrap wrap3"></div>
 			<div class="preloader-wrap wrap4"></div>
 			<div class="preloader-wrap wrap5"></div>
-		</div> 
+		</div>  
 	</div>
 	
-	<!-- Header -->
-	<header class="site-header mo-left header style-1">
-		<!-- Main Header -->
-		<div class="header-info-bar">
+<!-- Header -->
+<header class="site-header mo-left header style-1">
+	<!-- Main Header -->
+	<div class="header-info-bar">
+		<div class="container clearfix">
+			<!-- Website Logo -->
+			<div class="logo-header logo-dark">
+				<a href="index.html"><img src="images/logo.png" alt="logo"></a>
+			</div>
+			
+			<!-- EXTRA NAV -->
+			<div class="extra-nav">
+				<div class="extra-cell">
+					<ul class="navbar-nav header-right">
+						<li class="nav-item">
+							<a class="nav-link" href="wishlist.html">
+								<svg xmlns="http://www.w3.org/2000/svg" height="24px" viewBox="0 0 24 24" width="24px" fill="#000000"><path d="M0 0h24v24H0V0z" fill="none"/><path d="M16.5 3c-1.74 0-3.41.81-4.5 2.09C10.91 3.81 9.24 3 7.5 3 4.42 3 2 5.42 2 8.5c0 3.78 3.4 6.86 8.55 11.54L12 21.35l1.45-1.32C18.6 15.36 22 12.28 22 8.5 22 5.42 19.58 3 16.5 3zm-4.4 15.55l-.1.1-.1-.1C7.14 14.24 4 11.39 4 8.5 4 6.5 5.5 5 7.5 5c1.54 0 3.04.99 3.57 2.36h1.87C13.46 5.99 14.96 5 16.5 5c2 0 3.5 1.5 3.5 3.5 0 2.89-3.14 5.74-7.9 10.05z"/></svg>
+								<span class="badge">21</span>
+							</a>
+						</li>
+						<li class="nav-item">
+							<button type="button" class="nav-link box cart-btn">
+								<svg xmlns="http://www.w3.org/2000/svg" height="24px" viewBox="0 0 24 24" width="24px" fill="#000000"><path d="M0 0h24v24H0V0z" fill="none"/><path d="M15.55 13c.75 0 1.41-.41 1.75-1.03l3.58-6.49c.37-.66-.11-1.48-.87-1.48H5.21l-.94-2H1v2h2l3.6 7.59-1.35 2.44C4.52 15.37 5.48 17 7 17h12v-2H7l1.1-2h7.45zM6.16 6h12.15l-2.76 5H8.53L6.16 6zM7 18c-1.1 0-1.99.9-1.99 2S5.9 22 7 22s2-.9 2-2-.9-2-2-2zm10 0c-1.1 0-1.99.9-1.99 2s.89 2 1.99 2 2-.9 2-2-.9-2-2-2z"/></svg>
+								<span class="badge">5</span>
+							</button>
+							<ul class="dropdown-menu cart-list">
+								<li class="cart-item">
+									<div class="media"> 
+										<div class="media-left"> 
+											<a href="books-detail.html"> 
+												<img alt="" class="media-object" src="images/books/small/pic1.jpg"> 
+											</a> 
+										</div> 
+										<div class="media-body"> 
+											<h6 class="dz-title"><a href="books-detail.html" class="media-heading">Real Life</a></h6>
+											<span class="dz-price">₵28.00</span>
+											<span class="item-close">&times;</span>
+										</div> 
+									</div>
+								</li>
+								<li class="cart-item">
+									<div class="media"> 
+										<div class="media-left"> 
+											<a href="books-detail.html"> 
+												<img alt="" class="media-object" src="images/books/small/pic2.jpg"> 
+											</a> 
+										</div> 
+										<div class="media-body"> 
+											<h6 class="dz-title"><a href="books-detail.html" class="media-heading">Home</a></h6>
+											<span class="dz-price">₵28.00</span>
+											<span class="item-close">&times;</span>
+										</div> 
+									</div>
+								</li>
+								<li class="cart-item">
+									<div class="media"> 
+										<div class="media-left"> 
+											<a href="books-detail.html"> 
+												<img alt="" class="media-object" src="images/books/small/pic3.jpg"> 
+											</a> 
+										</div> 
+										<div class="media-body"> 
+											<h6 class="dz-title"><a href="books-detail.html" class="media-heading">Such a fun age</a></h6>
+											<span class="dz-price">₵28.00</span>
+											<span class="item-close">&times;</span>
+										</div> 
+									</div>
+								</li>
+								<li class="cart-item text-center">
+									<h6 class="text-secondary">Totle = ₵500</h6>
+								</li>
+								<li class="text-center d-flex">
+									<a href="shop-cart.html" class="btn btn-sm btn-primary me-2 btnhover w-100">View Cart</a>
+									<a href="shop-checkout.html" class="btn btn-sm btn-outline-primary btnhover w-100">Checkout</a>
+								</li>
+							</ul>
+						</li>
+						<li class="nav-item dropdown profile-dropdown  ms-4">
+							
+							<div class="dropdown-menu py-0 dropdown-menu-end">
+								
+								<div class="dropdown-body">
+									<a href="my-profile.html" class="dropdown-item d-flex justify-content-between align-items-center ai-icon">
+										<div>
+											<svg xmlns="http://www.w3.org/2000/svg" height="20px" viewBox="0 0 24 24" width="20px" fill="#000000"><path d="M0 0h24v24H0V0z" fill="none"/><path d="M12 6c1.1 0 2 .9 2 2s-.9 2-2 2-2-.9-2-2 .9-2 2-2m0 10c2.7 0 5.8 1.29 6 2H6c.23-.72 3.31-2 6-2m0-12C9.79 4 8 5.79 8 8s1.79 4 4 4 4-1.79 4-4-1.79-4-4-4zm0 10c-2.67 0-8 1.34-8 4v2h16v-2c0-2.66-5.33-4-8-4z"/></svg>
+											<span class="ms-2">Profile</span>
+										</div>
+									</a>
+									<a href="shop-cart.html" class="dropdown-item d-flex justify-content-between align-items-center ai-icon">
+										<div>
+											<svg xmlns="http://www.w3.org/2000/svg" height="20px" viewBox="0 0 24 24" width="20px" fill="#000000"><path d="M0 0h24v24H0V0z" fill="none"/><path d="M15.55 13c.75 0 1.41-.41 1.75-1.03l3.58-6.49c.37-.66-.11-1.48-.87-1.48H5.21l-.94-2H1v2h2l3.6 7.59-1.35 2.44C4.52 15.37 5.48 17 7 17h12v-2H7l1.1-2h7.45zM6.16 6h12.15l-2.76 5H8.53L6.16 6zM7 18c-1.1 0-1.99.9-1.99 2S5.9 22 7 22s2-.9 2-2-.9-2-2-2zm10 0c-1.1 0-1.99.9-1.99 2s.89 2 1.99 2 2-.9 2-2-.9-2-2-2z"/></svg>
+											<span class="ms-2">My Order</span>
+										</div>
+									</a>
+									<a href="wishlist.html" class="dropdown-item d-flex justify-content-between align-items-center ai-icon">
+										<div>
+											<svg xmlns="http://www.w3.org/2000/svg" height="20px" viewBox="0 0 24 24" width="20px" fill="#000000"><path d="M0 0h24v24H0V0z" fill="none"/><path d="M16.5 3c-1.74 0-3.41.81-4.5 2.09C10.91 3.81 9.24 3 7.5 3 4.42 3 2 5.42 2 8.5c0 3.78 3.4 6.86 8.55 11.54L12 21.35l1.45-1.32C18.6 15.36 22 12.28 22 8.5 22 5.42 19.58 3 16.5 3zm-4.4 15.55l-.1.1-.1-.1C7.14 14.24 4 11.39 4 8.5 4 6.5 5.5 5 7.5 5c1.54 0 3.04.99 3.57 2.36h1.87C13.46 5.99 14.96 5 16.5 5c2 0 3.5 1.5 3.5 3.5 0 2.89-3.14 5.74-7.9 10.05z"/></svg>
+											<span class="ms-2">Wishlist</span>
+										</div>
+									</a>
+								</div>
+								<div class="dropdown-footer">
+									<a class="btn btn-primary w-100 btnhover btn-sm" href="shop-login.html">Log Out</a>
+								</div>
+							</div>
+						</li>
+					</ul>
+				</div>
+			</div>
+			
+			<!-- header search nav -->
+			<div class="header-search-nav">
+				<form class="header-item-search">
+					<div class="input-group search-input">
+						<select class="default-select">
+							<option>Category</option>
+							<option>Photography </option>
+							<option>Arts</option>
+							<option>Adventure</option>
+							<option>Action</option>
+							<option>Games</option>
+							<option>Movies</option>
+							<option>Comics</option>
+							<option>Biographies</option>
+							<option>Children’s Books</option>
+							<option>Historical</option>
+							<option>Contemporary</option>
+							<option>Classics</option>
+							<option>Education</option>
+						</select>
+						<input type="text" class="form-control" aria-label="Text input with dropdown button" placeholder="Search Books Here">
+						<button class="btn" type="button"><i class="flaticon-loupe"></i></button>
+					</div>
+				</form>
+			</div>
+		</div>
+	</div>
+	<!-- Main Header End -->
+	
+	<!-- Main Header -->
+	<div class="sticky-header main-bar-wraper navbar-expand-lg">
+		<div class="main-bar clearfix">
 			<div class="container clearfix">
 				<!-- Website Logo -->
 				<div class="logo-header logo-dark">
 					<a href="index.html"><img src="images/logo.png" alt="logo"></a>
 				</div>
 				
+				<!-- Nav Toggle Button -->
+				<button class="navbar-toggler collapsed navicon justify-content-end" type="button" data-bs-toggle="collapse" data-bs-target="#navbarNavDropdown" aria-controls="navbarNavDropdown" aria-expanded="false" aria-label="Toggle navigation">
+					<span></span>
+					<span></span>
+					<span></span>
+				</button>
+				
 				<!-- EXTRA NAV -->
 				<div class="extra-nav">
 					<div class="extra-cell">
-						<ul class="navbar-nav header-right">
-							<li class="nav-item">
-								<a class="nav-link" href="wishlist.html">
-									<svg xmlns="http://www.w3.org/2000/svg" height="24px" viewBox="0 0 24 24" width="24px" fill="#000000"><path d="M0 0h24v24H0V0z" fill="none"/><path d="M16.5 3c-1.74 0-3.41.81-4.5 2.09C10.91 3.81 9.24 3 7.5 3 4.42 3 2 5.42 2 8.5c0 3.78 3.4 6.86 8.55 11.54L12 21.35l1.45-1.32C18.6 15.36 22 12.28 22 8.5 22 5.42 19.58 3 16.5 3zm-4.4 15.55l-.1.1-.1-.1C7.14 14.24 4 11.39 4 8.5 4 6.5 5.5 5 7.5 5c1.54 0 3.04.99 3.57 2.36h1.87C13.46 5.99 14.96 5 16.5 5c2 0 3.5 1.5 3.5 3.5 0 2.89-3.14 5.74-7.9 10.05z"/></svg>
-									<span class="badge">21</span>
-								</a>
-							</li>
-							<li class="nav-item">
-								<button type="button" class="nav-link box cart-btn">
-									<svg xmlns="http://www.w3.org/2000/svg" height="24px" viewBox="0 0 24 24" width="24px" fill="#000000"><path d="M0 0h24v24H0V0z" fill="none"/><path d="M15.55 13c.75 0 1.41-.41 1.75-1.03l3.58-6.49c.37-.66-.11-1.48-.87-1.48H5.21l-.94-2H1v2h2l3.6 7.59-1.35 2.44C4.52 15.37 5.48 17 7 17h12v-2H7l1.1-2h7.45zM6.16 6h12.15l-2.76 5H8.53L6.16 6zM7 18c-1.1 0-1.99.9-1.99 2S5.9 22 7 22s2-.9 2-2-.9-2-2-2zm10 0c-1.1 0-1.99.9-1.99 2s.89 2 1.99 2 2-.9 2-2-.9-2-2-2z"/></svg>
-									<span class="badge">5</span>
-								</button>
-								<ul class="dropdown-menu cart-list">
-									<li class="cart-item">
-										<div class="media"> 
-											<div class="media-left"> 
-												<a href="books-detail.html"> 
-													<img alt="" class="media-object" src="images/books/small/pic1.jpg"> 
-												</a> 
-											</div> 
-											<div class="media-body"> 
-												<h6 class="dz-title"><a href="books-detail.html" class="media-heading">Real Life</a></h6>
-												<span class="dz-price">₵28.00</span>
-												<span class="item-close">&times;</span>
-											</div> 
-										</div>
-									</li>
-									<li class="cart-item">
-										<div class="media"> 
-											<div class="media-left"> 
-												<a href="books-detail.html"> 
-													<img alt="" class="media-object" src="images/books/small/pic2.jpg"> 
-												</a> 
-											</div> 
-											<div class="media-body"> 
-												<h6 class="dz-title"><a href="books-detail.html" class="media-heading">Home</a></h6>
-												<span class="dz-price">₵28.00</span>
-												<span class="item-close">&times;</span>
-											</div> 
-										</div>
-									</li>
-									<li class="cart-item">
-										<div class="media"> 
-											<div class="media-left"> 
-												<a href="books-detail.html"> 
-													<img alt="" class="media-object" src="images/books/small/pic3.jpg"> 
-												</a> 
-											</div> 
-											<div class="media-body"> 
-												<h6 class="dz-title"><a href="books-detail.html" class="media-heading">Such a fun age</a></h6>
-												<span class="dz-price">₵28.00</span>
-												<span class="item-close">&times;</span>
-											</div> 
-										</div>
-									</li>
-									<li class="cart-item text-center">
-										<h6 class="text-secondary">Totle = ₵500</h6>
-									</li>
-									<li class="text-center d-flex">
-										<a href="shop-cart.html" class="btn btn-sm btn-primary me-2 btnhover w-100">View Cart</a>
-										<a href="shop-checkout.html" class="btn btn-sm btn-outline-primary btnhover w-100">Checkout</a>
-									</li>
-								</ul>
-							</li>
-							<li class="nav-item dropdown profile-dropdown  ms-4">
-								<!-- <a class="nav-link" href="javascript:void(0);" role="button" data-bs-toggle="dropdown" aria-expanded="false">
-									<img src="images/profile1.jpg" alt="/">
-									<div class="profile-info">
-										<h6 class="title">Brian</h6>
-										<span>info@gmail.com</span>
-									</div>
-								</a> -->
-								<div class="dropdown-menu py-0 dropdown-menu-end">
-									<div class="dropdown-header">
-										<h6 class="m-0">Brian</h6>
-										<span>info@gmail.com</span>
-									</div>
-									<div class="dropdown-body">
-										<a href="my-profile.html" class="dropdown-item d-flex justify-content-between align-items-center ai-icon">
-											<div>
-												<svg xmlns="http://www.w3.org/2000/svg" height="20px" viewBox="0 0 24 24" width="20px" fill="#000000"><path d="M0 0h24v24H0V0z" fill="none"/><path d="M12 6c1.1 0 2 .9 2 2s-.9 2-2 2-2-.9-2-2 .9-2 2-2m0 10c2.7 0 5.8 1.29 6 2H6c.23-.72 3.31-2 6-2m0-12C9.79 4 8 5.79 8 8s1.79 4 4 4 4-1.79 4-4-1.79-4-4-4zm0 10c-2.67 0-8 1.34-8 4v2h16v-2c0-2.66-5.33-4-8-4z"/></svg>
-												<span class="ms-2">Profile</span>
-											</div>
-										</a>
-										<a href="shop-cart.html" class="dropdown-item d-flex justify-content-between align-items-center ai-icon">
-											<div>
-												<svg xmlns="http://www.w3.org/2000/svg" height="20px" viewBox="0 0 24 24" width="20px" fill="#000000"><path d="M0 0h24v24H0V0z" fill="none"/><path d="M15.55 13c.75 0 1.41-.41 1.75-1.03l3.58-6.49c.37-.66-.11-1.48-.87-1.48H5.21l-.94-2H1v2h2l3.6 7.59-1.35 2.44C4.52 15.37 5.48 17 7 17h12v-2H7l1.1-2h7.45zM6.16 6h12.15l-2.76 5H8.53L6.16 6zM7 18c-1.1 0-1.99.9-1.99 2S5.9 22 7 22s2-.9 2-2-.9-2-2-2zm10 0c-1.1 0-1.99.9-1.99 2s.89 2 1.99 2 2-.9 2-2-.9-2-2-2z"/></svg>
-												<span class="ms-2">My Order</span>
-											</div>
-										</a>
-										<a href="wishlist.html" class="dropdown-item d-flex justify-content-between align-items-center ai-icon">
-											<div>
-												<svg xmlns="http://www.w3.org/2000/svg" height="20px" viewBox="0 0 24 24" width="20px" fill="#000000"><path d="M0 0h24v24H0V0z" fill="none"/><path d="M16.5 3c-1.74 0-3.41.81-4.5 2.09C10.91 3.81 9.24 3 7.5 3 4.42 3 2 5.42 2 8.5c0 3.78 3.4 6.86 8.55 11.54L12 21.35l1.45-1.32C18.6 15.36 22 12.28 22 8.5 22 5.42 19.58 3 16.5 3zm-4.4 15.55l-.1.1-.1-.1C7.14 14.24 4 11.39 4 8.5 4 6.5 5.5 5 7.5 5c1.54 0 3.04.99 3.57 2.36h1.87C13.46 5.99 14.96 5 16.5 5c2 0 3.5 1.5 3.5 3.5 0 2.89-3.14 5.74-7.9 10.05z"/></svg>
-												<span class="ms-2">Wishlist</span>
-											</div>
-										</a>
-									</div>
-									<div class="dropdown-footer">
-										<a class="btn btn-primary w-100 btnhover btn-sm" href="shop-login.html">Log Out</a>
-									</div>
-								</div>
-							</li>
-						</ul>
+						<a href="shop-login.html" class="btn btn-primary btnhover">Sign In Now</a>	
 					</div>
 				</div>
 				
-				<!-- header search nav -->
-				<div class="header-search-nav">
-					<form class="header-item-search">
-						<div class="input-group search-input">
-							<select class="default-select">
-								<option>Category</option>
-								<option>Photography </option>
-								<option>Arts</option>
-								<option>Adventure</option>
-								<option>Action</option>
-								<option>Games</option>
-								<option>Movies</option>
-								<option>Comics</option>
-								<option>Biographies</option>
-								<option>Children’s Books</option>
-								<option>Historical</option>
-								<option>Contemporary</option>
-								<option>Classics</option>
-								<option>Education</option>
-							</select>
+				<!-- Main Nav -->
+				<div class="header-nav navbar-collapse collapse justify-content-start" id="navbarNavDropdown">
+					<div class="logo-header logo-dark">
+						<a href="index.html"><img src="images/logo.png" alt=""></a>
+					</div>
+					<form class="search-input">
+						<div class="input-group">
 							<input type="text" class="form-control" aria-label="Text input with dropdown button" placeholder="Search Books Here">
 							<button class="btn" type="button"><i class="flaticon-loupe"></i></button>
 						</div>
 					</form>
-				</div>
-			</div>
-		</div>
-		<!-- Main Header End -->
-		
-		<!-- Main Header -->
-		<div class="sticky-header main-bar-wraper navbar-expand-lg">
-			<div class="main-bar clearfix">
-				<div class="container clearfix">
-					<!-- Website Logo -->
-					<div class="logo-header logo-dark">
-						<a href="index.html"><img src="images/logo.png" alt="logo"></a>
-					</div>
-					
-					<!-- Nav Toggle Button -->
-					<button class="navbar-toggler collapsed navicon justify-content-end" type="button" data-bs-toggle="collapse" data-bs-target="#navbarNavDropdown" aria-controls="navbarNavDropdown" aria-expanded="false" aria-label="Toggle navigation">
-						<span></span>
-						<span></span>
-						<span></span>
-					</button>
-					
-					<!-- EXTRA NAV -->
-					<div class="extra-nav">
-						<div class="extra-cell">
-							<a href="contact-us.html" class="btn btn-primary btnhover">Get In Touch</a>	
-						</div>
-					</div>
-					
-					<!-- Main Nav -->
-					<div class="header-nav navbar-collapse collapse justify-content-start" id="navbarNavDropdown">
-						<div class="logo-header logo-dark">
-							<a href="index.html"><img src="images/logo.png" alt=""></a>
-						</div>
-						<form class="search-input">
-							<div class="input-group">
-								<input type="text" class="form-control" aria-label="Text input with dropdown button" placeholder="Search Books Here">
-								<button class="btn" type="button"><i class="flaticon-loupe"></i></button>
-							</div>
-						</form>
-						<ul class="nav navbar-nav">
-							<li class="sub-menu-down"><a href="javascript:void(0);"><span>Home</span></a>
-								<ul class="sub-menu">
-									<li><a href="index.html">Home 1</a></li>
-									<li><a href="index-2.html">Home 2</a></li>
-									<li><a href="index-3.html">Home 3</a></li>
-								</ul>
-							</li>
-							<li class="sub-menu-down"><a href="javascript:void(0);"><span>Pages</span></a>
-								<ul class="sub-menu">
-									<li><a href="about-us.html"><span>About Us</span></a></li>
-									<li><a href="my-profile.html">My Profile</a></li>
-									<li><a href="services.html">Services</a></li>
-									<li><a href="faq.html">FAQ's</a></li>
-									<li><a href="help-desk.html">Help Desk</a></li>
-									<li><a href="coming-soon.html">Coming Soon</a></li>
-									<li><a href="#">Pricing</a></li>
-									<li><a href="privacy-policy.html">Privacy Policy</a></li>
-									<li><a href="under-construction.html">Under Construction</a></li>
-									<li><a href="error-404.html">Error 404</a></li>
-								</ul>
-							</li>
-							<li class="sub-menu-down"><a href="javascript:void(0);"><span>Shop</span></a>
-								<ul class="sub-menu">
-									<li><a href="books-grid-view.html">Shop Grid</a></li>
-									<li><a href="books-grid-view-sidebar.html">Shop Grid Sidebar</a></li>
-									<li><a href="books-list.html">Shop List</a></li>
-									<li><a href="books-list-view-sidebar.html">Shop List Sidebar</a></li>
-									<li><a href="books-detail.html">Shop Detail</a></li>
-									<li><a href="shop-cart.html">Cart</a></li>
-									<li><a href="shop-checkout.html">Checkout</a></li>
-									<li><a href="wishlist.html">Wishlist</a></li>
-									<li><a href="shop-login.html">Login</a></li>
-									<li><a href="shop-registration.html">Registration</a></li>
-								</ul>
-							</li>
-							<li class="sub-menu-down"><a href="javascript:void(0);"><span>Blog</span></a>
-								<ul class="sub-menu">
-									<li><a href="javascript:void(0);">Page Layout <i class="fa fa-angle-right"></i></a>
-										<ul class="sub-menu">
-											<li><a href="javascript:void(0);">No Sidebar <i class="fa fa-angle-right"></i></a>
-												<ul class="sub-menu">
-													<li><a href="blog-list-no-sidebar.html">Blog List</a></li>
-													<li><a href="blog-grid-no-sidebar.html">Blog Grid</a></li>
-													<li><a href="blog-grid-wide.html">Blog Grid Wide</a></li>
-												</ul>	
-											</li>
-											<li><a href="javascript:void(0);">2 Columns <i class="fa fa-angle-right"></i></a>
-												<ul class="sub-menu">
-													<li><a href="blog-list-right-sidebar.html">Blog List</a></li>
-													<li><a href="blog-grid-right-sidebar.html">Blog Grid</a></li>
-												</ul>	
-											</li>
-											<li><a href="javascript:void(0);">3 Columns <i class="fa fa-angle-right"></i></a>
-												<ul class="sub-menu">
-													<li><a href="blog-list-both-sidebar.html">Blog List</a></li>
-													<li><a href="blog-grid-both-sidebar.html">Blog Grid</a></li>
-												</ul>	
-											</li>
-										</ul>
-									</li>
-									<li><a href="javascript:void(0);">Blog Sidebar <i class="fa fa-angle-right"></i></a>
-										<ul class="sub-menu">
-											<li><a href="javascript:void(0);">No Sidebar <i class="fa fa-angle-right"></i></a>
-												<ul class="sub-menu">
-													<li><a href="blog-list-no-sidebar.html">Blog List</a></li>
-													<li><a href="blog-grid-no-sidebar.html">Blog Grid</a></li>
-												</ul>	
-											</li>
-											<li><a href="javascript:void(0);">Left Sidebar <i class="fa fa-angle-right"></i></a>
-												<ul class="sub-menu">
-													<li><a href="blog-list-left-sidebar.html">Blog List</a></li>
-													<li><a href="blog-grid-left-sidebar.html">Blog Grid</a></li>
-												</ul>	
-											</li>
-											<li><a href="javascript:void(0);">Right Sidebar <i class="fa fa-angle-right"></i></a>
-												<ul class="sub-menu">
-													<li><a href="blog-list-right-sidebar.html">Blog List</a></li>
-													<li><a href="blog-grid-right-sidebar.html">Blog Grid</a></li>
-												</ul>	
-											</li>
-											<li><a href="javascript:void(0);">2 Sidebar <i class="fa fa-angle-right"></i></a>
-												<ul class="sub-menu">
-													<li><a href="blog-list-both-sidebar.html">Blog List</a></li>
-													<li><a href="blog-grid-both-sidebar.html">Blog Grid</a></li>
-												</ul>	
-											</li>
-										</ul>
-									</li>
-								</ul>	
-							</li>
-							<li class="has-mega-menu sub-menu-down"><a href="javascript:void(0);">Post Layout</a>
-								<ul class="mega-menu">
-									<li><a href="javascript:void(0);">Side Bar</a>
-										<ul>
-											<li><a href="post-left-sidebar.html">Post Left Sidebar</a></li>
-											<li><a href="post-right-sidebar.html">Post Right Sidebar</a></li>
-											<li><a href="post-both-sidebar.html" class="new-badge">Post Both Sidebar <span>New</span></a></li>
-											<li><a href="post-no-sidebar.html">Post No Sidebar</a></li>
-										</ul>
-									</li>
-									<li> <a href="javascript:void(0);">Post Types</a>
-										<ul>
-											<li><a href="post-text.html" class="new-badge">Text Post <span>New</span></a></li>
-											<li><a href="post-image.html"  class="new-badge">Image Post <span>New</span></a></li>
-											<li><a href="post-video.html">Post Video</a></li>
-											<li><a href="post-link.html">Post Link</a></li>
-											<li><a href="post-audio.html">Post Audio</a></li>
-											<li><a href="post-quote.html">Post Quote</a></li>
-											<li><a href="post-tutorial.html" class="new-badge">Tutorial Post <span>New</span></a></li>
-											<li><a href="post-cateloge.html" class="new-badge">Cateloge Post <span>New</span></a></li>
-										</ul>
-									</li>
-									<li> <a href="javascript:void(0);">Multiple Media</a>
-										<ul>
-											<li><a href="post-banner.html" class="new-badge">Banner <span>New</span></a></li>
-											<li><a href="post-slide-show.html">Post Slide Show</a></li>
-											<li><a href="post-gallery.html">Gallery</a></li>
-											<li><a href="post-status-slider.html" class="new-badge">Status Slider <span>New</span></a></li>
-										</ul>
-									</li>
-									<li> <a href="javascript:void(0);">Post Layout Type</a>
-										<ul>
-											<li><a href="post-standard.html">Standard Post </a></li>
-											<li><a href="post-side.html" class="new-badge">Side Post <span>New</span></a></li>
-											<li><a href="post-corner.html" class="new-badge">Corner Post <span>New</span></a></li>
-										</ul>
-									</li>
-								</ul>
-							</li>
-							<li><a href="contact-us.html">Contact Us</a></li>
+					<ul class="nav navbar-nav">
+						<li><a href="index-3.html">Home</a></li>
+						<li><a href="books-grid-view.html">Browse Books </a></li>
+						<li><a href="about-us.html">About </a></li>
+						<li><a href="contact-us.html">Contact Us</a></li>
+					</ul>
+					</ul>
+					<div class="dz-social-icon">
+						<ul>
+							<li><a class="fab fa-facebook-f" target="_blank" href="https://www.facebook.com/dexignzone"></a></li>
+							<li><a class="fab fa-twitter" target="_blank" href="https://twitter.com/dexignzones"></a></li>
+							<li><a class="fab fa-linkedin-in" target="_blank" href="https://www.linkedin.com/showcase/3686700/admin/"></a></li>
+							<li><a class="fab fa-instagram" target="_blank" href="https://www.instagram.com/website_templates__/"></a></li>
 						</ul>
-						</ul>
-						<div class="dz-social-icon">
-							<ul>
-								<li><a class="fab fa-facebook-f" target="_blank" href="https://www.facebook.com/dexignzone"></a></li>
-								<li><a class="fab fa-twitter" target="_blank" href="https://twitter.com/dexignzones"></a></li>
-								<li><a class="fab fa-linkedin-in" target="_blank" href="https://www.linkedin.com/showcase/3686700/admin/"></a></li>
-								<li><a class="fab fa-instagram" target="_blank" href="https://www.instagram.com/website_templates__/"></a></li>
-							</ul>
-						</div>
 					</div>
 				</div>
 			</div>
 		</div>
-		<!-- Main Header End -->
-		
-	</header>
-	<!-- Header End -->
+	</div>
+	<!-- Main Header End -->
+	
+</header>
+<!-- Header End -->
 	
 	<div class="page-content bg-white">
 	
 		<!--Swiper Banner Start -->
-		<div class="main-slider style-1"> 
-			<div class="main-swiper">
-				<div class="swiper-wrapper">
-					<div class="swiper-slide bg-blue" style="background-image: url(images/background/waveelement.png);">
-						<div class="container">
+		<div class="banner-one">
+			<div class="container">
+				<div class="banner-inner">
+					<div class="row align-items-center">
+                        <div class="col-md-6 order-md-1 order-2">
+							<div class="dz-media move-box wow fadeIn" data-wow-duration="1.6s" data-wow-delay="0.8s" style="visibility: visible; animation-duration: 1.6s; animation-delay: 0.8s; animation-name: fadeIn;">
+                                <img src="images/banner/banner-bookconnect.png" alt="media">
+                                <div class="move-1 wow zoomIn" data-wow-delay="2.5s"> 
+                                    <svg width="69" height="69" viewBox="0 0 69 69" fill="none" xmlns="http://www.w3.org/2000/svg">
+                                        <g clip-path="url(#clip0_1_154)">
+                                        <path d="M41.8123 14.8552L42.2653 13.1648C42.3854 12.7165 42.3225 12.2388 42.0904 11.8369C41.8584 11.4349 41.4761 11.1416 41.0278 11.0215C40.5795 10.9014 40.1018 10.9642 39.6999 11.1963C39.2979 11.4284 39.0046 11.8106 38.8845 12.2589L38.4316 13.9493C38.3115 14.3976 38.3743 14.8753 38.6064 15.2772C38.8385 15.6792 39.2207 15.9725 39.669 16.0926C40.1173 16.2127 40.595 16.1498 40.997 15.9178C41.3989 15.6857 41.6922 15.3035 41.8123 14.8552ZM24.8196 14.1066C24.5704 13.743 24.1932 13.4869 23.7634 13.3893C23.3335 13.2917 22.8827 13.36 22.501 13.5804C22.1193 13.8007 21.8348 14.157 21.7044 14.5781C21.574 14.9991 21.6072 15.4538 21.7975 15.8514L22.6761 17.3731C22.9252 17.7367 23.3024 17.9929 23.7323 18.0904C24.1621 18.188 24.6129 18.1198 24.9946 17.8994C25.3763 17.679 25.6608 17.3227 25.7912 16.9017C25.9217 16.4807 25.8884 16.0259 25.6981 15.6283L24.8196 14.1066ZM13.9494 30.9418C14.3977 31.062 14.8754 30.9991 15.2773 30.767C15.6793 30.5349 15.9726 30.1527 16.0927 29.7044C16.2128 29.2561 16.1499 28.7784 15.9179 28.3765C15.6858 27.9745 15.3036 27.6812 14.8552 27.5611L13.1649 27.1082C12.7166 26.988 12.2389 27.0509 11.8369 27.283C11.435 27.5151 11.1417 27.8973 11.0216 28.3456C10.9014 28.7939 10.9643 29.2716 11.1964 29.6735C11.4285 30.0755 11.8107 30.3688 12.259 30.4889L13.9494 30.9418ZM13.4681 46.9373C13.7004 47.337 14.0815 47.6285 14.5281 47.7482C14.9746 47.8678 15.4504 47.8059 15.8515 47.5759L17.3732 46.6973C17.7368 46.4482 17.993 46.071 18.0905 45.6412C18.1881 45.2113 18.1198 44.7605 17.8995 44.3788C17.6791 43.9971 17.3228 43.7126 16.9018 43.5822C16.4807 43.4518 16.026 43.485 15.6284 43.6753L14.1067 44.5539C13.707 44.7862 13.4155 45.1673 13.2958 45.6139C13.1762 46.0604 13.2381 46.5362 13.4681 46.9373ZM46.6974 52.0002C46.4483 51.6366 46.0711 51.3805 45.6413 51.2829C45.2114 51.1853 44.7606 51.2536 44.3789 51.474C43.9972 51.6943 43.7127 52.0506 43.5823 52.4717C43.4518 52.8927 43.4851 53.3474 43.6754 53.745L44.554 55.2667C44.8031 55.6303 45.1803 55.8865 45.6101 55.984C46.04 56.0816 46.4908 56.0134 46.8725 55.793C47.2542 55.5726 47.5387 55.2163 47.6691 54.7953C47.7995 54.3743 47.7663 53.9195 47.576 53.5219L46.6974 52.0002ZM57.1145 38.8844L55.4241 38.4315C54.9758 38.3114 54.4981 38.3743 54.0962 38.6063C53.6942 38.8384 53.401 39.2206 53.2808 39.6689C53.1607 40.1172 53.2236 40.5949 53.4556 40.9969C53.6877 41.3988 54.0699 41.6921 54.5183 41.8122L56.2086 42.2652C56.6569 42.3853 57.1346 42.3224 57.5366 42.0903C57.9385 41.8583 58.2318 41.476 58.3519 41.0277C58.4721 40.5794 58.4092 40.1017 58.1771 39.6998C57.945 39.2979 57.5628 39.0046 57.1145 38.8844ZM55.9055 22.436C55.6731 22.0363 55.292 21.7448 54.8455 21.6252C54.3989 21.5055 53.9231 21.5674 53.522 21.7974L52.0003 22.676C51.7827 22.7801 51.5891 22.9281 51.4314 23.1106C51.2737 23.2931 51.1555 23.5063 51.0842 23.7367C51.0128 23.9671 50.9898 24.2097 51.0167 24.4494C51.0435 24.6891 51.1196 24.9206 51.2402 25.1295C51.3608 25.3384 51.5233 25.5201 51.7174 25.6632C51.9116 25.8063 52.1332 25.9077 52.3684 25.9611C52.6036 26.0145 52.8473 26.0187 53.0842 25.9734C53.3211 25.9281 53.5461 25.8344 53.7451 25.698L55.2668 24.8195C55.6665 24.5871 55.958 24.206 56.0777 23.7595C56.1973 23.3129 56.1354 22.8371 55.9055 22.436ZM19.4734 30.6103C18.8078 33.1093 18.7677 35.7339 19.3569 38.2521C19.9461 40.7703 21.1463 43.1047 22.8515 45.0491L20.3468 54.3968C20.2266 54.8451 20.2895 55.3228 20.5216 55.7247C20.7537 56.1267 21.1359 56.42 21.5842 56.5401L35.1072 60.1636C35.5555 60.2837 36.0332 60.2208 36.4351 59.9888C36.8371 59.7567 37.1303 59.3745 37.2505 58.9261L39.7552 49.5784C42.3328 48.7035 44.6396 47.1755 46.4507 45.1434C48.2618 43.1113 49.5153 40.6445 50.089 37.9837C50.6627 35.3228 50.537 32.5587 49.7241 29.9608C48.9113 27.363 47.439 25.0202 45.4509 23.1609C43.4629 21.3016 41.0269 19.9893 38.3805 19.352C35.7342 18.7146 32.9678 18.774 30.3513 19.5244C27.7347 20.2747 25.3573 21.6903 23.4508 23.6332C21.5444 25.5761 20.174 27.98 19.4734 30.6103ZM24.1804 53.6123L25.0863 50.2316L35.2285 52.9492L34.3227 56.3299L24.1804 53.6123ZM37.8573 22.8541C40.4605 23.5531 42.7605 25.0912 44.4008 27.23C46.0412 29.3689 46.9303 31.989 46.9304 34.6844C46.9305 37.3799 46.0416 40.0001 44.4014 42.1391C42.7613 44.278 40.4614 45.8163 37.8583 46.5156C37.5604 46.5954 37.2889 46.7525 37.0713 46.971C36.8537 47.1894 36.6977 47.4616 36.619 47.7597L36.1344 49.5684L32.7537 48.6626L35.4713 38.5203L38.852 39.4262C39.3003 39.5463 39.778 39.4834 40.1799 39.2514C40.5819 39.0193 40.8752 38.6371 40.9953 38.1888C41.1154 37.7405 41.0525 37.2628 40.8205 36.8608C40.5884 36.4589 40.2062 36.1656 39.7579 36.0455L29.6156 33.3279C29.1673 33.2077 28.6897 33.2706 28.2877 33.5027C27.8858 33.7348 27.5925 34.117 27.4723 34.5653C27.3522 35.0136 27.4151 35.4913 27.6472 35.8932C27.8792 36.2952 28.2615 36.5885 28.7098 36.7086L32.0905 37.6145L29.3729 47.7567L25.9922 46.8508L26.4813 45.0252C26.5623 44.7277 26.5633 44.414 26.4841 44.116C26.4048 43.818 26.2483 43.5462 26.0302 43.3281C24.1348 41.4195 22.9202 38.9401 22.5741 36.2726C22.2279 33.6051 22.7693 30.8978 24.1148 28.5686C25.4603 26.2394 27.535 24.4179 30.0187 23.3851C32.5024 22.3523 35.257 22.1657 37.8573 22.8541Z" fill="white"/>
+                                        </g>
+                                        <defs>
+                                        <clipPath id="clip0_1_154">
+                                        <rect width="56" height="56" fill="white" transform="translate(14.8878 0.393799) rotate(15)"/>
+                                        </clipPath>
+                                        </defs>
+                                    </svg>
+                                </div>	
+                                <div class="move-2 wow zoomIn" data-wow-delay="2.5s"> 
+                                    <svg width="78" height="78" viewBox="0 0 78 78" fill="none" xmlns="http://www.w3.org/2000/svg">
+                                        <g clip-path="url(#clip0_1_150)">
+                                        <path d="M55.1592 10.9645C54.7509 10.2574 53.9391 9.887 53.1373 10.0421C44.1991 11.7725 35.9741 16.4422 29.9016 23.2168C20.9983 25.0884 12.8417 29.8767 6.87398 36.7522C6.33888 37.369 6.25362 38.2573 6.6619 38.9645L23.9956 68.987C24.6403 70.1038 26.2681 70.2423 27.0995 69.2847C32.6523 62.8869 40.2909 58.4769 48.608 56.8668L48.608 56.8662C49.0233 56.7858 49.4061 56.5692 49.6902 56.242C55.2431 49.8441 62.8814 45.4341 71.1988 43.824C72.4405 43.5834 73.1352 42.0993 72.493 40.987L55.1592 10.9645ZM26.0137 64.8247L10.6733 38.2541C15.8285 32.7313 22.588 28.8301 29.9484 27.127L45.2893 53.698C38.0039 55.6009 31.3045 59.4669 26.0137 64.8247ZM67.8788 40.6537C60.5936 42.5568 53.8955 46.424 48.6043 51.7818L33.2639 25.2115C38.4192 19.6886 45.1782 15.7864 52.5385 14.0833L67.8788 40.6537Z" fill="white"/>
+                                        <path d="M42.0121 34.8537L44.5663 37.7064C48.3443 34.3235 52.903 31.7492 57.7492 30.2613L56.6255 26.6009C51.2532 28.2501 46.2 31.1039 42.0121 34.8537ZM58.4282 38.9616C59.5941 38.4601 60.8 38.017 62.0123 37.6449L60.8885 33.9844C59.5444 34.3971 58.2075 34.8882 56.915 35.4443L58.4282 38.9616ZM46.2751 42.2373L48.8293 45.09C50.9464 43.1942 53.2936 41.5557 55.806 40.2201L54.0086 36.8392C51.2236 38.3193 48.6221 40.1358 46.2751 42.2373ZM37.7492 27.4702L40.3034 30.3228C44.0815 26.94 48.6401 24.3656 53.4864 22.8778L52.3626 19.2174C46.9903 20.8666 41.9371 23.7202 37.7492 27.4702ZM19.4704 48.0525L22.0786 50.8559C25.7904 47.4028 30.2991 44.742 35.1176 43.1617L33.9243 39.5234C28.5829 41.2751 23.5848 44.2245 19.4704 48.0525ZM23.7333 55.436L26.3415 58.2394C30.0532 54.7862 34.562 52.1256 39.3805 50.5453L38.1872 46.9069C32.8458 48.6586 27.8477 51.608 23.7333 55.436ZM30.8545 35.7782L29.6613 32.1398C24.32 33.8917 19.3219 36.841 15.2073 40.669L17.8156 43.4723C21.5274 40.0191 26.0362 37.3584 30.8545 35.7782Z" fill="white"/>
+                                        </g>
+                                        <defs>
+                                        <clipPath id="clip0_1_150">
+                                        <rect width="56" height="56" fill="white" transform="translate(0.784607 28.7847) rotate(-30)"/>
+                                        </clipPath>
+                                        </defs>
+                                    </svg>
+                                </div>
+                                <div class="our-customer">
+                                    <h6 class="mb-3">10k+ student joined</h6>
+                                    <ul>
+                                        <li class="customer-image">
+                                            <img src="images/testimonial/testimonial4.jpg" alt="">
+                                        </li>
+                                        <li class="customer-image">
+                                            <img src="images/testimonial/testimonial4.jpg" alt="">
+                                        </li>
+                                        <li class="customer-image">
+                                            <img src="images/testimonial/testimonial5.jpg" alt="">
+                                        </li>
+                                        <li class="total-customer">
+                                            <i class="fa-solid fa-plus"></i>
+                                        </li>
+                                    </ul>
+                                </div>					
+                            </div>
+						</div>
+						<div class="col-md-6 order-md-2 order-1 m-b30">
 							<div class="banner-content">
-								<div class="row">
-									<div class="col-md-6">
-										<div class="swiper-content">
-											<div class="content-info">
-												<h6 class="sub-title" data-swiper-parallax="-10">BEST MANAGEMENT </h6>
-												<h1 class="title mb-0" data-swiper-parallax="-20">Think and Grow Rich</h1>
-												<ul class="dz-tags" data-swiper-parallax="-30">
-													<li><a href="javascript:void(0);">Napoleon Hill</a></li>
-													<li><a href="javascript:void(0);">Business & Strategy</a></li>
-												</ul>
-												<p class="text mb-0" data-swiper-parallax="-40">It is a long established fact that a reader will be distracted by the readable content of a page when looking at its layout. The point of using Lorem Ipsum is that it has a more-or-less normal.</p>
-												<div class="price" data-swiper-parallax="-50">
-													<span class="price-num">₵17.2</span>
-													<del>₵15.25</del>
-													<span class="badge badge-danger">15% OFF</span>
-												</div>
-												<div class="content-btn" data-swiper-parallax="-60">
-													<a class="btn btn-primary btnhover" href="books-grid-view.html">Buy Now</a>
-													<a class="btn border btnhover ms-4 text-white" href="books-detail.html">See Details</a>
-												</div>
-											</div>
-											<div class="partner">
-												<p>Our partner</p>
-												<div class="brand-logo">
-													<img src="images/partner/partner-1.png" alt="client">
-													<img  class="mid-logo" src="images/partner/partner-2.png" alt="client">
-													<img src="images/partner/partner-3.png" alt="client">
-												</div>
-											</div>
+								<div class="banner-content">
+									<h1 class="title max-w700" style="font-size: 60px; line-height: 1.4; margin-top: px;">
+										Swap textbooks, novels, and more with fellow students. 
+										
+									  </h1>
+								  
+								<p class="text m-b40"><span class="text-primary">Save money & make friends!</span></p>
+								<br>
+                                <form class="search style-1 m-b40">
+                                            <div class="form-group">
+                                        <div class="input-group mb-0">
+                                            <input type="text" class="form-control" placeholder="Search for a Book">
+                                            <div class="input-group-addon">
+                                                <button  type="text" class="btn btn-primary btnhover">
+                                                    <i class="flaticon-loupe"></i>
+                                                </button>
+                                            </div>
+                                        </div>
+                                    </div>
+                                </form>
+                                <div class="data-box">
+										<div class="counter-box">
+											<h2 class="title"><span class="box-icon"><svg width="32" height="32" viewBox="0 0 32 32" fill="none" xmlns="http://www.w3.org/2000/svg">
+												<path d="M23.4667 19.4668C23.4667 23.4668 20.1333 26.6668 16 26.6668C15.3333 26.6668 14.6667 26.5334 14 26.4001C17.2 25.6001 19.4667 22.8001 19.4667 19.4668C19.4667 19.0668 19.4667 18.6668 19.3333 18.2668C20 18.1334 20.6667 18.0001 21.3333 17.7334C22 17.4668 22.5333 17.0668 22.8 16.5334C23.2 17.4668 23.4667 18.4001 23.4667 19.4668Z" fill="#FEDE8A"/>
+												<path d="M23.4667 19.4668C23.4667 23.4668 20.1333 26.6668 16 26.6668C11.8667 26.6668 8.53334 23.4668 8.53334 19.4668C8.53334 18.4001 8.80001 17.4668 9.20001 16.5334C9.46668 17.0668 10 17.6001 10.6667 17.7334C12.4 18.2668 14.2667 18.5334 16 18.5334C17.7333 18.5334 19.6 18.2668 21.3333 17.7334C22 17.4668 22.5333 17.0668 22.8 16.5334C23.2 17.4668 23.4667 18.4001 23.4667 19.4668Z" stroke="#EAA451" stroke-width="2" stroke-miterlimit="10" stroke-linecap="round" stroke-linejoin="round"/>
+												<path d="M26.2667 9.3333L24.2667 10.4L23.0667 10.9333L18.6667 12.6666L16.2667 13.6C16.1333 13.7333 15.8667 13.7333 15.6 13.6L13.3333 12.6666L8.93333 10.8L7.73333 10.2666L5.73333 9.3333C5.2 9.06663 5.2 8.39997 5.73333 8.1333L15.7333 3.7333C15.8667 3.59997 16.1333 3.59997 16.4 3.7333L26.4 8.1333C26.8 8.39997 26.8 9.06663 26.2667 9.3333Z" stroke="#EAA451" stroke-width="2" stroke-miterlimit="10" stroke-linejoin="round"/>
+												<path d="M23.0667 10.8V15.4667C23.0667 15.8667 22.9333 16.2667 22.8 16.5334C22.5333 17.0667 22 17.6 21.3333 17.7334C19.6 18.2667 17.7333 18.5334 16 18.5334C15.3333 18.5334 14.5333 18.5334 13.8667 18.4C14.9333 18.2667 16 18 16.9333 17.7334C17.6 17.4667 18.1333 17.0667 18.4 16.5334C18.5333 16.1334 18.6667 15.8667 18.6667 15.4667V12.6667L23.0667 10.8Z" fill="#FEDE8A"/>
+												<path d="M23.0667 10.8V15.4667C23.0667 15.8667 22.9333 16.2667 22.8 16.5334C22.5333 17.0667 22 17.6 21.3333 17.7334C19.6 18.2667 17.7333 18.5334 16 18.5334C14.2667 18.5334 12.4 18.2667 10.6667 17.7334C10 17.4667 9.46667 17.0667 9.20001 16.5334C9.06667 16.1334 8.93334 15.8667 8.93334 15.4667V10.8L13.3333 12.6667L15.7333 13.6C15.8667 13.7334 16.1333 13.7334 16.4 13.6L18.6667 12.6667L23.0667 10.8Z" stroke="#EAA451" stroke-width="2" stroke-miterlimit="10" stroke-linejoin="round"/>
+												<path d="M26.6667 8.66675V14.9334" stroke="#EAA451" stroke-width="2" stroke-miterlimit="10" stroke-linecap="round" stroke-linejoin="round"/>
+											</svg></span><span class="counter">150 </span> <span class="ms-2">Tutors</span></h2>
+										</div>
+										<div class="counter-box">
+											<h2 class="title"><span class="box-icon"><svg width="32" height="32" viewBox="0 0 32 32" fill="none" xmlns="http://www.w3.org/2000/svg">
+												<path d="M27.6 13.3333L25.3333 14.5333L24 15.0666L16.4 18.3999C16.1333 18.5333 15.8667 18.5333 15.7333 18.3999L8 15.0666L6.66667 14.5333L4.4 13.3333C3.86667 13.0666 3.86667 12.2666 4.4 11.9999L15.6 6.93325C15.8667 6.79992 16.1333 6.79992 16.2667 6.93325L27.6 11.9999C28.1333 12.2666 28.1333 13.0666 27.6 13.3333Z" stroke="#EAA451" stroke-width="2" stroke-miterlimit="10" stroke-linejoin="round"/>
+												<path d="M24 15.0667V20.5333C24 21.7333 23.2 22.9333 22 23.2C20 23.8666 18 24.1333 16 24.1333C15.3333 24.1333 14.6667 24.1333 14 24C15.3333 23.8667 16.6667 23.6 18 23.0666C19.2 22.6666 20 21.6 20 20.4V16.6667L24 15.0667Z" fill="#FEDE8A"/>
+												<path d="M24 15.0667V20.5333C24 21.7333 23.2 22.9333 22 23.2C20 23.8666 18 24.1333 16 24.1333C14 24.1333 11.8667 24 10 23.3333C8.8 22.9333 8 21.8667 8 20.6667V15.2L15.6 18.5333C15.8667 18.6666 16.1333 18.6666 16.2667 18.5333L24 15.0667Z" stroke="#EAA451" stroke-width="2" stroke-miterlimit="10" stroke-linejoin="round"/>
+												<path d="M28 12.6667V20.0001" stroke="#EAA451" stroke-width="2" stroke-miterlimit="10" stroke-linecap="round" stroke-linejoin="round"/>
+                                            </svg></span><span class="counter">15</span>k<span>+</span> <span class="ms-2">Students</span></h2>
+										</div>
+										<div class="counter-box mb-0">
+											<h2 class="title"><span class="box-icon"><svg width="32" height="32" viewBox="0 0 32 32" fill="none" xmlns="http://www.w3.org/2000/svg">
+												<path d="M20.4 24.0001C20.5333 24.0001 20.5333 24.0001 20.4 24.0001C20.8 23.8668 21.0667 23.7334 21.2 23.4668C21.6 23.0668 22 22.9334 22.5333 22.9334H22.6667C23.6 22.9334 24.4 22.2668 24.5333 21.3334C24.5333 21.2001 24.5333 21.2001 24.5333 21.0668V20.9334C24.5333 20.4001 24.6667 20.0001 25.0667 19.6001C25.4667 19.2001 25.6 18.8001 25.6 18.2668C25.6 17.8668 25.4667 17.3334 25.0667 16.9334C24.6667 16.5334 24.5333 16.1334 24.5333 15.6001V15.4668C24.5333 14.4001 23.7333 13.6001 22.6667 13.6001C22.1333 13.6001 21.7333 13.3334 21.3333 13.0668C20.9333 12.6668 20.5333 12.5334 20 12.5334C19.4667 12.5334 19.0667 12.6668 18.6667 13.0668C18.2667 13.4668 17.8667 13.6001 17.3333 13.6001H17.2C16.1333 13.6001 15.3333 14.4001 15.3333 15.4668V15.6001C15.3333 16.1334 15.2 16.5334 14.8 16.9334C14.4 17.3334 14.2667 17.7334 14.2667 18.2668C14.2667 18.8001 14.4 19.2001 14.8 19.6001C15.2 20.0001 15.3333 20.4001 15.3333 20.9334V21.0668C15.3333 21.2001 15.3333 21.2001 15.3333 21.3334C15.4667 22.2668 16.2667 22.9334 17.2 22.9334H17.3333C17.8667 22.9334 18.2667 23.0668 18.6667 23.4668C18.9333 23.7334 19.2 23.8668 19.4667 24.0001" fill="#FEDE8A"/>
+												<path d="M20.4 24.0001C20.5333 24.0001 20.5333 24.0001 20.4 24.0001C20.8 23.8668 21.0667 23.7334 21.2 23.4668C21.6 23.0668 22 22.9334 22.5333 22.9334H22.6667C23.6 22.9334 24.4 22.2668 24.5333 21.3334C24.5333 21.2001 24.5333 21.2001 24.5333 21.0668V20.9334C24.5333 20.4001 24.6667 20.0001 25.0667 19.6001C25.4667 19.2001 25.6 18.8001 25.6 18.2668C25.6 17.8668 25.4667 17.3334 25.0667 16.9334C24.6667 16.5334 24.5333 16.1334 24.5333 15.6001V15.4668C24.5333 14.4001 23.7333 13.6001 22.6667 13.6001C22.1333 13.6001 21.7333 13.3334 21.3333 13.0668C20.9333 12.6668 20.5333 12.5334 20 12.5334C19.4667 12.5334 19.0667 12.6668 18.6667 13.0668C18.2667 13.4668 17.8667 13.6001 17.3333 13.6001H17.2C16.1333 13.6001 15.3333 14.4001 15.3333 15.4668V15.6001C15.3333 16.1334 15.2 16.5334 14.8 16.9334C14.4 17.3334 14.2667 17.7334 14.2667 18.2668C14.2667 18.8001 14.4 19.2001 14.8 19.6001C15.2 20.0001 15.3333 20.4001 15.3333 20.9334V21.0668C15.3333 21.2001 15.3333 21.2001 15.3333 21.3334C15.4667 22.2668 16.2667 22.9334 17.2 22.9334H17.3333C17.8667 22.9334 18.2667 23.0668 18.6667 23.4668C18.9333 23.7334 19.2 23.8668 19.4667 24.0001" stroke="#EAA451" stroke-width="2" stroke-miterlimit="10" stroke-linecap="round" stroke-linejoin="round"/>
+												<path d="M19.6 23.9999C19.4667 23.9999 19.4667 23.9999 19.6 23.9999L20 24.6666L24 28.6666L24.6667 25.3333L28 24.6666L26.6667 23.3333L24.6667 21.3333C24.5333 22.2666 23.7333 22.9333 22.8 22.9333H22.6667C22.1333 22.9333 21.7333 23.0666 21.3333 23.4666C21.0667 23.7333 20.8 23.8666 20.5333 23.9999" stroke="#EAA451" stroke-width="2" stroke-miterlimit="10" stroke-linecap="round" stroke-linejoin="round"/>
+												<path d="M19.6 23.9999C19.4667 23.9999 19.4667 23.9999 19.6 23.9999C19.2 23.8666 18.9333 23.7333 18.8 23.4666C18.4 23.0666 18 22.9333 17.4667 22.9333H17.3333C16.4 22.9333 15.6 22.2666 15.4667 21.3333L12.8 23.9999L12 24.6666L15.3333 25.3333L16 28.6666L20 24.6666L20.5333 24.1333" stroke="#EAA451" stroke-width="2" stroke-miterlimit="10" stroke-linecap="round" stroke-linejoin="round"/>
+												<path d="M19.6 24H19.4667" stroke="#EAA451" stroke-width="2" stroke-miterlimit="10" stroke-linecap="round" stroke-linejoin="round"/>
+												<path d="M20.5334 24H20.4" stroke="#EAA451" stroke-width="2" stroke-miterlimit="10" stroke-linecap="round" stroke-linejoin="round"/>
+												<path d="M12.6667 24.0001H6.66667C5.2 24.0001 4 22.8001 4 21.3334V9.33341C4 7.86675 5.2 6.66675 6.66667 6.66675H24C25.4667 6.66675 26.6667 7.86675 26.6667 9.33341V23.3334" stroke="#EAA451" stroke-width="2" stroke-miterlimit="10" stroke-linecap="round" stroke-linejoin="round"/>
+												<path d="M8 10.6667H13.3333" stroke="#EAA451" stroke-width="2" stroke-miterlimit="10" stroke-linecap="round" stroke-linejoin="round"/>
+												<path d="M8 16H10.6667" stroke="#EAA451" stroke-width="2" stroke-miterlimit="10" stroke-linecap="round" stroke-linejoin="round"/>
+												</svg></span><span class="counter">83</span> <span class="ms-2">Courses</span></h2>
 										</div>
 									</div>
-									<div class="col-md-6">
-										<div class="banner-media" data-swiper-parallax="-100">
-											<img src="images/banner/banner-media.png" alt="banner-media">
-										</div>
-										<img class="pattern" src="images/Group.png" data-swiper-parallax="-100" alt="dots">
-									</div>
-								</div>
 							</div>
-						</div>
-					</div>
-					<div class="swiper-slide bg-blue" style="background-image: url(images/background/waveelement.png);">
-						<div class="container">
-							<div class="banner-content">
-								<div class="row">
-									<div class="col-md-6">
-										<div class="swiper-content">
-											<div class="content-info">
-												<h6 class="sub-title" data-swiper-parallax="-10">BEST SELLER</h6>
-												<h1 class="title mb-0" data-swiper-parallax="-20">Pushing Clouds</h1>
-												<ul class="dz-tags" data-swiper-parallax="-30">
-													<li><a href="javascript:void(0);">Napoleon Hill</a></li>
-													<li><a href="javascript:void(0);">Business & Strategy</a></li>
-												</ul>
-												<p class="text mb-0" data-swiper-parallax="-40">Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris</p>
-												<div class="price" data-swiper-parallax="-50">
-													<span class="price-num">₵9.5</span>
-													<del>₵12.0</del>
-													<span class="badge badge-danger">20% OFF</span>
-												</div>
-												<div class="content-btn" data-swiper-parallax="-50">
-													<a class="btn btn-primary btnhover" href="books-grid-view.html">Buy Now</a>
-													<a class="btn border btnhover ms-4 text-white" href="books-detail.html">See Details</a>
-												</div>
-											</div>
-											<div class="partner">
-												<p>Our partner</p>
-												<div class="brand-logo">
-													<img src="images/partner/partner-1.png" alt="client">
-													<img  class="mid-logo" src="images/partner/partner-2.png" alt="client">
-													<img src="images/partner/partner-3.png" alt="client">
-												</div>
-											</div>
-										</div>
-									</div>
-									<div class="col-md-6">
-										<div class="banner-media" data-swiper-parallax="-100">
-											<img src="images/banner/banner-media2.png" alt="banner-media1">
-										</div>
-										<img class="pattern" src="images/Group.png" data-swiper-parallax="-100" alt="dots">
-									</div>
-								</div>
-							</div>
-						</div>
-					</div>
-				</div>
-				<div class="container swiper-pagination-wrapper">
-					<div class="swiper-pagination-five"></div>
-				</div>
-			</div>
-			<div class="swiper main-swiper-thumb">
-				<div class="swiper-wrapper">
-					<div class="swiper-slide">
-						<div class="books-card">
-							<div class="dz-media">
-								<img src="images/books/book16.png" alt="book">									
-							</div>
-							<div class="dz-content">
-								<h5 class="title mb-0">Think and Grow Rich</h5>
-								<div class="dz-meta">
-									<ul>
-										<li>by Napoleon Hill</li>
-									</ul>
-								</div>
-								<div class="book-footer">
-									<div class="price">
-										<span class="price-num">₵9.5</span>
-									</div>
-									<div class="rate">
-										<i class="flaticon-star text-yellow"></i>
-										<i class="flaticon-star text-yellow"></i>
-										<i class="flaticon-star text-yellow"></i>
-										<i class="flaticon-star text-yellow"></i>
-										<i class="flaticon-star text-yellow"></i>
-									</div>
-								</div>
-							</div>
-						</div>
-					</div>
-					<div class="swiper-slide">
-						<div class="books-card">
-							<div class="dz-media">
-								<img src="images/books/grid/book9.jpg" alt="book">									
-							</div>
-							<div class="dz-content">
-								<h5 class="title mb-0">Pushing Clouds</h5>
-								<div class="dz-meta">
-									<ul>
-										<li>by Jamet Sigh</li>
-									</ul>
-								</div>
-								<div class="book-footer">
-									<div class="price">
-										<span class="price-num">₵5.7</span>
-									</div>
-									<div class="rate">
-										<i class="flaticon-star text-yellow"></i>
-										<i class="flaticon-star text-yellow"></i>
-										<i class="flaticon-star text-yellow"></i>
-										<i class="flaticon-star text-yellow"></i>
-										<i class="flaticon-star text-muted"></i>
-									</div>
-								</div>
-							</div>
-						</div>
-					</div>
-					<div class="swiper-slide">
-						<div class="books-card">
-							<div class="dz-media">
-								<img src="images/books/book16.png" alt="book">									
-							</div>
-							<div class="dz-content">
-								<h5 class="title mb-0">Think and Grow Rich</h5>
-								<div class="dz-meta">
-									<ul>
-										<li>by Napoleon Hill</li>
-									</ul>
-								</div>
-								<div class="book-footer">
-									<div class="price">
-										<span class="price-num">₵9.5</span>
-									</div>
-									<div class="rate">
-										<i class="flaticon-star text-yellow"></i>
-										<i class="flaticon-star text-yellow"></i>
-										<i class="flaticon-star text-yellow"></i>
-										<i class="flaticon-star text-yellow"></i>
-										<i class="flaticon-star text-yellow"></i>
-									</div>
-								</div>
-							</div>
-						</div>
-					</div>
-					<div class="swiper-slide">
-						<div class="books-card">
-							<div class="dz-media">
-								<img src="images/books/grid/book9.jpg" alt="book">									
-							</div>
-							<div class="dz-content">
-								<h5 class="title mb-0">Pushing Clouds</h5>
-								<div class="dz-meta">
-									<ul>
-										<li>by Jamet Sigh</li>
-									</ul>
-								</div>
-								<div class="book-footer">
-									<div class="price">
-										<span class="price-num">₵5.7</span>
-									</div>
-									<div class="rate">
-										<i class="flaticon-star text-yellow"></i>
-										<i class="flaticon-star text-yellow"></i>
-										<i class="flaticon-star text-yellow"></i>
-										<i class="flaticon-star text-yellow"></i>
-										<i class="flaticon-star text-muted"></i>
-									</div>
-								</div>
-							</div>
+                            
+                           
 						</div>
 					</div>
 				</div>
 			</div>
-		</div>		
+		</div>	
 		<!--Swiper Banner End-->
 		
-		<!-- Client Start-->
-		<div class="bg-white py-5">
+		<section class="content-inner-1 overlay-white-middle">
 			<div class="container">
-			<!--Client Swiper -->
-				<div class="swiper client-swiper">
-					<div class="swiper-wrapper">
-						<div class="swiper-slide"><img src="images/client/client1.svg" alt="client"></div>
-						<div class="swiper-slide"><img src="images/client/client2.svg" alt="client"></div>
-						<div class="swiper-slide"><img src="images/client/client3.svg" alt="client"></div>
-						<div class="swiper-slide"><img src="images/client/client4.svg" alt="client"></div>
-						<div class="swiper-slide"><img src="images/client/client5.svg" alt="client"></div>	
+				<div class="row about-style1 align-items-center">
+					<div class="col-lg-6 m-b30 wow fadeInUp" data-wow-delay="0.1s">
+						<div class="row sp10 about-thumb">
+							<div class="col-sm-6 aos-item ">
+								<div class="split-box">
+									<div>
+										<img class="m-b30" src="images/about/about1.jpg" alt="/">
+									</div>
+								</div>
+							</div>
+							<div class="col-sm-6">
+								<div class="split-box ">
+									<div>
+										<img class="m-b20 aos-item" src="images/about/about2.jpg" alt="/">
+									</div>
+								</div>
+								<div class="exp-bx aos-item">
+									<div class="exp-head">
+										<div class="counter-num">
+											<h2><span class="counter">5</span><small>+</small></h2>
+										</div>
+										<h6 class="title">Years of Experience</h6>
+									</div>
+									<div class="exp-info">
+										<ul class="list-check primary">
+											<li>Academic & Textbooks</li>
+											<li>Science Fiction & Fantasy</li>
+											<li>Self-Help & Motivation</li>
+											<li>History & Politics</li>
+										</ul>
+										
+									</div>
+								</div>
+							</div>
+						</div>
 					</div>
-				</div>
-			</div>
-		</div>
-		<!-- Client End-->
+					<div class="col-lg-6 m-b30 wow fadeInUp" data-wow-delay="0.2s">
+						<div class="about-content px-lg-4">
+							<div class="section-head style-1">
+								<h2 class="title">BookConnect: The Ultimate Hub for Learners!</h2>
+                                <p>Why buy when you can swap? Discover a smarter way to share knowledge, save money, and connect with fellow learners. Join BookConnect today and unlock endless learning opportunities!</p>
 
-		<!--Recommend Section Start-->
-		<section class="content-inner-1 bg-grey reccomend">
-			<div class="container">
-				<div class="section-head text-center">
-					<h2 class="title">Recomended For You</h2>
-					<p>Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris</p>
-				</div>
-				<!-- Swiper -->
-				<div class="swiper-container swiper-two overflow-hidden">
-					<div class="swiper-wrapper">
-						<div class="swiper-slide">
-							<div class="books-card style-1 wow fadeInUp" data-wow-delay="0.1s">
-								<div class="dz-media">
-									<img src="images/books/grid/book6.jpg" alt="book">									
-								</div>
-								<div class="dz-content">
-									<h4 class="title">Adventure</h4>
-									<span class="price">₵18,78</span>
-									<a href="shop-cart.html" class="btn btn-secondary btnhover btnhover2"><i class="flaticon-shopping-cart-1 m-r10"></i> Add to cart</a>
-								</div>
 							</div>
-						</div>
-						<div class="swiper-slide">
-							<div class="books-card style-1 wow fadeInUp" data-wow-delay="0.2s">
-								<div class="dz-media">
-									<img src="images/books/grid/book5.jpg" alt="book">									
-								</div>
-								<div class="dz-content">
-									<h4 class="title">Take Tango</h4>
-									<span class="price">₵18,78</span>
-									<a href="shop-cart.html" class="btn btn-secondary btnhover btnhover2"><i class="flaticon-shopping-cart-1 m-r10"></i> Add to cart</a>
-								</div>
-							</div>
-						</div>
-						<div class="swiper-slide">
-							<div class="books-card style-1 wow fadeInUp" data-wow-delay="0.3s">
-								<div class="dz-media">
-									<img src="images/books/grid/book2.jpg" alt="book">									
-								</div>
-								<div class="dz-content">
-									<h4 class="title">Home</h4>
-									<span class="price">₵18,78</span>
-									<a href="shop-cart.html" class="btn btn-secondary btnhover btnhover2"><i class="flaticon-shopping-cart-1 m-r10"></i> Add to cart</a>
-								</div>
-							</div>
-						</div>
-						<div class="swiper-slide">
-							<div class="books-card style-1 wow fadeInUp" data-wow-delay="0.4s">
-								<div class="dz-media">
-									<img src="images/books/grid/book16.jpg" alt="book">									
-								</div>
-								<div class="dz-content">
-									<h4 class="title">Thunder Stunt</h4>
-									<span class="price">₵18,78</span>
-									<a href="shop-cart.html" class="btn btn-secondary btnhover btnhover2"><i class="flaticon-shopping-cart-1 m-r10"></i> Add to cart</a>
-								</div>
-							</div>
-						</div>
-						<div class="swiper-slide">
-							<div class="books-card style-1 wow fadeInUp" data-wow-delay="0.5s">
-								<div class="dz-media">
-									<img src="images/books/grid/book14.jpg" alt="book">									
-								</div>
-								<div class="dz-content">
-									<h4 class="title">Heavy Lift</h4>
-									<span class="price">₵18,78</span>
-									<a href="shop-cart.html" class="btn btn-secondary btnhover btnhover2"><i class="flaticon-shopping-cart-1 m-r10"></i> Add to cart</a>
-								</div>
-							</div>
-						</div>
-						<div class="swiper-slide">
-							<div class="books-card style-1 wow fadeInUp" data-wow-delay="0.6s">
-								<div class="dz-media">
-									<img src="images/books/grid/book1.jpg" alt="book">									
-								</div>
-								<div class="dz-content">
-									<h4 class="title">Real Life</h4>
-									<span class="price">₵18,78</span>
-									<a href="shop-cart.html" class="btn btn-secondary btnhover btnhover2"><i class="flaticon-shopping-cart-1 m-r10"></i> Add to cart</a>
-								</div>
-							</div>
-						</div>
-						<div class="swiper-slide">
-							<div class="books-card style-1 wow fadeInUp" data-wow-delay="0.7s">
-								<div class="dz-media">
-									<img src="images/books/grid/book15.jpg" alt="book">									
-								</div>
-								<div class="dz-content">
-									<h4 class="title">Terrible</h4>
-									<span class="price">₵18,78</span>
-									<a href="shop-cart.html" class="btn btn-secondary btnhover btnhover2"><i class="flaticon-shopping-cart-1 m-r10"></i> Add to cart</a>
-								</div>
-							</div>
+							<a href="books-grid-view.html" class="btn btn-primary shadow-primary btnhover">Start Swapping Books!</a>
 						</div>
 					</div>
 				</div>
+				
+				
+						
+					<!-- icon-box1 -->
+				<section class="content-inner-2">
+					<div class="container">
+						
+						
+						<div class="row">
+							<div class="section-head style-1">
+								<h2 class="title">How SwapSelf Works</h2>
+                                
+
+							</div>
+							<div class="col-lg-3 col-sm-6 wow fadeInUp" data-wow-delay="0.1s">
+								<div class="icon-bx-wraper style-1 m-b30 text-center">
+									<div class="icon-bx-sm m-b10">
+										<i class="flaticon-user icon-cell"></i> 
+									</div>
+									<div class="icon-content">
+										<h5 class="dz-title m-b10">Join the Community</h5>
+										<p>Create a free account and set up your profile in seconds.</p>
+									</div>
+								</div>
+							</div>
+							
+							<div class="col-lg-3 col-sm-6 wow fadeInUp" data-wow-delay="0.2s">
+								<div class="icon-bx-wraper style-1 m-b30 text-center">
+									<div class="icon-bx-sm m-b10"> 
+										<i class="flaticon-open-book icon-cell"></i> <!-- List Books Icon -->
+									</div>
+									<div class="icon-content">
+										<h5 class="dz-title m-b10">List Your Books</h5>
+										<p>Upload books you want to exchange—textbooks, novels, or comics.</p>
+									</div>
+								</div>
+							</div>
+							
+							<div class="col-lg-3 col-sm-6 wow fadeInUp" data-wow-delay="0.3s">
+								<div class="icon-bx-wraper style-1 m-b30 text-center">
+									<div class="icon-bx-sm m-b10"> 
+										<i class="flaticon-chat icon-cell"></i> <!-- Chat Icon -->
+									</div>
+									<div class="icon-content">
+										<h5 class="dz-title m-b10">Connect & Chat</h5>
+										<p>Find students nearby and chat to arrange an exchange.</p>
+									</div>
+								</div>
+							</div>
+							
+							<div class="col-lg-3 col-sm-6 wow fadeInUp" data-wow-delay="0.4s">
+								<div class="icon-bx-wraper style-1 m-b30 text-center">
+									<div class="icon-bx-sm m-b10">
+										<img src="https://cdn-icons-png.flaticon.com/128/2278/2278992.png" alt="Swap Icon" width="50">
+									 </div>
+									 
+									<div class="icon-content">
+										<h5 class="dz-title m-b10">Swap & Save!</h5>
+										<p>Meet up, swap books, and enjoy free learning resources!</p>
+									</div>
+								</div>
+							</div>
+							
+						</div>
+					</div>
+				</section>
+				<!-- icon-box1 End-->
 			</div>
-		</section>
-		
-		<!-- icon-box1 -->
-		<section class="content-inner-2">
-			<div class="container">
-				<div class="row">
-					<div class="col-lg-3 col-sm-6 wow fadeInUp" data-wow-delay="0.1s">
-						<div class="icon-bx-wraper style-1 m-b20 text-center">
-							<div class="icon-bx-sm m-b10">
-								<i class="flaticon-power icon-cell"></i>
-							</div>
-							<div class="icon-content">
-								<h5 class="dz-title m-b10">Quick Delivery</h5>
-								<p>Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor</p>
-							</div>
+	</section>
+			<!-- Book Sale -->
+			<section class="content-inner-1">
+				<div class="container">
+					<div class="section-head book-align">
+						<h2 class="title mb-0">Trending Swaps This Week</h2>
+						<div class="pagination-align style-1">
+							<div class="swiper-button-prev"><i class="fa-solid fa-angle-left"></i></div>
+							<div class="swiper-pagination-two"></div>
+							<div class="swiper-button-next"><i class="fa-solid fa-angle-right"></i></div>
 						</div>
 					</div>
-					<div class="col-lg-3 col-sm-6 wow fadeInUp" data-wow-delay="0.2s">
-						<div class="icon-bx-wraper style-1 m-b20 text-center">
-							<div class="icon-bx-sm m-b10"> 
-								<i class="flaticon-shield icon-cell"></i>
-							</div>
-							<div class="icon-content">
-								<h5 class="dz-title m-b10">Secure Payment</h5>
-								<p>Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor</p>
-							</div>
-						</div>
-					</div>
-					<div class="col-lg-3 col-sm-6 wow fadeInUp" data-wow-delay="0.3s">
-						<div class="icon-bx-wraper style-1 m-b20 text-center">
-							<div class="icon-bx-sm m-b10"> 
-								<i class="flaticon-like icon-cell"></i>
-							</div>
-							<div class="icon-content">
-								<h5 class="dz-title m-b10">Best Quality</h5>
-								<p>Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor</p>
-							</div>
-						</div>
-					</div>
-					<div class="col-lg-3 col-sm-6 wow fadeInUp" data-wow-delay="0.4s">
-						<div class="icon-bx-wraper style-1 m-b20 text-center">
-							<div class="icon-bx-sm m-b10"> 
-								<i class="flaticon-star icon-cell"></i>
-							</div>
-							<div class="icon-content">
-								<h5 class="dz-title m-b10">Return Guarantee</h5>
-								<p>Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor</p>
-							</div>
-						</div>
-					</div>
-				</div>
-			</div>
-		</section>
-		<!-- icon-box1 End-->
-		
-		<!-- Book Sale -->
-		<section class="content-inner-1">
-			<div class="container">
-				<div class="section-head book-align">
-					<h2 class="title mb-0">Books on Sale</h2>
-					<div class="pagination-align style-1">
-						<div class="swiper-button-prev"><i class="fa-solid fa-angle-left"></i></div>
-						<div class="swiper-pagination-two"></div>
-						<div class="swiper-button-next"><i class="fa-solid fa-angle-right"></i></div>
-					</div>
-				</div>
-				<div class="swiper-container books-wrapper-3 swiper-four overflow-hidden">
-					<div class="swiper-wrapper">
-						<div class="swiper-slide">
-							<div class="books-card style-3 wow fadeInUp" data-wow-delay="0.1s">
-								<div class="dz-media">
-									<img src="images/books/grid/book5.jpg" alt="book">									
-								</div>
-								<div class="dz-content">
-									<h5 class="title"><a href="books-grid-view.html">Take Out Tango</a></h5>
-									<ul class="dz-tags">
-										<li><a href="books-grid-view.html">SPORTS,</a></li>
-										<li><a href="books-grid-view.html">DRAMA</a></li>
-									</ul>
-									<div class="book-footer">
-										<div class="rate">
-											<i class="flaticon-star"></i> 6.8
-										</div>
-										<div class="price">
-											<span class="price-num">₵9.5</span>
-											<del>₵12.0</del>
+					<div class="swiper-container books-wrapper-3 swiper-four overflow-hidden">
+						<div class="swiper-wrapper">
+							<div class="swiper-slide">
+								<div class="books-card style-3 wow fadeInUp" data-wow-delay="0.1s">
+									<div class="dz-media">
+										<img src="images/books/grid/book5.jpg" alt="book">									
+									</div>
+									<div class="dz-content">
+										<h5 class="title"><a href="books-detail.html">Physics Textbook</a></h5>
+										<ul class="dz-tags">
+											<li><a href="books-detail.html">Aki-Ola</a></li>
+											<li><a href="books-detail.html">ACADEMICS</a></li>
+										</ul>
+										<div class="book-footer">
+											<div class="rate">
+												<i class="flaticon-star"></i> 6.8
+											</div>
+											<div class="price">
+												<span class="price-num">Free</span>
+												<del>₵12.0</del>
+											</div>
 										</div>
 									</div>
 								</div>
 							</div>
-						</div>
-						<div class="swiper-slide">
-							<div class="books-card style-3 wow fadeInUp" data-wow-delay="0.2s">
-								<div class="dz-media">
-									<img src="images/books/grid/book11.jpg" alt="book">									
-								</div>
-								<div class="dz-content">
-									<h5 class="title"><a href="books-grid-view.html">The Missadventure</a></h5>
-									<ul class="dz-tags">
-										<li><a href="books-grid-view.html">SPORTS,</a></li>
-										<li><a href="books-grid-view.html">DRAMA</a></li>
-									</ul>
-									<div class="book-footer">
-										<div class="rate">
-											<i class="flaticon-star"></i> 6.8
-										</div>
-										<div class="price">
-											<span class="price-num">₵9.5</span>
-											<del>₵12.0</del>
+							<div class="swiper-slide">
+								<div class="books-card style-3 wow fadeInUp" data-wow-delay="0.2s">
+									<div class="dz-media">
+										<img src="images/books/grid/book11.jpg" alt="book">									
+									</div>
+									<div class="dz-content">
+										<h5 class="title"><a href="books-detail.html">Chemistry Textbook</a></h5>
+										<ul class="dz-tags">
+											<li><a href="books-detail.html">Aki-Ola</a></li>
+											<li><a href="books-detail.html">ACADEMICS</a></li>
+										</ul>
+										<div class="book-footer">
+											<div class="rate">
+												<i class="flaticon-star"></i> 6.8
+											</div>
+											<div class="price">
+												<span class="price-num">Free</span>
+												<del>₵12.0</del>
+											</div>
 										</div>
 									</div>
 								</div>
 							</div>
-						</div>
-						<div class="swiper-slide">
-							<div class="books-card style-3 wow fadeInUp" data-wow-delay="0.3s">
-								<div class="dz-media">
-									<img src="images/books/grid/book7.jpg" alt="book">									
-								</div>
-								<div class="dz-content">
-									<h5 class="title"><a href="books-grid-view.html">Seconds [PART 1]</a></h5>
-									<ul class="dz-tags">
-										<li><a href="books-grid-view.html">SPORTS,</a></li>
-										<li><a href="books-grid-view.html">DRAMA</a></li>
-									</ul>
-									<div class="book-footer">
-										<div class="rate">
-											<i class="flaticon-star"></i> 6.8
-										</div>
-										<div class="price">
-											<span class="price-num">₵9.5</span>
-											<del>₵12.0</del>
+							<div class="swiper-slide">
+								<div class="books-card style-3 wow fadeInUp" data-wow-delay="0.3s">
+									<div class="dz-media">
+										<img src="images/books/grid/book7.jpg" alt="book">									
+									</div>
+									<div class="dz-content">
+										<h5 class="title"><a href="books-detail.html">Mathematics Textbook</a></h5>
+										<ul class="dz-tags">
+											<li><a href="books-detail.html">Aki-Ola</a></li>
+											<li><a href="books-detail.html">ACADEMICS</a></li>
+										</ul>
+										<div class="book-footer">
+											<div class="rate">
+												<i class="flaticon-star"></i> 6.8
+											</div>
+											<div class="price">
+												<span class="price-num">Free</span>
+												<del>₵12.0</del>
+											</div>
 										</div>
 									</div>
 								</div>
 							</div>
-						</div>
-						<div class="swiper-slide">
-							<div class="books-card style-3 wow fadeInUp" data-wow-delay="0.4s">
-								<div class="dz-media">
-									<img src="images/books/grid/book12.jpg" alt="book">									
-								</div>
-								<div class="dz-content">
-									<h5 class="title"><a href="books-grid-view.html">The Missadventure</a></h5>
-									<ul class="dz-tags">
-										<li><a href="books-grid-view.html">SPORTS,</a></li>
-										<li><a href="books-grid-view.html">DRAMA</a></li>
-									</ul>
-									<div class="book-footer">
-										<div class="rate">
-											<i class="flaticon-star"></i> 6.8
-										</div>
-										<div class="price">
-											<span class="price-num">₵9.5</span>
-											<del>₵12.0</del>
+							<div class="swiper-slide">
+								<div class="books-card style-3 wow fadeInUp" data-wow-delay="0.4s">
+									<div class="dz-media">
+										<img src="images/books/grid/book12.jpg" alt="book">									
+									</div>
+									<div class="dz-content">
+										<h5 class="title"><a href="books-detail.html">Programming Languages Textbook</a></h5>
+										<ul class="dz-tags">
+											<li><a href="books-detail.html">Aki-Ola</a></li>
+											<li><a href="books-detail.html">ACADEMICS</a></li>
+										</ul>
+										<div class="book-footer">
+											<div class="rate">
+												<i class="flaticon-star"></i> 6.8
+											</div>
+											<div class="price">
+												<span class="price-num">Free</span>
+												<del>₵12.0</del>
+											</div>
 										</div>
 									</div>
 								</div>
 							</div>
-						</div>
-						<div class="swiper-slide">
-							<div class="books-card style-3 wow fadeInUp" data-wow-delay="0.5s">
-								<div class="dz-media">
-									<img src="images/books/grid/book15.jpg" alt="book">									
-								</div>
-								<div class="dz-content">
-									<h5 class="title"><a href="books-grid-view.html">Terrible Madness</a></h5>
-									<ul class="dz-tags">
-										<li><a href="books-grid-view.html">SPORTS,</a></li>
-										<li><a href="books-grid-view.html">DRAMA</a></li>
-									</ul>
-									<div class="book-footer">
-										<div class="rate">
-											<i class="flaticon-star"></i> 6.8
-										</div>
-										<div class="price">
-											<span class="price-num">₵9.5</span>
-											<del>₵12.0</del>
+							<div class="swiper-slide">
+								<div class="books-card style-3 wow fadeInUp" data-wow-delay="0.5s">
+									<div class="dz-media">
+										<img src="images/books/grid/book15.jpg" alt="book">									
+									</div>
+									<div class="dz-content">
+										<h5 class="title"><a href="books-detail.html">CSM 353 Past Questions</a></h5>
+										<ul class="dz-tags">
+											<li><a href="books-detail.html">Aki-Ola</a></li>
+											<li><a href="books-detail.html">ACADEMICS</a></li>
+										</ul>
+										<div class="book-footer">
+											<div class="rate">
+												<i class="flaticon-star"></i> 6.8
+											</div>
+											<div class="price">
+												<span class="price-num">Free</span>
+												<del>₵12.0</del>
+											</div>
 										</div>
 									</div>
 								</div>
 							</div>
-						</div>
-						<div class="swiper-slide">
-							<div class="books-card style-3 wow fadeInUp" data-wow-delay="0.6s">
-								<div class="dz-media">
-									<img src="images/books/grid/book3.jpg" alt="book">									
-								</div>
-								<div class="dz-content">
-									<h5 class="title"><a href="books-grid-view.html">Battle Drive</a></h5>
-									<ul class="dz-tags">
-										<li><a href="books-grid-view.html">SPORTS,</a></li>
-										<li><a href="books-grid-view.html">DRAMA</a></li>
-									</ul>
-									<div class="book-footer">
-										<div class="rate">
-											<i class="flaticon-star"></i> 6.8
-										</div>
-										<div class="price">
-											<span class="price-num">₵9.5</span>
-											<del>₵12.0</del>
+							<div class="swiper-slide">
+								<div class="books-card style-3 wow fadeInUp" data-wow-delay="0.6s">
+									<div class="dz-media">
+										<img src="images/books/grid/book3.jpg" alt="book">									
+									</div>
+									<div class="dz-content">
+										<h5 class="title"><a href="books-detail.html">CSM 387 Past Questions</a></h5>
+										<ul class="dz-tags">
+											<li><a href="books-detail.html">Aki-Ola</a></li>
+											<li><a href="books-detail.html">ACADEMICS</a></li>
+										</ul>
+										<div class="book-footer">
+											<div class="rate">
+												<i class="flaticon-star"></i> 6.8
+											</div>
+											<div class="price">
+												<span class="price-num">Free</span>
+												<del>₵12.0</del>
+											</div>
 										</div>
 									</div>
 								</div>
@@ -920,17 +640,15 @@
 						</div>
 					</div>
 				</div>
-			</div>
-		</section>
-		<!-- Book Sale End -->
-		
+			</section>
+			<!-- Book Sale End -->
 		<!-- Feature Product -->
 		<section class="content-inner-1 bg-grey reccomend">
 			<div class="container">
 				<div class="section-head text-center">
 					<div class="circle style-1"></div>
 					<h2 class="title">Featured Product</h2>
-					<p>Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris </p>
+					<p> Explore a handpicked selection of must-read books across various genres. Exchange, learn, and grow with BookConnect!</p>
 				</div>
 			</div>
 			<div class="container">
@@ -943,19 +661,19 @@
 								</div>
 								<div class="dz-content">
 									<h6 class="sub-title">BEST SELLER</h6>
-									<h2 class="title">A Heavy LIft</h2>
+									<h2 class="title">Atomic Habits</h2>
 									<ul class="dz-tags">
-										<li>Napoleon Hill</li>
-										<li>Business & Strategy</li>
+										<li>James Clear</li>
+										<li>Self-Improvement, Productivity</li>
 									</ul>
-									<p class="text">Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris </p>
+									<p class="text"> This book dives into the science of habit formation, showing how tiny changes can lead to remarkable results. James Clear breaks down actionable steps to create good habits, eliminate bad ones, and master the art of continuous improvement.</p>
 									<div class="price">
 										<span class="price-num">₵9.5</span>
 										<del>₵12.0</del>
 										<span class="badge">20% OFF</span>
 									</div>
 									<div class="bookcard-footer">
-										<a href="shop-cart.html" class="btn btn-primary btnhover m-t15 m-r10">Buy Now</a>
+										<a href="shop-cart.html" class="btn btn-primary btnhover m-t15 m-r10">Swap / Buy</a>
 										<a href="books-detail.html" class="btn btn-outline-secondary btnhover m-t15">See Details</a>
 									</div>
 								</div>
@@ -980,7 +698,7 @@
 										<span class="badge">20% OFF</span>
 									</div>
 									<div class="bookcard-footer">
-										<a href="shop-cart.html" class="btn btn-primary btnhover m-t15 m-r10">Buy Now</a>
+										<a href="shop-cart.html" class="btn btn-primary btnhover m-t15 m-r10">Swap / Buy</a>
 										<a href="books-detail.html" class="btn btn-outline-secondary btnhover m-t15">See Details</a>
 									</div>
 								</div>
@@ -1005,7 +723,7 @@
 										<span class="badge">20% OFF</span>
 									</div>
 									<div class="bookcard-footer">
-										<a href="shop-cart.html" class="btn btn-primary btnhover m-t15 m-r10">Buy Now</a>
+										<a href="shop-cart.html" class="btn btn-primary btnhover m-t15 m-r10">Swap / Buy</a>
 										<a href="books-detail.html" class="btn btn-outline-secondary btnhover m-t15">See Details</a>
 									</div>
 								</div>
@@ -1030,7 +748,7 @@
 										<span class="badge">20% OFF</span>
 									</div>
 									<div class="bookcard-footer">
-										<a href="shop-cart.html" class="btn btn-primary btnhover m-t15 m-r10">Buy Now</a>
+										<a href="shop-cart.html" class="btn btn-primary btnhover m-t15 m-r10">Swap / Buy</a>
 										<a href="books-detail.html" class="btn btn-outline-secondary btnhover m-t15">See Details</a>
 									</div>
 								</div>
@@ -1055,7 +773,7 @@
 										<span class="badge">20% OFF</span>
 									</div>
 									<div class="bookcard-footer">
-										<a href="shop-cart.html" class="btn btn-primary btnhover m-t15 m-r10">Buy Now</a>
+										<a href="shop-cart.html" class="btn btn-primary btnhover m-t15 m-r10">Swap / Buy</a>
 										<a href="books-detail.html" class="btn btn-outline-secondary btnhover m-t15">See Details</a>
 									</div>
 								</div>
@@ -1080,7 +798,7 @@
 										<span class="badge">20% OFF</span>
 									</div>
 									<div class="bookcard-footer">
-										<a href="shop-cart.html" class="btn btn-primary btnhover m-t15 m-r10">Buy Now</a>
+										<a href="shop-cart.html" class="btn btn-primary btnhover m-t15 m-r10">Swap / Buy</a>
 										<a href="books-detail.html" class="btn btn-outline-secondary btnhover m-t15">See Details</a>
 									</div>
 								</div>
@@ -1098,7 +816,7 @@
 		<!-- Feature Product End -->
 		
 		<!-- Special Offer-->
-		<section class="content-inner-2">
+		<!-- <section class="content-inner-1">
 			<div class="container">
 				<div class="section-head book-align">
 					<h2 class="title mb-0">Special Offers</h2>
@@ -1256,17 +974,19 @@
 					</div>
 				</div>
 			</div>
-		</section>
+		</section> -->
 		<!-- Special Offer End -->
 		
 		<!-- Testimonial -->
-		<section class="content-inner-2 testimonial-wrapper">
+		<section class="content-inner-1 testimonial-wrapper">
 			<div class="container">
 				<div class="testimonial">
 					<div class="section-head book-align">
 						<div>
 							<h2 class="title mb-0">Testimonials</h2>
-							<p class="m-b0">Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua</p>
+							<p class="m-b0"> Real Students. Real Savings. Real Stories.
+
+								Why spend a fortune on books when you can swap and save? See what our amazing users have to say about their experience with BookConnect!</p>
 						</div>
 						<div class="pagination-align style-1">
 							<div class="testimonial-button-prev swiper-button-prev"><i class="fa-solid fa-angle-left"></i></div>
@@ -1288,15 +1008,15 @@
 									<li><i class="flaticon-star text-yellow"></i></li>	
 								</ul>
 								<div class="testimonial-text">
-									<p>Very impresive store. Your book made studying for the ABC certification exams a breeze. Thank you very much</p>
+									<p>BookConnect has been a game-changer for me! I was able to exchange my old textbooks for the ones I needed this semester without spending a dime. It's easy, fun, and helps students like me save money!</p>
 								</div>
 								<div class="testimonial-detail">
 									<div class="testimonial-pic">
 										<img src="images/testimonial/testimonial1.jpg" alt="">
 									</div>
 									<div class="info-right">
-										<h6 class="testimonial-name">Jason Huang</h6> 
-										<span class="testimonial-position">Book Lovers</span> 
+										<h6 class="testimonial-name">Sarah A.</h6> 
+										<span class="testimonial-position">University Student</span> 
 									</div>
 								</div>
 							</div>
@@ -1313,15 +1033,15 @@
 									<li><i class="flaticon-star text-muted"></i></li>	
 								</ul>
 								<div class="testimonial-text">
-									<p>Very impresive store. Your book made studying for the ABC certification exams a breeze. Thank you very much</p>
+									<p>I love the idea of swapping books instead of letting them collect dust. I’ve connected with so many students, and now I always find great books to read!</p>
 								</div>
 								<div class="testimonial-detail">
 									<div class="testimonial-pic radius">
 										<img src="images/testimonial/testimonial2.jpg" alt="">
 									</div>
 									<div>
-										<h6 class="testimonial-name">Miranda Lee</h6> 
-										<span class="testimonial-position">Book Lovers</span> 
+										<h6 class="testimonial-name">James K.</h6> 
+										<span class="testimonial-position">Literature Enthusiast</span> 
 									</div>
 								</div>
 							</div>
@@ -1338,7 +1058,7 @@
 									<li><i class="flaticon-star text-muted"></i></li>	
 								</ul>
 								<div class="testimonial-text">
-									<p>Very impresive store. Your book made studying for the ABC certification exams a breeze. Thank you very much</p>
+									<p>I was skeptical at first, but BookConnect made book exchanges so simple. The chat feature helps you connect with students nearby, and I’ve saved a lot on textbooks</p>
 								</div>
 								<div class="testimonial-detail">
 									<div class="testimonial-pic radius">
@@ -1346,7 +1066,7 @@
 									</div>
 									<div>
 										<h6 class="testimonial-name">Steve Henry</h6> 
-										<span class="testimonial-position">Book Lovers</span> 
+										<span class="testimonial-position">Engineering Major</span> 
 									</div>
 								</div>
 							</div>
@@ -1363,15 +1083,15 @@
 									<li><i class="flaticon-star text-muted"></i></li>
 								</ul>
 								<div class="testimonial-text">
-									<p>Thank you for filling a niche at an affordable price. Your book was just what I was looking for. Thanks again</p>
+									<p>I found an old classic novel that I had been searching for forever! This platform is not just for students but also for book lovers looking for unique finds!</p>
 								</div>
 								<div class="testimonial-detail">
 									<div class="testimonial-pic radius">
 										<img src="images/testimonial/testimonial4.jpg" alt="">
 									</div>
 									<div>
-										<h6 class="testimonial-name">Angela Moss</h6> 
-										<span class="testimonial-position">Book Lovers</span> 
+										<h6 class="testimonial-name">Linda M.</h6> 
+										<span class="testimonial-position">Avid Reader</span> 
 									</div>
 								</div>
 							</div>
@@ -1388,15 +1108,15 @@
 									<li><i class="flaticon-star text-muted"></i></li>	
 								</ul>
 								<div class="testimonial-text">
-									<p>Very impresive store. Your book made studying for the ABC certification exams a breeze. Thank you very much</p>
+									<p>As a college student, buying books every semester is expensive. BookConnect allows me to exchange books hassle-free. Highly recommend it to all students!</p>
 								</div>
 								<div class="testimonial-detail">
 									<div class="testimonial-pic radius">
 										<img src="images/testimonial/testimonial2.jpg" alt="">
 									</div>
 									<div>
-										<h6 class="testimonial-name">Miranda Lee</h6> 
-										<span class="testimonial-position">Book Lovers</span> 
+										<h6 class="testimonial-name">Michael R.</h6> 
+										<span class="testimonial-position">Computer Science Student</span> 
 									</div>
 								</div>
 							</div>
@@ -1413,15 +1133,15 @@
 									<li><i class="flaticon-star text-muted"></i></li>	
 								</ul>
 								<div class="testimonial-text">
-									<p>Very impresive store. Your book made studying for the ABC certification exams a breeze. Thank you very much</p>
+									<p>Buying new books every semester is expensive, but BookConnect has made it easier to find what I need without spending a fortune!</p>
 								</div>
 								<div class="testimonial-detail">
 									<div class="testimonial-pic">
 										<img src="images/testimonial/testimonial1.jpg" alt="">
 									</div>
 									<div class="info-right">
-										<h6 class="testimonial-name">Jason Huang</h6> 
-										<span class="testimonial-position">Book Lovers</span> 
+										<h6 class="testimonial-name">Emma T.</h6> 
+										<span class="testimonial-position">Medical Student</span> 
 									</div>
 								</div>
 							</div>
@@ -1432,157 +1152,20 @@
 		</section>
 		<!-- Testimonial End -->
 		
-		<!-- Latest News -->
-		<section class="content-inner-2">
-			<div class="container">
-				<div class="section-head text-center">
-					<h2 class="title">Latest News</h2>
-					<p>Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua</p>
-				</div>
-				<div class="swiper-container blog-swiper overflow-hidden">
-					<div class="swiper-wrapper">
-						<div class="swiper-slide">
-							<div class="dz-blog style-1 bg-white m-b30 wow fadeInUp" data-wow-delay="0.1s" >
-								<div class="dz-media">
-									<a href="blog-detail.html"><img src="images/blog/grid/blog4.jpg" alt="/"></a>
-								</div>
-								<div class="dz-info p-3">
-									<h6 class="dz-title">
-										<a href="blog-detail.html">Benefits of reading: Smart, Diligent, Happy, Intelligent</a>
-									</h6>
-									<p class="m-b0">Lorem ipsum dolor sit amet, consectetur adipiscing do eiusmod tempor</p>
-									<div class="dz-meta meta-bottom mt-3 pt-3">
-										<ul class="">
-											<li class="post-date"><i class="far fa-calendar fa-fw m-r10"></i>24 March, 2024</li>
-										</ul>
-									</div>
-								</div>
-							</div>
-						</div>
-						<div class="swiper-slide">
-							<div class="dz-blog style-1 bg-white m-b30 wow fadeInUp" data-wow-delay="0.2s">
-								<div class="dz-media">
-									<a href="blog-detail.html"><img src="images/blog/grid/blog3.jpg" alt="/"></a>
-								</div>
-								<div class="dz-info p-3">
-									<h6 class="dz-title">
-										<a href="blog-detail.html">10 Things you must know to improve your reading skills</a>
-									</h6>
-									<p class="m-b0">Lorem ipsum dolor sit amet, consectetur adipiscing do eiusmod tempor</p>
-									<div class="dz-meta meta-bottom mt-3 pt-3">
-										<ul class="">
-											<li class="post-date"><i class="far fa-calendar fa-fw m-r10"></i>18 July, 2024</li>
-										</ul>
-									</div>
-								</div>
-							</div>
-						</div>
-						<div class="swiper-slide">
-							<div class="dz-blog style-1 bg-white m-b30 wow fadeInUp" data-wow-delay="0.3s">
-								<div class="dz-media">
-									<a href="blog-detail.html"><img src="images/blog/grid/blog2.jpg" alt="/"></a>
-								</div>
-								<div class="dz-info p-3">
-									<h6 class="dz-title">
-										<a href="blog-detail.html">Benefits of reading: Smart, Diligent, Happy, Intelligent</a>
-									</h6>
-									<p class="m-b0">Lorem ipsum dolor sit amet, consectetur adipiscing do eiusmod tempor</p>
-									<div class="dz-meta meta-bottom mt-3 pt-3">
-										<ul class="">
-											<li class="post-date"><i class="far fa-calendar fa-fw m-r10"></i>7 June, 2024</li>
-										</ul>
-									</div>
-								</div>
-							</div>
-						</div>
-						<div class="swiper-slide">
-							<div class="dz-blog style-1 bg-white m-b30 wow fadeInUp" data-wow-delay="0.4s">
-								<div class="dz-media">
-									<a href="blog-detail.html"><img src="images/blog/grid/blog1.jpg" alt="/"></a>
-								</div>
-								<div class="dz-info p-3">
-									<h6 class="dz-title">
-										<a href="blog-detail.html">We Must know why reading is important for children?</a>
-									</h6>
-									<p class="m-b0">Lorem ipsum dolor sit amet, consectetur adipiscing do eiusmod tempor</p>
-									<div class="dz-meta meta-bottom mt-3 pt-3">
-										<ul class="">
-											<li class="post-date"><i class="far fa-calendar fa-fw m-r10"></i>30 May, 2024</li>
-										</ul>
-									</div>
-								</div>
-							</div>
-						</div>
-					</div>
-				</div>
-			</div>
-		</section>
-		<!-- Latest News End -->
+	
 		
-		<!-- Feature Box -->
-		<section class="content-inner">
-			<div class="container">
-				<div class="row sp15">
-					<div class="col-lg-3 col-md-6 col-sm-6 col-6 wow fadeInUp" data-wow-delay="0.1s">
-						<div class="icon-bx-wraper style-2 m-b30 text-center">
-							<div class="icon-bx-lg">
-								<i class="fa-solid fa-users icon-cell"></i>
-							</div>
-							<div class="icon-content">
-								<h2 class="dz-title counter m-b0">125,663</h2>
-								<p class="font-20">Happy Customers</p>
-							</div>
-						</div>
-					</div>
-					<div class="col-lg-3 col-md-6 col-sm-6 col-6 wow fadeInUp" data-wow-delay="0.2s">
-						<div class="icon-bx-wraper style-2 m-b30 text-center">
-							<div class="icon-bx-lg"> 
-								<i class="fa-solid fa-book icon-cell"></i>
-							</div>
-							<div class="icon-content">
-								<h2 class="dz-title counter m-b0">50,672</h2>
-								<p class="font-20">Book Collections</p>
-							</div>
-						</div>
-					</div>
-					<div class="col-lg-3 col-md-6 col-sm-6 col-6 wow fadeInUp" data-wow-delay="0.3s">
-						<div class="icon-bx-wraper style-2 m-b30 text-center">
-							<div class="icon-bx-lg"> 
-								<i class="fa-solid fa-store icon-cell"></i>
-							</div>
-							<div class="icon-content">
-								<h2 class="dz-title counter m-b0">1,562</h2>
-								<p class="font-20">Our Stores</p>
-							</div>
-						</div>
-					</div>
-					<div class="col-lg-3 col-md-6 col-sm-6 col-6 wow fadeInUp" data-wow-delay="0.4s">
-						<div class="icon-bx-wraper style-2 m-b30 text-center">
-							<div class="icon-bx-lg"> 
-								<i class="fa-solid fa-leaf icon-cell"></i>
-							</div>
-							<div class="icon-content">
-								<h2 class="dz-title counter m-b0">457</h2>
-								<p class="font-20">Famous Writers</p>
-							</div>
-						</div>
-					</div>
-				</div>
-			</div>
-		</section>
-		<!-- Feature Box End -->
 
 		<!-- Newsletter -->
 		<section class="py-5 newsletter-wrapper" style="background-image: url('images/background/bg1.jpg'); background-size: cover;">
 			<div class="container">
 				<div class="subscride-inner">
 					<div class="row style-1 justify-content-xl-between justify-content-lg-center align-items-center text-xl-start text-center">
-						<div class="col-xl-7 col-lg-12 wow fadeInUp" data-wow-delay="0.1s">
+						<div class="col-xl-7 col-lg-12">
 							<div class="section-head mb-0">
 								<h2 class="title text-white my-lg-3 mt-0">Subscribe our newsletter for newest books updates</h2>
 							</div>
 						</div>
-						<div class="col-xl-5 col-lg-6 wow fadeInUp" data-wow-delay="0.2s">
+						<div class="col-xl-5 col-lg-6">
 							<form class="dzSubscribe style-1" action="https://bookland.dexignzone.com/xhtml/script/mailchamp.php" method="post">
 								<div class="dzSubscribeMsg"></div>
 								<div class="form-group">
@@ -1613,7 +1196,7 @@
 			<div class="container">
 				<div class="category-toggle">
 					<a href="javascript:void(0);" class="toggle-btn">Books categories</a>
-					<div class="toggle-items row">
+					<div class="toggle-items row book-grid-row">
 						<div class="footer-col-book">
 							<ul>
 								<li><a href="books-grid-view.html">Architecture</a></li>
@@ -1658,77 +1241,71 @@
 		<div class="footer-top">
 			<div class="container">
 				<div class="row">
-					<div class="col-xl-3 col-lg-12 wow fadeInUp" data-wow-delay="0.1s">
+					<div class="col-xl-3 col-lg-12">
 						<div class="widget widget_about">
 							<div class="footer-logo logo-white">
 								<a href="index.html"><img src="images/logo.png" alt=""></a> 
 							</div>
-							<p class="text">Bookland is a Book Store Ecommerce Website Template by DexignZone lorem ipsum dolor sit</p>
+							<p class="text">BookConnect – Swap books, connect, and save! 🚀📚</p>
 							<div class="dz-social-icon style-1">
 								<ul>
-									<li><a href="https://www.facebook.com/dexignzone" target="_blank" ><i class="fa-brands fa-facebook-f"></i></a></li>
-									<li><a href="https://www.youtube.com/channel/UCGL8V6uxNNMRrk3oZfVct1g" target="_blank"><i class="fa-brands fa-youtube"></i></a></li>
-									<li><a href="https://www.linkedin.com/showcase/3686700/admin/" target="_blank"><i class="fa-brands fa-linkedin"></i></a></li>
-									<li><a href="https://www.instagram.com/website_templates__/" target="_blank"><i class="fa-brands fa-instagram"></i></a></li>
+									<li><a href="#" target="_blank" ><i class="fa-brands fa-facebook-f"></i></a></li>
+									<li><a href="#" target="_blank"><i class="fa-brands fa-youtube"></i></a></li>
+									<li><a href="#" target="_blank"><i class="fa-brands fa-linkedin"></i></a></li>
+									<li><a href="#" target="_blank"><i class="fa-brands fa-instagram"></i></a></li>
 								</ul>
 							</div>
 						</div>
 					</div>
-					<div class="col-xl-2 col-lg-3 col-md-4 col-sm-4 col-4 wow fadeInUp" data-wow-delay="0.2s">
+					<div class="col-xl-2 col-lg-3 col-md-4 col-sm-4 col-4">
 						<div class="widget widget_services">
 							<h5 class="footer-title">Our Links</h5>
 							<ul>
-								<li><a href="about-us.html">About us</a></li>
-								<li><a href="contact-us.html">Contact us</a></li>
-								<li><a href="privacy-policy.html">Privacy Policy</a></li>
-								<li><a href="#">Pricing Table</a></li>
-								<li><a href="faq.html">FAQ</a></li>
+								<li><a href="index-3.html">Home</a></li>
+						<li><a href="books-grid-view.html">Browse Books </a></li>
+						<li><a href="about-us.html">About </a></li>
+						<li><a href="contact-us.html">Contact Us</a></li>
 							</ul>
 						</div>
 					</div>
-					<div class="col-xl-2 col-lg-3 col-sm-4 col-4 wow fadeInUp" data-wow-delay="0.3s">
+					<div class="col-xl-2 col-lg-3 col-sm-4 col-4">
 						<div class="widget widget_services">
-							<h5 class="footer-title">Bookland ?</h5>
+							<h5 class="footer-title">BookConnect</h5>
 							<ul>
-								<li><a href="index.html">Bookland</a></li>
-								<li><a href="services.html">Services</a></li>
-								<li><a href="books-detail.html">Book Details</a></li>
-								<li><a href="blog-detail.html">Blog Details</a></li>
-								<li><a href="books-grid-view.html">Shop</a></li>
+								<li><a href="how-it-works.html">How It Works</a></li>
+								<li><a href="#">Browse Books</a></li>
+								<li><a href="community.html">Community</a></li>
 							</ul>   
 						</div>
 					</div>
-					<div class="col-xl-2 col-lg-3 col-md-4 col-sm-4 col-4 wow fadeInUp" data-wow-delay="0.4s">
+					<div class="col-xl-2 col-lg-3 col-md-4 col-sm-4 col-4">
 						<div class="widget widget_services">
 							<h5 class="footer-title">Resources</h5>
 							<ul>
-								<li><a href="services.html">Download</a></li>
 								<li><a href="help-desk.html">Help Center</a></li>
 								<li><a href="shop-cart.html">Shop Cart</a></li>
 								<li><a href="shop-login.html">Login</a></li>
-								<li><a href="about-us.html">Partner</a></li>
 							</ul>
 						</div>
 					</div>
-					<div class="col-xl-3 col-lg-3 col-md-12 col-sm-12 wow fadeInUp" data-wow-delay="0.5s">
+					<div class="col-xl-3 col-lg-3 col-md-12 col-sm-12">
 						<div class="widget widget_getintuch">
 							<h5 class="footer-title">Get in Touch With Us</h5>
 							<ul>
 								<li>
 									<i class="flaticon-placeholder"></i>
-									<span>832  Thompson Drive, San Fransisco CA 94107,US</span>
+									<span>KNUST - Kumasi</span>
 								</li>
 								<li>
 									<i class="flaticon-phone"></i>
-									<span>+123 345123 556<br>
-									+123 345123 556</span>
+									<span>+123 345123 556</span>
 								</li>
 								<li>
 									<i class="flaticon-email"></i> 
-									<span>support@bookland.id<br>
-									info@bookland.id</span>
+									<span>support@SwapSelf.id<br>
+									info@BookConnect.id</span>
 								</li>
-							</ul>
+							</ul
 						</div>
 					</div>
 				</div>
@@ -1741,10 +1318,10 @@
 			<div class="container">
 				<div class="row fb-inner">
 					<div class="col-lg-6 col-md-12 text-start"> 
-						<p class="copyright-text">Bookland Book Store Ecommerce Website - © <span class="current-year">2024</span> All Rights Reserved</p>
+						<p class="copyright-text">BookConnect Book Store Ecommerce Website - © <span class="current-year">2025</span> All Rights Reserved</p>
 					</div>
 					<div class="col-lg-6 col-md-12 text-end"> 
-						<p>Made with <span class="heart"></span> by <a href="https://dexignzone.com/">DexignZone</a></p>
+						<p>Made with <span class="heart"></span> by <a href="#">Group 15</a></p>
 					</div>
 				</div>
 			</div>
@@ -1756,17 +1333,19 @@
 	
 	<button class="scroltop" type="button"><i class="fas fa-arrow-up"></i></button>
 </div>
+
 <!-- JAVASCRIPT FILES ========================================= -->
 <script src="js/jquery.min.js"></script><!-- JQUERY MIN JS -->
-<script src="vendor/wow/wow.min.js"></script><!-- WOW JS -->
 <script src="vendor/bootstrap/dist/js/bootstrap.bundle.min.js"></script><!-- BOOTSTRAP MIN JS -->
 <script src="vendor/bootstrap-select/dist/js/bootstrap-select.min.js"></script><!-- BOOTSTRAP SELECT MIN JS -->
 <script src="vendor/counter/waypoints-min.js"></script><!-- WAYPOINTS JS -->
 <script src="vendor/counter/counterup.min.js"></script><!-- COUNTERUP JS -->
+<script src="vendor/wow/wow.min.js"></script><!-- WOW JS -->
 <script src="vendor/swiper/swiper-bundle.min.js"></script><!-- SWIPER JS -->
 <script src="js/dz.carousel.js"></script><!-- DZ CAROUSEL JS -->
 <script src="js/dz.ajax.js"></script><!-- AJAX -->
 <script src="js/custom.js"></script><!-- CUSTOM JS -->
+
 </body>
 
 

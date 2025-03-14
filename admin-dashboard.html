@@ -1,0 +1,655 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Admin Dashboard - BookConnect</title>
+  <link rel="stylesheet" href="styles.css">
+  <link rel="stylesheet" href="admin-styles.css">
+  <link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Poppins:wght@300;400;500;600;700&display=swap">
+  <!-- Chart.js for data visualization -->
+  <script src="https://cdn.jsdelivr.net/npm/chart.js"></script>
+</head>
+<body>
+  <div class="admin-layout">
+    <!-- Sidebar Navigation -->
+    <aside class="admin-sidebar">
+      <div class="admin-sidebar-header">
+        <h1>Book<span>Connect</span></h1>
+        <p>Admin Portal</p>
+      </div>
+      
+      <nav class="admin-nav">
+        <div class="admin-nav-section">
+          <h3>Main</h3>
+          <ul>
+            <li>
+              <a href="admin-dashboard.html" class="admin-nav-item active">
+                <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M3 9l9-7 9 7v11a2 2 0 0 1-2 2H5a2 2 0 0 1-2-2z"></path><polyline points="9 22 9 12 15 12 15 22"></polyline></svg>
+                Dashboard
+              </a>
+            </li>
+            <li>
+              <a href="#" class="admin-nav-item">
+                <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M17 21v-2a4 4 0 0 0-4-4H5a4 4 0 0 0-4 4v2"></path><circle cx="9" cy="7" r="4"></circle><path d="M23 21v-2a4 4 0 0 0-3-3.87"></path><path d="M16 3.13a4 4 0 0 1 0 7.75"></path></svg>
+                Users
+              </a>
+            </li>
+            <li>
+              <a href="#" class="admin-nav-item">
+                <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M4 19.5A2.5 2.5 0 0 1 6.5 17H20"></path><path d="M6.5 2H20v20H6.5A2.5 2.5 0 0 1 4 19.5v-15A2.5 2.5 0 0 1 6.5 2z"></path></svg>
+                Books
+              </a>
+            </li>
+            <li>
+              <a href="#" class="admin-nav-item">
+                <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><rect x="1" y="4" width="22" height="16" rx="2" ry="2"></rect><line x1="1" y1="10" x2="23" y2="10"></line></svg>
+                Transactions
+              </a>
+            </li>
+          </ul>
+        </div>
+        
+        <div class="admin-nav-section">
+          <h3>Administration</h3>
+          <ul>
+            <li>
+              <a href="policy-management.html" class="admin-nav-item">
+                <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M14 2H6a2 2 0 0 0-2 2v16a2 2 0 0 0 2 2h12a2 2 0 0 0 2-2V8z"></path><polyline points="14 2 14 8 20 8"></polyline><line x1="16" y1="13" x2="8" y2="13"></line><line x1="16" y1="17" x2="8" y2="17"></line><polyline points="10 9 9 9 8 9"></polyline></svg>
+                Policies
+              </a>
+            </li>
+            <li>
+              <a href="#" class="admin-nav-item">
+                <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><circle cx="12" cy="12" r="3"></circle><path d="M19.4 15a1.65 1.65 0 0 0 .33 1.82l.06.06a2 2 0 0 1 0 2.83 2 2 0 0 1-2.83 0l-.06-.06a1.65 1.65 0 0 0-1.82-.33 1.65 1.65 0 0 0-1 1.51V21a2 2 0 0 1-2 2 2 2 0 0 1-2-2v-.09A1.65 1.65 0 0 0 9 19.4a1.65 1.65 0 0 0-1.82.33l-.06.06a2 2 0 0 1-2.83 0 2 2 0 0 1 0-2.83l.06-.06a1.65 1.65 0 0 0 .33-1.82 1.65 1.65 0 0 0-1.51-1H3a2 2 0 0 1-2-2 2 2 0 0 1 2-2h.09A1.65 1.65 0 0 0 4.6 9a1.65 1.65 0 0 0-.33-1.82l-.06-.06a2 2 0 0 1 0-2.83 2 2 0 0 1 2.83 0l.06.06a1.65 1.65 0 0 0 1.82.33H9a1.65 1.65 0 0 0 1-1.51V3a2 2 0 0 1 2-2 2 2 0 0 1 2 2v.09a1.65 1.65 0 0 0 1 1.51 1.65 1.65 0 0 0 1.82-.33l.06-.06a2 2 0 0 1 2.83 0 2 2 0 0 1 0 2.83l-.06.06a1.65 1.65 0 0 0-.33 1.82V9a1.65 1.65 0 0 0 1.51 1H21a2 2 0 0 1 2 2 2 2 0 0 1-2 2h-.09a1.65 1.65 0 0 0-1.51 1z"></path></svg>
+                Settings
+              </a>
+            </li>
+            <li>
+              <a href="#" class="admin-nav-item">
+                <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M13 2H6a2 2 0 0 0-2 2v16a2 2 0 0 0 2 2h12a2 2 0 0 0 2-2V9z"></path><polyline points="13 2 13 9 20 9"></polyline></svg>
+                Reports
+              </a>
+            </li>
+          </ul>
+        </div>
+        
+        <div class="admin-nav-section">
+          <h3>Account</h3>
+          <ul>
+            <li>
+              <a href="#" class="admin-nav-item">
+                <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M20 21v-2a4 4 0 0 0-4-4H8a4 4 0 0 0-4 4v2"></path><circle cx="12" cy="7" r="4"></circle></svg>
+                Profile
+              </a>
+            </li>
+            <li>
+              <a href="#" class="admin-nav-item">
+                <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M9 21H5a2 2 0 0 1-2-2V5a2 2 0 0 1 2-2h4"></path><polyline points="16 17 21 12 16 7"></polyline><line x1="21" y1="12" x2="9" y2="12"></line></svg>
+                Logout
+              </a>
+            </li>
+          </ul>
+        </div>
+      </nav>
+    </aside>
+
+    <!-- Main Content Area -->
+    <main class="admin-main">
+      <!-- Top Header -->
+      <header class="admin-header">
+        <div class="admin-header-left">
+          <button class="sidebar-toggle">
+            <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><line x1="3" y1="12" x2="21" y2="12"></line><line x1="3" y1="6" x2="21" y2="6"></line><line x1="3" y1="18" x2="21" y2="18"></line></svg>
+          </button>
+          <h2>Dashboard</h2>
+        </div>
+        
+        <div class="admin-header-right">
+          <div class="search-container">
+            <input type="text" placeholder="Search...">
+            <button class="search-btn">
+              <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><circle cx="11" cy="11" r="8"></circle><line x1="21" y1="21" x2="16.65" y2="16.65"></line></svg>
+            </button>
+          </div>
+          
+          <div class="admin-notifications">
+            <button class="notification-btn">
+              <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M18 8A6 6 0 0 0 6 8c0 7-3 9-3 9h18s-3-2-3-9"></path><path d="M13.73 21a2 2 0 0 1-3.46 0"></path></svg>
+              <span class="notification-badge">5</span>
+            </button>
+          </div>
+          
+          <div class="admin-profile">
+            <button class="profile-btn">
+              <img src="https://via.placeholder.com/40" alt="Admin Profile">
+              <span>Admin User</span>
+              <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><polyline points="6 9 12 15 18 9"></polyline></svg>
+            </button>
+          </div>
+        </div>
+      </header>
+
+      <!-- Page Content -->
+      <div class="admin-content">
+        <div class="content-header">
+          <div class="content-header-left">
+            <h1>Dashboard Overview</h1>
+            <p>Welcome back, Admin! Here's what's happening with BookConnect today.</p>
+          </div>
+          
+          <div class="content-header-actions">
+            <div class="date-filter">
+              <button class="btn btn-outline active">Today</button>
+              <button class="btn btn-outline">Week</button>
+              <button class="btn btn-outline">Month</button>
+              <button class="btn btn-outline">Year</button>
+            </div>
+            <button class="btn btn-primary">
+              <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M21 15v4a2 2 0 0 1-2 2H5a2 2 0 0 1-2-2v-4"></path><polyline points="17 8 12 3 7 8"></polyline><line x1="12" y1="3" x2="12" y2="15"></line></svg>
+              Export Report
+            </button>
+          </div>
+        </div>
+
+        <!-- Stats Cards -->
+        <div class="stats-grid">
+          <div class="stat-card">
+            <div class="stat-card-content">
+              <div class="stat-card-info">
+                <h3>Total Users</h3>
+                <p class="stat-value">2,845</p>
+                <p class="stat-change positive">
+                  <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><polyline points="23 6 13.5 15.5 8.5 10.5 1 18"></polyline><polyline points="17 6 23 6 23 12"></polyline></svg>
+                  12.5% from last month
+                </p>
+              </div>
+              <div class="stat-card-icon users">
+                <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M17 21v-2a4 4 0 0 0-4-4H5a4 4 0 0 0-4 4v2"></path><circle cx="9" cy="7" r="4"></circle><path d="M23 21v-2a4 4 0 0 0-3-3.87"></path><path d="M16 3.13a4 4 0 0 1 0 7.75"></path></svg>
+              </div>
+            </div>
+            <div class="stat-card-footer">
+              <a href="#" class="stat-card-link">View all users</a>
+            </div>
+          </div>
+
+          <div class="stat-card">
+            <div class="stat-card-content">
+              <div class="stat-card-info">
+                <h3>Books Listed</h3>
+                <p class="stat-value">4,721</p>
+                <p class="stat-change positive">
+                  <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><polyline points="23 6 13.5 15.5 8.5 10.5 1 18"></polyline><polyline points="17 6 23 6 23 12"></polyline></svg>
+                  8.2% from last month
+                </p>
+              </div>
+              <div class="stat-card-icon books">
+                <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M4 19.5A2.5 2.5 0 0 1 6.5 17H20"></path><path d="M6.5 2H20v20H6.5A2.5 2.5 0 0 1 4 19.5v-15A2.5 2.5 0 0 1 6.5 2z"></path></svg>
+              </div>
+            </div>
+            <div class="stat-card-footer">
+              <a href="#" class="stat-card-link">View all books</a>
+            </div>
+          </div>
+
+          <div class="stat-card">
+            <div class="stat-card-content">
+              <div class="stat-card-info">
+                <h3>Exchanges</h3>
+                <p class="stat-value">1,283</p>
+                <p class="stat-change positive">
+                  <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><polyline points="23 6 13.5 15.5 8.5 10.5 1 18"></polyline><polyline points="17 6 23 6 23 12"></polyline></svg>
+                  23.7% from last month
+                </p>
+              </div>
+              <div class="stat-card-icon exchanges">
+                <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><polyline points="17 1 21 5 17 9"></polyline><path d="M3 11V9a4 4 0 0 1 4-4h14"></path><polyline points="7 23 3 19 7 15"></polyline><path d="M21 13v2a4 4 0 0 1-4 4H3"></path></svg>
+              </div>
+            </div>
+            <div class="stat-card-footer">
+              <a href="#" class="stat-card-link">View all exchanges</a>
+            </div>
+          </div>
+
+          <div class="stat-card">
+            <div class="stat-card-content">
+              <div class="stat-card-info">
+                <h3>Active Issues</h3>
+                <p class="stat-value">24</p>
+                <p class="stat-change negative">
+                  <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><polyline points="23 18 13.5 8.5 8.5 13.5 1 6"></polyline><polyline points="17 18 23 18 23 12"></polyline></svg>
+                  5.3% from last month
+                </p>
+              </div>
+              <div class="stat-card-icon issues">
+                <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><circle cx="12" cy="12" r="10"></circle><line x1="12" y1="8" x2="12" y2="12"></line><line x1="12" y1="16" x2="12.01" y2="16"></line></svg>
+              </div>
+            </div>
+            <div class="stat-card-footer">
+              <a href="#" class="stat-card-link">View all issues</a>
+            </div>
+          </div>
+        </div>
+
+        <!-- Charts Section -->
+        <div class="charts-section">
+          <div class="chart-container">
+            <div class="chart-header">
+              <h3>User Growth</h3>
+              <div class="chart-actions">
+                <button class="btn btn-sm btn-outline">
+                  <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><circle cx="18" cy="5" r="3"></circle><circle cx="6" cy="12" r="3"></circle><circle cx="18" cy="19" r="3"></circle><line x1="8.59" y1="13.51" x2="15.42" y2="17.49"></line><line x1="15.41" y1="6.51" x2="8.59" y2="10.49"></line></svg>
+                  Share
+                </button>
+                <button class="btn btn-sm btn-outline">
+                  <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><polyline points="6 9 6 2 18 2 18 9"></polyline><path d="M6 18H4a2 2 0 0 1-2-2v-5a2 2 0 0 1 2-2h16a2 2 0 0 1 2 2v5a2 2 0 0 1-2 2h-2"></path><rect x="6" y="14" width="12" height="8"></rect></svg>
+                  Print
+                </button>
+              </div>
+            </div>
+            <div class="chart-body">
+              <canvas id="userGrowthChart"></canvas>
+            </div>
+          </div>
+
+          <div class="chart-container">
+            <div class="chart-header">
+              <h3>Exchange Activity</h3>
+              <div class="chart-actions">
+                <button class="btn btn-sm btn-outline">
+                  <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><circle cx="18" cy="5" r="3"></circle><circle cx="6" cy="12" r="3"></circle><circle cx="18" cy="19" r="3"></circle><line x1="8.59" y1="13.51" x2="15.42" y2="17.49"></line><line x1="15.41" y1="6.51" x2="8.59" y2="10.49"></line></svg>
+                  Share
+                </button>
+                <button class="btn btn-sm btn-outline">
+                  <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><polyline points="6 9 6 2 18 2 18 9"></polyline><path d="M6 18H4a2 2 0 0 1-2-2v-5a2 2 0 0 1 2-2h16a2 2 0 0 1 2 2v5a2 2 0 0 1-2 2h-2"></path><rect x="6" y="14" width="12" height="8"></rect></svg>
+                  Print
+                </button>
+              </div>
+            </div>
+            <div class="chart-body">
+              <canvas id="exchangeActivityChart"></canvas>
+            </div>
+          </div>
+        </div>
+
+        <!-- Recent Activity and Quick Actions -->
+        <div class="activity-actions-grid">
+          <div class="recent-activity">
+            <div class="section-header">
+              <h3>Recent Activity</h3>
+              <a href="#" class="view-all">View All</a>
+            </div>
+            
+            <div class="activity-list">
+              <div class="activity-item">
+                <div class="activity-icon user-joined">
+                  <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M16 21v-2a4 4 0 0 0-4-4H5a4 4 0 0 0-4 4v2"></path><circle cx="8.5" cy="7" r="4"></circle><line x1="20" y1="8" x2="20" y2="14"></line><line x1="23" y1="11" x2="17" y2="11"></line></svg>
+                </div>
+                <div class="activity-content">
+                  <p><strong>Sarah Johnson</strong> joined BookConnect</p>
+                  <span class="activity-time">5 minutes ago</span>
+                </div>
+              </div>
+              
+              <div class="activity-item">
+                <div class="activity-icon book-added">
+                  <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M4 19.5A2.5 2.5 0 0 1 6.5 17H20"></path><path d="M6.5 2H20v20H6.5A2.5 2.5 0 0 1 4 19.5v-15A2.5 2.5 0 0 1 6.5 2z"></path></svg>
+                </div>
+                <div class="activity-content">
+                  <p><strong>Michael Chen</strong> added <strong>"The Great Gatsby"</strong> to their collection</p>
+                  <span class="activity-time">15 minutes ago</span>
+                </div>
+              </div>
+              
+              <div class="activity-item">
+                <div class="activity-icon exchange-completed">
+                  <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><polyline points="17 1 21 5 17 9"></polyline><path d="M3 11V9a4 4 0 0 1 4-4h14"></path><polyline points="7 23 3 19 7 15"></polyline><path d="M21 13v2a4 4 0 0 1-4 4H3"></path></svg>
+                </div>
+                <div class="activity-content">
+                  <p><strong>Emily Davis</strong> and <strong>James Wilson</strong> completed a book exchange</p>
+                  <span class="activity-time">42 minutes ago</span>
+                </div>
+              </div>
+              
+              <div class="activity-item">
+                <div class="activity-icon issue-reported">
+                  <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><circle cx="12" cy="12" r="10"></circle><line x1="12" y1="8" x2="12" y2="12"></line><line x1="12" y1="16" x2="12.01" y2="16"></line></svg>
+                </div>
+                <div class="activity-content">
+                  <p><strong>Alex Thompson</strong> reported an issue with a book condition</p>
+                  <span class="activity-time">1 hour ago</span>
+                </div>
+              </div>
+              
+              <div class="activity-item">
+                <div class="activity-icon review-added">
+                  <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><polygon points="12 2 15.09 8.26 22 9.27 17 14.14 18.18 21.02 12 17.77 5.82 21.02 7 14.14 2 9.27 8.91 8.26 12 2"></polygon></svg>
+                </div>
+                <div class="activity-content">
+                  <p><strong>Olivia Martinez</strong> left a 5-star review for <strong>Daniel Brown</strong></p>
+                  <span class="activity-time">2 hours ago</span>
+                </div>
+              </div>
+            </div>
+          </div>
+
+          <div class="quick-actions">
+            <div class="section-header">
+              <h3>Quick Actions</h3>
+            </div>
+            
+            <div class="actions-grid">
+              <a href="#" class="action-card">
+                <div class="action-icon">
+                  <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M17 21v-2a4 4 0 0 0-4-4H5a4 4 0 0 0-4 4v2">  stroke-linecap="round" stroke-linejoin="round"><path d="M17 21v-2a4 4 0 0 0-4-4H5a4 4 0 0 0-4 4v2"></path><circle cx="9" cy="7" r="4"></circle></svg>
+                </div>
+                <h4>Add New User</h4>
+              </a>
+              
+              <a href="#" class="action-card">
+                <div class="action-icon">
+                  <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M4 19.5A2.5 2.5 0 0 1 6.5 17H20"></path><path d="M6.5 2H20v20H6.5A2.5 2.5 0 0 1 4 19.5v-15A2.5 2.5 0 0 1 6.5 2z"></path></svg>
+                </div>
+                <h4>Add New Book</h4>
+              </a>
+              
+              <a href="#" class="action-card">
+                <div class="action-icon">
+                  <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><circle cx="12" cy="12" r="10"></circle><line x1="12" y1="8" x2="12" y2="12"></line><line x1="12" y1="16" x2="12.01" y2="16"></line></svg>
+                </div>
+                <h4>Resolve Issues</h4>
+              </a>
+              
+              <a href="#" class="action-card">
+                <div class="action-icon">
+                  <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M14 2H6a2 2 0 0 0-2 2v16a2 2 0 0 0 2 2h12a2 2 0 0 0 2-2V8z"></path><polyline points="14 2 14 8 20 8"></polyline><line x1="16" y1="13" x2="8" y2="13"></line><line x1="16" y1="17" x2="8" y2="17"></line><polyline points="10 9 9 9 8 9"></polyline></svg>
+                </div>
+                <h4>Manage Policies</h4>
+              </a>
+              
+              <a href="#" class="action-card">
+                <div class="action-icon">
+                  <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><polyline points="17 1 21 5 17 9"></polyline><path d="M3 11V9a4 4 0 0 1 4-4h14"></path><polyline points="7 23 3 19 7 15"></polyline><path d="M21 13v2a4 4 0 0 1-4 4H3"></path></svg>
+                </div>
+                <h4>View Exchanges</h4>
+              </a>
+              
+              <a href="#" class="action-card">
+                <div class="action-icon">
+                  <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M13 2H6a2 2 0 0 0-2 2v16a2 2 0 0 0 2 2h12a2 2 0 0 0 2-2V9z"></path><polyline points="13 2 13 9 20 9"></polyline></svg>
+                </div>
+                <h4>Generate Reports</h4>
+              </a>
+            </div>
+          </div>
+        </div>
+
+        <!-- Popular Books and Top Users -->
+        <div class="books-users-grid">
+          <div class="popular-books">
+            <div class="section-header">
+              <h3>Popular Books</h3>
+              <a href="#" class="view-all">View All</a>
+            </div>
+            
+            <div class="books-table-container">
+              <table class="data-table">
+                <thead>
+                  <tr>
+                    <th>Book</th>
+                    <th>Author</th>
+                    <th>Genre</th>
+                    <th>Exchanges</th>
+                    <th>Rating</th>
+                  </tr>
+                </thead>
+                <tbody>
+                  <tr>
+                    <td>
+                      <div class="book-info">
+                        <img src="https://via.placeholder.com/40" alt="Book Cover">
+                        <span>To Kill a Mockingbird</span>
+                      </div>
+                    </td>
+                    <td>Harper Lee</td>
+                    <td>Fiction</td>
+                    <td>87</td>
+                    <td>
+                      <div class="rating">
+                        <span class="stars">★★★★★</span>
+                        <span class="rating-value">4.8</span>
+                      </div>
+                    </td>
+                  </tr>
+                  <tr>
+                    <td>
+                      <div class="book-info">
+                        <img src="https://via.placeholder.com/40" alt="Book Cover">
+                        <span>1984</span>
+                      </div>
+                    </td>
+                    <td>George Orwell</td>
+                    <td>Dystopian</td>
+                    <td>76</td>
+                    <td>
+                      <div class="rating">
+                        <span class="stars">★★★★☆</span>
+                        <span class="rating-value">4.6</span>
+                      </div>
+                    </td>
+                  </tr>
+                  <tr>
+                    <td>
+                      <div class="book-info">
+                        <img src="https://via.placeholder.com/40" alt="Book Cover">
+                        <span>The Great Gatsby</span>
+                      </div>
+                    </td>
+                    <td>F. Scott Fitzgerald</td>
+                    <td>Classic</td>
+                    <td>65</td>
+                    <td>
+                      <div class="rating">
+                        <span class="stars">★★★★☆</span>
+                        <span class="rating-value">4.5</span>
+                      </div>
+                    </td>
+                  </tr>
+                  <tr>
+                    <td>
+                      <div class="book-info">
+                        <img src="https://via.placeholder.com/40" alt="Book Cover">
+                        <span>Pride and Prejudice</span>
+                      </div>
+                    </td>
+                    <td>Jane Austen</td>
+                    <td>Romance</td>
+                    <td>59</td>
+                    <td>
+                      <div class="rating">
+                        <span class="stars">★★★★☆</span>
+                        <span class="rating-value">4.4</span>
+                      </div>
+                    </td>
+                  </tr>
+                  <tr>
+                    <td>
+                      <div class="book-info">
+                        <img src="https://via.placeholder.com/40" alt="Book Cover">
+                        <span>The Hobbit</span>
+                      </div>
+                    </td>
+                    <td>J.R.R. Tolkien</td>
+                    <td>Fantasy</td>
+                    <td>52</td>
+                    <td>
+                      <div class="rating">
+                        <span class="stars">★★★★☆</span>
+                        <span class="rating-value">4.7</span>
+                      </div>
+                    </td>
+                  </tr>
+                </tbody>
+              </table>
+            </div>
+          </div>
+
+          <div class="top-users">
+            <div class="section-header">
+              <h3>Top Users</h3>
+              <a href="#" class="view-all">View All</a>
+            </div>
+            
+            <div class="users-list">
+              <div class="user-card">
+                <div class="user-card-header">
+                  <img src="https://via.placeholder.com/50" alt="User Avatar" class="user-avatar">
+                  <div class="user-info">
+                    <h4>Emma Wilson</h4>
+                    <p>Member since Mar 2024</p>
+                  </div>
+                  <div class="user-badge top-exchanger">
+                    <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><polygon points="12 2 15.09 8.26 22 9.27 17 14.14 18.18 21.02 12 17.77 5.82 21.02 7 14.14 2 9.27 8.91 8.26 12 2"></polygon></svg>
+                  </div>
+                </div>
+                <div class="user-card-body">
+                  <div class="user-stat">
+                    <span class="stat-label">Books Shared</span>
+                    <span class="stat-value">42</span>
+                  </div>
+                  <div class="user-stat">
+                    <span class="stat-label">Exchanges</span>
+                    <span class="stat-value">38</span>
+                  </div>
+                  <div class="user-stat">
+                    <span class="stat-label">Rating</span>
+                    <span class="stat-value">4.9</span>
+                  </div>
+                </div>
+              </div>
+              
+              <div class="user-card">
+                <div class="user-card-header">
+                  <img src="https://via.placeholder.com/50" alt="User Avatar" class="user-avatar">
+                  <div class="user-info">
+                    <h4>David Rodriguez</h4>
+                    <p>Member since Jan 2024</p>
+                  </div>
+                  <div class="user-badge top-collector">
+                    <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M4 19.5A2.5 2.5 0 0 1 6.5 17H20"></path><path d="M6.5 2H20v20H6.5A2.5 2.5 0 0 1 4 19.5v-15A2.5 2.5 0 0 1 6.5 2z"></path></svg>
+                  </div>
+                </div>
+                <div class="user-card-body">
+                  <div class="user-stat">
+                    <span class="stat-label">Books Shared</span>
+                    <span class="stat-value">36</span>
+                  </div>
+                  <div class="user-stat">
+                    <span class="stat-label">Exchanges</span>
+                    <span class="stat-value">31</span>
+                  </div>
+                  <div class="user-stat">
+                    <span class="stat-label">Rating</span>
+                    <span class="stat-value">4.8</span>
+                  </div>
+                </div>
+              </div>
+              
+              <div class="user-card">
+                <div class="user-card-header">
+                  <img src="https://via.placeholder.com/50" alt="User Avatar" class="user-avatar">
+                  <div class="user-info">
+                    <h4>Sophia Kim</h4>
+                    <p>Member since Feb 2024</p>
+                  </div>
+                  <div class="user-badge top-rated">
+                    <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M22 11.08V12a10 10 0 1 1-5.93-9.14"></path><polyline points="22 4 12 14.01 9 11.01"></polyline></svg>
+                  </div>
+                </div>
+                <div class="user-card-body">
+                  <div class="user-stat">
+                    <span class="stat-label">Books Shared</span>
+                    <span class="stat-value">29</span>
+                  </div>
+                  <div class="user-stat">
+                    <span class="stat-label">Exchanges</span>
+                    <span class="stat-value">27</span>
+                  </div>
+                  <div class="user-stat">
+                    <span class="stat-label">Rating</span>
+                    <span class="stat-value">5.0</span>
+                  </div>
+                </div>
+              </div>
+            </div>
+          </div>
+        </div>
+
+        <!-- System Status -->
+        <div class="system-status">
+          <div class="section-header">
+            <h3>System Status</h3>
+            <span class="status-indicator online">All Systems Operational</span>
+          </div>
+          
+          <div class="status-grid">
+            <div class="status-card">
+              <div class="status-card-header">
+                <h4>Server Uptime</h4>
+                <span class="status-badge online">Online</span>
+              </div>
+              <div class="status-card-body">
+                <div class="status-metric">
+                  <span class="metric-value">99.98%</span>
+                  <span class="metric-label">Last 30 days</span>
+                </div>
+              </div>
+            </div>
+            
+            <div class="status-card">
+              <div class="status-card-header">
+                <h4>API Response</h4>
+                <span class="status-badge online">Normal</span>
+              </div>
+              <div class="status-card-body">
+                <div class="status-metric">
+                  <span class="metric-value">124ms</span>
+                  <span class="metric-label">Average response time</span>
+                </div>
+              </div>
+            </div>
+            
+            <div class="status-card">
+              <div class="status-card-header">
+                <h4>Database</h4>
+                <span class="status-badge online">Healthy</span>
+              </div>
+              <div class="status-card-body">
+                <div class="status-metric">
+                  <span class="metric-value">28%</span>
+                  <span class="metric-label">Current load</span>
+                </div>
+              </div>
+            </div>
+            
+            <div class="status-card">
+              <div class="status-card-header">
+                <h4>Storage</h4>
+                <span class="status-badge warning">Warning</span>
+              </div>
+              <div class="status-card-body">
+                <div class="status-metric">
+                  <span class="metric-value">82%</span>
+                  <span class="metric-label">Capacity used</span>
+                </div>
+              </div>
+            </div>
+          </div>
+        </div>
+      </div>
+    </main>
+  </div>
+
+  <script src="admin-scripts.js"></script>
+</body>
+</html>
