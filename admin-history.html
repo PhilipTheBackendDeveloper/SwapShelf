@@ -1,0 +1,498 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>Admin History - BookConnect</title>
+<link rel="stylesheet" href="styles.css">
+<link rel="stylesheet" href="admin-styles.css">
+<link rel="stylesheet" href="admin-history-styles.css">
+
+
+<link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Poppins:wght@300;400;500;600;700&display=swap">
+<!-- Chart.js for data visualization -->
+<script src="https://cdn.jsdelivr.net/npm/chart.js"></script>
+</head>
+<body>
+<div class="admin-layout">
+  <!-- Sidebar Navigation -->
+  <aside class="admin-sidebar">
+    <div class="admin-sidebar-header">
+      <h1>Book<span>Connect</span></h1>
+      <p>Admin Portal</p>
+    </div>
+    
+    <nav class="admin-nav">
+      <div class="admin-nav-section">
+        <h3>Main</h3>
+        <ul>
+          <li>
+            <a href="admin-dashboard.html" class="admin-nav-item">
+              <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M3 9l9-7 9 7v11a2 2 0 0 1-2 2H5a2 2 0 0 1-2-2z"></path><polyline points="9 22 9 12 15 12 15 22"></polyline></svg>
+              Dashboard
+            </a>
+          </li>
+          <li>
+            <a href="#" class="admin-nav-item">
+              <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M17 21v-2a4 4 0 0 0-4-4H5a4 4 0 0 0-4 4v2"></path><circle cx="9" cy="7" r="4"></circle><path d="M23 21v-2a4 4 0 0 0-3-3.87"></path><path d="M16 3.13a4 4 0 0 1 0 7.75"></path></svg>
+              Approve Users 
+            </a>
+          </li>
+          <li>
+            <a href="pending-users.html" class="admin-nav-item">
+              <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M17 21v-2a4 4 0 0 0-4-4H5a4 4 0 0 0-4 4v2"></path><circle cx="9" cy="7" r="4"></circle><path d="M23 21v-2a4 4 0 0 0-3-3.87"></path><path d="M16 3.13a4 4 0 0 1 0 7.75"></path></svg>
+              Pending Users
+            </a>
+          </li>
+          <li>
+            <a href="pending-books.html" class="admin-nav-item">
+              <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M4 19.5A2.5 2.5 0 0 1 6.5 17H20"></path><path d="M6.5 2H20v20H6.5A2.5 2.5 0 0 1 4 19.5v-15A2.5 2.5 0 0 1 6.5 2z"></path></svg>
+              Book Requests
+            </a>
+          </li>
+          
+        </ul>
+      </div>
+      
+      <div class="admin-nav-section">
+        <h3>Administration</h3>
+        <ul>
+          <li>
+            <a href="policy-management.html" class="admin-nav-item">
+              <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M14 2H6a2 2 0 0 0-2 2v16a2 2 0 0 0 2 2h12a2 2 0 0 0 2-2V8z"></path><polyline points="14 2 14 8 20 8"></polyline><line x1="16" y1="13" x2="8" y2="13"></line><line x1="16" y1="17" x2="8" y2="17"></line><polyline points="10 9 9 9 8 9"></polyline></svg>
+              Policies
+            </a>
+          </li>
+          <li>
+            <a href="admin-history.html" class="admin-nav-item active">
+              <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><circle cx="12" cy="12" r="10"></circle><polyline points="12 6 12 12 16 14"></polyline></svg>
+              History
+            </a>
+          </li>
+          <li>
+            <a href="#" class="admin-nav-item">
+              <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><circle cx="12" cy="12" r="3"></circle><path d="M19.4 15a1.65 1.65 0 0 0 .33 1.82l.06.06a2 2 0 0 1 0 2.83 2 2 0 0 1-2.83 0l-.06-.06a1.65 1.65 0 0 0-1.82-.33 1.65 1.65 0 0 0-1 1.51V21a2 2 0 0 1-2 2 2 2 0 0 1-2-2v-.09A1.65 1.65 0 0 0 9 19.4a1.65 1.65 0 0 0-1.82.33l-.06.06a2 2 0 0 1-2.83 0 2 2 0 0 1 0-2.83l.06-.06a1.65 1.65 0 0 0 .33-1.82 1.65 1.65 0 0 0-1.51-1H3a2 2 0 0 1-2-2 2 2 0 0 1 2-2h.09A1.65 1.65 0 0 0 4.6 9a1.65 1.65 0 0 0-.33-1.82l-.06-.06a2 2 0 0 1 0-2.83 2 2 0 0 1 2.83 0l.06.06a1.65 1.65 0 0 0 1.82.33H9a1.65 1.65 0 0 0 1-1.51V3a2 2 0 0 1 2-2 2 2 0 0 1 2 2v.09a1.65 1.65 0 0 0 1 1.51 1.65 1.65 0 0 0 1.82-.33l.06-.06a2 2 0 0 1 2.83 0 2 2 0 0 1 0 2.83l-.06.06a1.65 1.65 0 0 0-.33 1.82V9a1.65 1.65 0 0 0 1.51 1H21a2 2 0 0 1 2 2 2 2 0 0 1-2 2h-.09a1.65 1.65 0 0 0-1.51 1z"></path></svg>
+              Settings
+            </a>
+          </li>
+          
+        </ul>
+      </div>
+      
+      <div class="admin-nav-section">
+        <h3>Account</h3>
+        <ul>
+          <li>
+            <a href="#" class="admin-nav-item">
+              <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M20 21v-2a4 4 0 0 0-4-4H8a4 4 0 0 0-4 4v2"></path><circle cx="12" cy="7" r="4"></circle></svg>
+              Profile
+            </a>
+          </li>
+          <li>
+            <a href="shop-login.html" class="admin-nav-item">
+              <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M9 21H5a2 2 0 0 1-2-2V5a2 2 0 0 1 2-2h4"></path><polyline points="16 17 21 12 16 7"></polyline><line x1="21" y1="12" x2="9" y2="12"></line></svg>
+              Logout
+            </a>
+          </li>
+        </ul>
+      </div>
+    </nav>
+  </aside>
+
+  <!-- Main Content Area -->
+  <main class="admin-main">
+    <!-- Top Header -->
+    <header class="admin-header">
+      <div class="admin-header-left">
+        <button class="sidebar-toggle">
+          <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><line x1="3" y1="12" x2="21" y2="12"></line><line x1="3" y1="6" x2="21" y2="6"></line><line x1="3" y1="18" x2="21" y2="18"></line></svg>
+        </button>
+        <h2>History</h2>
+      </div>
+      
+      <div class="admin-header-right">
+        <div class="search-container">
+          <input type="text" placeholder="Search...">
+          <button class="search-btn">
+            <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><circle cx="11" cy="11" r="8"></circle><line x1="21" y1="21" x2="16.65" y2="16.65"></line></svg>
+          </button>
+        </div>
+        
+        <div class="admin-notifications">
+          <button class="notification-btn">
+            <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M18 8A6 6 0 0 0 6 8c0 7-3 9-3 9h18s-3-2-3-9"></path><path d="M13.73 21a2 2 0 0 1-3.46 0"></path></svg>
+            <span class="notification-badge">3</span>
+          </button>
+        </div>
+        
+        <div class="admin-profile">
+          <button class="profile-btn">
+            <img src="https://randomuser.me/api/portraits/women/8.jpg" alt="Admin Profile">
+            <span>Admin User</span>
+            <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><polyline points="6 9 12 15 18 9"></polyline></svg>
+          </button>
+        </div>
+      </div>
+    </header>
+
+    <!-- Page Content -->
+    <div class="admin-content">
+      <div class="content-header">
+        <div class="content-header-left">
+          <h1>Admin History</h1>
+          <p>Track and review all administrative actions in the BookConnect system.</p>
+        </div>
+        
+        <div class="content-header-actions">
+          <div class="date-filter">
+            <button class="btn btn-outline active" id="filter-today">Today</button>
+            <button class="btn btn-outline" id="filter-week">Week</button>
+            <button class="btn btn-outline" id="filter-month">Month</button>
+            <button class="btn btn-outline" id="filter-all">All Time</button>
+          </div>
+          <button class="btn btn-primary" id="export-report">
+            <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M21 15v4a2 2 0 0 1-2 2H5a2 2 0 0 1-2-2v-4"></path><polyline points="17 8 12 3 7 8"></polyline><line x1="12" y1="3" x2="12" y2="15"></line></svg>
+            Export Report
+          </button>
+        </div>
+      </div>
+
+      <!-- Stats Cards -->
+      <div class="stats-grid">
+        <div class="stat-card">
+          <div class="stat-card-content">
+            <div class="stat-card-info">
+              <h3>Today's Actions</h3>
+              <p class="stat-value" id="today-actions">24</p>
+              <p class="stat-change positive">
+                <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><polyline points="23 6 13.5 15.5 8.5 10.5 1 18"></polyline><polyline points="17 6 23 6 23 12"></polyline></svg>
+                15.3% from yesterday
+              </p>
+            </div>
+            <div class="stat-card-icon users">
+              <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><circle cx="12" cy="12" r="10"></circle><polyline points="12 6 12 12 16 14"></polyline></svg>
+            </div>
+          </div>
+          <div class="stat-card-footer">
+            <a href="#" class="stat-card-link" id="view-today">View today's actions</a>
+          </div>
+        </div>
+
+        <div class="stat-card">
+          <div class="stat-card-content">
+            <div class="stat-card-info">
+              <h3>User Management</h3>
+              <p class="stat-value" id="user-actions">156</p>
+              <p class="stat-change positive">
+                <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><polyline points="23 6 13.5 15.5 8.5 10.5 1 18"></polyline><polyline points="17 6 23 6 23 12"></polyline></svg>
+                8.2% from last month
+              </p>
+            </div>
+            <div class="stat-card-icon books">
+              <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M17 21v-2a4 4 0 0 0-4-4H5a4 4 0 0 0-4 4v2"></path><circle cx="9" cy="7" r="4"></circle></svg>
+            </div>
+          </div>
+          <div class="stat-card-footer">
+            <a href="#" class="stat-card-link" id="view-user-actions">View user actions</a>
+          </div>
+        </div>
+
+        <div class="stat-card">
+          <div class="stat-card-content">
+            <div class="stat-card-info">
+              <h3>Book Management</h3>
+              <p class="stat-value" id="book-actions">89</p>
+              <p class="stat-change positive">
+                <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><polyline points="23 6 13.5 15.5 8.5 10.5 1 18"></polyline><polyline points="17 6 23 6 23 12"></polyline></svg>
+                12.7% from last month
+              </p>
+            </div>
+            <div class="stat-card-icon exchanges">
+              <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M4 19.5A2.5 2.5 0 0 1 6.5 17H20"></path><path d="M6.5 2H20v20H6.5A2.5 2.5 0 0 1 4 19.5v-15A2.5 2.5 0 0 1 6.5 2z"></path></svg>
+            </div>
+          </div>
+          <div class="stat-card-footer">
+            <a href="#" class="stat-card-link" id="view-book-actions">View book actions</a>
+          </div>
+        </div>
+
+        <div class="stat-card">
+          <div class="stat-card-content">
+            <div class="stat-card-info">
+              <h3>Policy Changes</h3>
+              <p class="stat-value" id="policy-actions">12</p>
+              <p class="stat-change negative">
+                <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><polyline points="23 18 13.5 8.5 8.5 13.5 1 6"></polyline><polyline points="17 18 23 18 23 12"></polyline></svg>
+                3.5% from last month
+              </p>
+            </div>
+            <div class="stat-card-icon issues">
+              <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M14 2H6a2 2 0 0 0-2 2v16a2 2 0 0 0 2 2h12a2 2 0 0 0 2-2V8z"></path><polyline points="14 2 14 8 20 8"></polyline><line x1="16" y1="13" x2="8" y2="13"></line><line x1="16" y1="17" x2="8" y2="17"></line><polyline points="10 9 9 9 8 9"></polyline></svg>
+            </div>
+          </div>
+          <div class="stat-card-footer">
+            <a href="#" class="stat-card-link" id="view-policy-actions">View policy changes</a>
+          </div>
+        </div>
+      </div>
+
+      <!-- Charts Section -->
+      <div class="charts-section">
+        <div class="chart-container">
+          <div class="chart-header">
+            <h3>Activity Trends</h3>
+            <div class="chart-actions">
+              <button class="btn btn-sm btn-outline" id="chart-week">7 Days</button>
+              <button class="btn btn-sm btn-outline active" id="chart-month">30 Days</button>
+              <button class="btn btn-sm btn-outline" id="chart-quarter">90 Days</button>
+            </div>
+          </div>
+          <div class="chart-body">
+            <canvas id="activityChart"></canvas>
+          </div>
+        </div>
+      </div>
+
+      <!-- History Filters -->
+      <div class="filter-section">
+        <div class="filter-header">
+          <h3>History Filters</h3>
+          <button class="btn btn-sm btn-primary" id="apply-filters">
+            <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><polygon points="22 3 2 3 10 12.46 10 19 14 21 14 12.46 22 3"></polygon></svg>
+            Apply Filters
+          </button>
+        </div>
+        <div class="filter-grid">
+          <div class="filter-group">
+            <label for="date-range">Date Range</label>
+            <select id="date-range" class="filter-select">
+              <option value="today">Today</option>
+              <option value="yesterday">Yesterday</option>
+              <option value="week" selected>Last 7 Days</option>
+              <option value="month">Last 30 Days</option>
+              <option value="custom">Custom Range</option>
+            </select>
+          </div>
+          
+          <div class="filter-group custom-date-range" id="custom-date-container">
+            <label for="start-date">From</label>
+            <input type="date" id="start-date" class="filter-input">
+            <label for="end-date" class="mt-2">To</label>
+            <input type="date" id="end-date" class="filter-input">
+          </div>
+          
+          <div class="filter-group">
+            <label for="action-type">Action Type</label>
+            <select id="action-type" class="filter-select">
+              <option value="all" selected>All Actions</option>
+              <option value="user">User Management</option>
+              <option value="book">Book Management</option>
+              <option value="policy">Policy Changes</option>
+              <option value="system">System Changes</option>
+              <option value="login">Login/Logout</option>
+            </select>
+          </div>
+          
+          <div class="filter-group">
+            <label for="admin-filter">Admin</label>
+            <select id="admin-filter" class="filter-select">
+              <option value="all" selected>All Admins</option>
+              <option value="sarah">Sarah Johnson</option>
+              <option value="michael">Michael Chen</option>
+              <option value="jessica">Jessica Williams</option>
+            </select>
+          </div>
+          
+          <div class="filter-group">
+            <label for="search-history">Search</label>
+            <div class="search-input-container">
+              <input type="text" id="search-history" class="filter-input" placeholder="Search in history...">
+              <button id="search-btn" class="search-input-btn">
+                <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><circle cx="11" cy="11" r="8"></circle><line x1="21" y1="21" x2="16.65" y2="16.65"></line></svg>
+              </button>
+            </div>
+          </div>
+        </div>
+      </div>
+
+      <!-- History Table -->
+      <div class="table-container">
+        <div class="table-header">
+          <h3>History Log</h3>
+          <div class="table-actions">
+            <button class="btn btn-sm btn-outline" id="refresh-history">
+              <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M23 4v6h-6"></path><path d="M1 20v-6h6"></path><path d="M3.51 9a9 9 0 0 1 14.85-3.36L23 10M1 14l4.64 4.36A9 9 0 0 0 20.49 15"></path></svg>
+              Refresh
+            </button>
+            <button class="btn btn-sm btn-outline" id="export-csv">
+              <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M21 15v4a2 2 0 0 1-2 2H5a2 2 0 0 1-2-2v-4"></path><polyline points="7 10 12 15 17 10"></polyline><line x1="12" y1="15" x2="12" y2="3"></line></svg>
+              Export CSV
+            </button>
+          </div>
+        </div>
+        <div class="data-table-wrapper">
+          <table class="data-table">
+            <thead>
+              <tr>
+                <th><span class="sortable" data-sort="timestamp">Timestamp <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M7 10l5 5 5-5"></path></svg></span></th>
+                <th><span class="sortable" data-sort="admin">Admin <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M7 10l5 5 5-5"></path></svg></span></th>
+                <th><span class="sortable" data-sort="action">Action <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M7 10l5 5 5-5"></path></svg></span></th>
+                <th><span class="sortable" data-sort="category">Category <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M7 10l5 5 5-5"></path></svg></span></th>
+                <th>Target</th>
+                <th>Details</th>
+              </tr>
+            </thead>
+            <tbody id="history-table-body">
+              <!-- Table rows will be populated by JavaScript -->
+            </tbody>
+          </table>
+        </div>
+        
+        <!-- Pagination -->
+        <div class="pagination">
+          <div class="pagination-info">
+            Showing <span id="showing-start">1</span>-<span id="showing-end">10</span> of <span id="total-entries">156</span> entries
+          </div>
+          <div class="pagination-controls">
+            <button id="prev-page" class="pagination-btn" disabled>
+              <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><polyline points="15 18 9 12 15 6"></polyline></svg>
+            </button>
+            <div id="pagination-numbers" class="pagination-numbers">
+              <!-- Pagination numbers will be populated by JavaScript -->
+            </div>
+            <button id="next-page" class="pagination-btn">
+              <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><polyline points="9 18 15  stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><polyline points="9 18 15 12 9 6"></polyline></svg>
+            </button>
+          </div>
+        </div>
+      </div>
+    </div>
+  </main>
+</div>
+
+<!-- History Details Modal -->
+<div id="history-details-modal" class="modal">
+  <div class="modal-content">
+    <div class="modal-header">
+      <h2>Action Details</h2>
+      <button class="close-modal">
+        <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><line x1="18" y1="6" x2="6" y2="18"></line><line x1="6" y1="6" x2="18" y2="18"></line></svg>
+      </button>
+    </div>
+    <div class="modal-body">
+      <div class="details-grid">
+        <div class="detail-section">
+          <h3>Basic Information</h3>
+          <div class="detail-row">
+            <div class="detail-label">Timestamp:</div>
+            <div class="detail-value" id="detail-timestamp">March 15, 2025 - 2:34 PM</div>
+          </div>
+          <div class="detail-row">
+            <div class="detail-label">Admin:</div>
+            <div class="detail-value" id="detail-admin">Sarah Johnson</div>
+          </div>
+          <div class="detail-row">
+            <div class="detail-label">IP Address:</div>
+            <div class="detail-value" id="detail-ip">192.168.1.105</div>
+          </div>
+          <div class="detail-row">
+            <div class="detail-label">Session ID:</div>
+            <div class="detail-value" id="detail-session">a7f8d9e3c2b1</div>
+          </div>
+        </div>
+        
+        <div class="detail-section">
+          <h3>Action Information</h3>
+          <div class="detail-row">
+            <div class="detail-label">Action Type:</div>
+            <div class="detail-value" id="detail-action-type">Book Approval</div>
+          </div>
+          <div class="detail-row">
+            <div class="detail-label">Category:</div>
+            <div class="detail-value" id="detail-category">Book Management</div>
+          </div>
+          <div class="detail-row">
+            <div class="detail-label">Target:</div>
+            <div class="detail-value" id="detail-target">"The Great Gatsby" (ID: B-2025-03-15-001)</div>
+          </div>
+          <div class="detail-row">
+            <div class="detail-label">Status:</div>
+            <div class="detail-value" id="detail-status"><span class="status-badge success">Successful</span></div>
+          </div>
+        </div>
+        
+        <div class="detail-section full-width">
+          <h3>Description</h3>
+          <div class="detail-row">
+            <div class="detail-value" id="detail-description">
+              Approved book submission "The Great Gatsby" by F. Scott Fitzgerald. Book was added to the Fiction category with 5 available copies.
+            </div>
+          </div>
+        </div>
+        
+        <div class="detail-section full-width">
+          <h3>State Changes</h3>
+          <div class="state-comparison">
+            <div class="state-before">
+              <h4>Before</h4>
+              <pre id="detail-before-state" class="code-block">
+{
+  "status": "pending",
+  "reviewCount": 0,
+  "lastUpdated": "2025-03-15T10:15:23Z"
+}
+              </pre>
+            </div>
+            <div class="state-after">
+              <h4>After</h4>
+              <pre id="detail-after-state" class="code-block">
+{
+  "status": "approved",
+  "reviewCount": 1,
+  "lastUpdated": "2025-03-15T14:34:12Z",
+  "approvedBy": "sarah.johnson",
+  "approvalNotes": "Classic literature, approved for general circulation"
+}
+              </pre>
+            </div>
+          </div>
+        </div>
+        
+        <div class="detail-section full-width">
+          <h3>Related Actions</h3>
+          <div class="timeline" id="related-actions">
+            <div class="timeline-item">
+              <div class="timeline-point"></div>
+              <div class="timeline-content">
+                <div class="timeline-time">March 15, 2025 - 10:15 AM</div>
+                <div class="timeline-info">Book submission created by user "jsmith"</div>
+              </div>
+            </div>
+            <div class="timeline-item">
+              <div class="timeline-point active"></div>
+              <div class="timeline-content">
+                <div class="timeline-time">March 15, 2025 - 2:34 PM</div>
+                <div class="timeline-info">Book approved by admin "Sarah Johnson"</div>
+              </div>
+            </div>
+            <div class="timeline-item">
+              <div class="timeline-point"></div>
+              <div class="timeline-content">
+                <div class="timeline-time">March 15, 2025 - 2:35 PM</div>
+                <div class="timeline-info">Notification sent to user "jsmith"</div>
+              </div>
+            </div>
+          </div>
+        </div>
+      </div>
+    </div>
+    <div class="modal-footer">
+      <button class="btn btn-outline close-modal">Close</button>
+    </div>
+  </div>
+</div>
+
+<script src="admin-history.js"></script>
+</body>
+</html>
+

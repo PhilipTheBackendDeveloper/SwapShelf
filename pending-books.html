@@ -3,244 +3,483 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Pending Book Requests</title>
+    <title>Book Approval Management - BookConnect</title>
+    <link rel="stylesheet" href="admin-styles.css">
+    <link rel="stylesheet" href="pending-books-styles.css">
+    <link rel="stylesheet" href="pending-users-styles.css">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
+    <link href="https://fonts.googleapis.com/css2?family=Poppins:wght@300;400;500;600;700&display=swap" rel="stylesheet">
     
 </head>
 <body>
-    <header>
-        <div class="navbar">
-<!-- Website Logo -->
-<div class="logo-header logo-dark">
-  <a href="index.html"><img src="images/logo.png" alt="logo"></a>
-</div> 
+    <div class="admin-container">
+        <!-- Sidebar -->
+        <aside class="sidebar">
+          <div class="logo-container">
+             
+              <h2>BookConnect</h2>
+          </div>
+          
+          <nav class="sidebar-nav">
+              <div class="nav-section">
+                  <h3>Dashboard</h3>
+                  <ul>
+                      <li><a href="admin-dashboard.html"><i class="fas fa-tachometer-alt"></i> Overview</a></li>
+                      <li><a href="admin-analytics.html"><i class="fas fa-chart-line"></i> Analytics</a></li>
+                  </ul>
+              </div>
+              
+              <div class="nav-section">
+                  <h3>User Management</h3>
+                  <ul>
+                      <li ><a href="pending-users.html"><i class="fas fa-user-clock"></i> Pending Users</a></li>
+                      <li><a href="approve-users.html"><i class="fas fa-user-check"></i> Approve Users</a></li>
+                      <li><a href="admin-history.html"><i class="fas fa-history"></i> User History</a></li>
+                  </ul>
+              </div>
+              
+              <div class="nav-section">
+                  <h3>Content</h3>
+                  <ul>
+                      <li class="active"><a href="pending-books.html"><i class="fas fa-book"></i> Pending Books</a></li>
+                      <li><a href="policy-management.html"><i class="fas fa-file-alt"></i> Policies</a></li>
+                  </ul>
+              </div>
+          </nav>
+          
+          <div class="sidebar-footer">
+              <a href="shop-login.html"><i class="fas fa-sign-out-alt"></i> Log Out</a>
+          </div>
+      </aside>
+        <!-- Main Content -->
+        <main class="main-content">
+            <header class="content-header">
+                <div class="header-title">
+                    <h1>Book Approval Management</h1>
+                    <p>Review and manage book submissions</p>
+                </div>
+                <div class="header-actions">
+                    <div class="search-container">
+                        <input type="text" id="search-books" placeholder="Search books...">
+                        <button><i class="fas fa-search"></i></button>
+                    </div>
+                    <div class="admin-profile">
+                        <img src="#" alt="Admin">
+                        <div class="admin-info">
+                            <p class="admin-name">John Admin</p>
+                            <p class="admin-role">Administrator</p>
+                        </div>
+                    </div>
+                </div>
+            </header>
 
-<nav>
-  <a href="Admindashboard.html">Admin Dashboard</a>
-  <a href="shop-login.html">Log Out</a>
-  <a href="Approvedusers.html">Active Users</a>
-</nav>
+            <!-- Dashboard Summary -->
+            <div class="dashboard-cards">
+                <div class="dashboard-card">
+                    <div class="card-icon pending-icon">
+                        <i class="fas fa-hourglass-half"></i>
+                    </div>
+                    <div class="card-content">
+                        <h3>Pending Books</h3>
+                        <p id="pending-count">24</p>
+                    </div>
+                </div>
+                <div class="dashboard-card">
+                    <div class="card-icon approved-icon">
+                        <i class="fas fa-check-circle"></i>
+                    </div>
+                    <div class="card-content">
+                        <h3>Approved Books</h3>
+                        <p id="approved-count">156</p>
+                    </div>
+                </div>
+                <div class="dashboard-card">
+                    <div class="card-icon rejected-icon">
+                        <i class="fas fa-times-circle"></i>
+                    </div>
+                    <div class="card-content">
+                        <h3>Rejected Books</h3>
+                        <p id="rejected-count">18</p>
+                    </div>
+                </div>
+                <div class="dashboard-card">
+                    <div class="card-icon total-icon">
+                        <i class="fas fa-book"></i>
+                    </div>
+                    <div class="card-content">
+                        <h3>Total Books</h3>
+                        <p id="total-count">198</p>
+                    </div>
+                </div>
+            </div>
+
+            <!-- Book Management Section -->
+            <div class="content-card">
+                <div class="card-header">
+                    <h2>Book Submissions</h2>
+                    <div class="header-actions">
+                        <div class="filter-controls">
+                            <div class="filter-group">
+                                <select id="status-filter" class="select-control">
+                                    <option value="all">All Status</option>
+                                    <option value="pending">Pending</option>
+                                    <option value="approved">Approved</option>
+                                    <option value="rejected">Rejected</option>
+                                </select>
+                            </div>
+                            <div class="filter-group">
+                                <select id="date-filter" class="select-control">
+                                    <option value="all">All Time</option>
+                                    <option value="today">Today</option>
+                                    <option value="week">This Week</option>
+                                    <option value="month">This Month</option>
+                                </select>
+                            </div>
+                            <div class="filter-group">
+                                <select id="genre-filter" class="select-control">
+                                    <option value="all">All Genres</option>
+                                    <option value="fiction">Fiction</option>
+                                    <option value="non-fiction">Non-Fiction</option>
+                                    <option value="science">Science</option>
+                                    <option value="history">History</option>
+                                    <option value="biography">Biography</option>
+                                </select>
+                            </div>
+                        </div>
+                        <div class="view-controls">
+                            <button id="grid-view" class="view-btn active" title="Grid View"><i class="fas fa-th-large"></i></button>
+                            <button id="list-view" class="view-btn" title="List View"><i class="fas fa-list"></i></button>
+                        </div>
+                    </div>
+                </div>
+
+                <div class="batch-actions">
+                    <div class="selection-info">
+                        <label class="checkbox-container">
+                            <input type="checkbox" id="select-all">
+                            <span class="checkmark"></span>
+                            <span class="label-text">Select All</span>
+                        </label>
+                        <span id="selected-count">0 books selected</span>
+                    </div>
+                    <div class="action-buttons">
+                        <button id="approve-selected" class="btn btn-success" disabled>
+                            <i class="fas fa-check"></i> Approve Selected
+                        </button>
+                        <button id="reject-selected" class="btn btn-danger" disabled>
+                            <i class="fas fa-times"></i> Reject Selected
+                        </button>
+                    </div>
+                </div>
+
+                <!-- Books Grid View -->
+                <div id="books-grid" class="books-grid">
+                    <!-- Book cards will be dynamically generated here -->
+                    <!-- Example Book Card -->
+                    <div class="book-card" data-id="1" data-status="pending">
+                        <div class="book-selection">
+                            <label class="checkbox-container">
+                                <input type="checkbox" class="book-checkbox">
+                                <span class="checkmark"></span>
+                            </label>
+                        </div>
+                        <div class="book-cover">
+                            <img src="https://covers.openlibrary.org/b/id/8091016-L.jpg" alt="Book Cover">
+                            <div class="book-status pending">Pending</div>
+                        </div>
+                        <div class="book-info">
+                            <h3 class="book-title">The Great Gatsby</h3>
+                            <p class="book-author"><i class="fas fa-user"></i> F. Scott Fitzgerald</p>
+                            <p class="book-genre"><i class="fas fa-bookmark"></i> Fiction</p>
+                            <p class="book-date"><i class="fas fa-calendar-alt"></i> Mar 12, 2025</p>
+                        </div>
+                        <div class="book-actions">
+                            <button class="action-btn btn-view" data-id="1" title="View Details">
+                                <i class="fas fa-eye"></i>
+                            </button>
+                            <button class="action-btn btn-approve" data-id="1" title="Approve Book">
+                                <i class="fas fa-check"></i>
+                            </button>
+                            <button class="action-btn btn-reject" data-id="1" title="Reject Book">
+                                <i class="fas fa-times"></i>
+                            </button>
+                        </div>
+                    </div>
+
+                    <div class="book-card" data-id="2" data-status="approved">
+                        <div class="book-selection">
+                            <label class="checkbox-container">
+                                <input type="checkbox" class="book-checkbox">
+                                <span class="checkmark"></span>
+                            </label>
+                        </div>
+                        <div class="book-cover">
+                            <img src="https://covers.openlibrary.org/b/id/12749873-L.jpg" alt="Book Cover">
+                            <div class="book-status approved">Approved</div>
+                        </div>
+                        <div class="book-info">
+                            <h3 class="book-title">To Kill a Mockingbird</h3>
+                            <p class="book-author"><i class="fas fa-user"></i> Harper Lee</p>
+                            <p class="book-genre"><i class="fas fa-bookmark"></i> Fiction</p>
+                            <p class="book-date"><i class="fas fa-calendar-alt"></i> Mar 10, 2025</p>
+                        </div>
+                        <div class="book-actions">
+                            <button class="action-btn btn-view" data-id="2" title="View Details">
+                                <i class="fas fa-eye"></i>
+                            </button>
+                            <button class="action-btn btn-reject" data-id="2" title="Reject Book">
+                                <i class="fas fa-times"></i>
+                            </button>
+                        </div>
+                    </div>
+
+                    <div class="book-card" data-id="3" data-status="rejected">
+                        <div class="book-selection">
+                            <label class="checkbox-container">
+                                <input type="checkbox" class="book-checkbox">
+                                <span class="checkmark"></span>
+                            </label>
+                        </div>
+                        <div class="book-cover">
+                            <img src="https://covers.openlibrary.org/b/id/12547191-L.jpg" alt="Book Cover">
+                            <div class="book-status rejected">Rejected</div>
+                        </div>
+                        <div class="book-info">
+                            <h3 class="book-title">1984</h3>
+                            <p class="book-author"><i class="fas fa-user"></i> George Orwell</p>
+                            <p class="book-genre"><i class="fas fa-bookmark"></i> Science Fiction</p>
+                            <p class="book-date"><i class="fas fa-calendar-alt"></i> Mar 8, 2025</p>
+                        </div>
+                        <div class="book-actions">
+                            <button class="action-btn btn-view" data-id="3" title="View Details">
+                                <i class="fas fa-eye"></i>
+                            </button>
+                            <button class="action-btn btn-approve" data-id="3" title="Approve Book">
+                                <i class="fas fa-check"></i>
+                            </button>
+                        </div>
+                    </div>
+
+                    <!-- More book cards would be generated here -->
+                </div>
+
+                <!-- Books List View (hidden by default) -->
+                <div id="books-list" class="books-list" style="display: none;">
+                    <table>
+                        <thead>
+                            <tr>
+                                <th>
+                                    <label class="checkbox-container">
+                                        <input type="checkbox" id="select-all-list">
+                                        <span class="checkmark"></span>
+                                    </label>
+                                </th>
+                                <th>Cover</th>
+                                <th>Title</th>
+                                <th>Author</th>
+                                <th>Genre</th>
+                                <th>Submitted</th>
+                                <th>Status</th>
+                                <th>Actions</th>
+                            </tr>
+                        </thead>
+                        <tbody>
+                            <!-- Table rows will be dynamically generated here -->
+                            <tr data-id="1" data-status="pending">
+                                <td>
+                                    <label class="checkbox-container">
+                                        <input type="checkbox" class="book-checkbox">
+                                        <span class="checkmark"></span>
+                                    </label>
+                                </td>
+                                <td><img src="https://covers.openlibrary.org/b/id/8091016-L.jpg" alt="Book Cover"></td>
+                                <td>The Great Gatsby</td>
+                                <td>F. Scott Fitzgerald</td>
+                                <td>Fiction</td>
+                                <td>Mar 12, 2025</td>
+                                <td><span class="status-badge pending">Pending</span></td>
+                                <td>
+                                    <div class="table-actions">
+                                        <button class="action-btn btn-view" data-id="1" title="View Details">
+                                            <i class="fas fa-eye"></i>
+                                        </button>
+                                        <button class="action-btn btn-approve" data-id="1" title="Approve Book">
+                                            <i class="fas fa-check"></i>
+                                        </button>
+                                        <button class="action-btn btn-reject" data-id="1" title="Reject Book">
+                                            <i class="fas fa-times"></i>
+                                        </button>
+                                    </div>
+                                </td>
+                            </tr>
+                            <tr data-id="2" data-status="approved">
+                                <td>
+                                    <label class="checkbox-container">
+                                        <input type="checkbox" class="book-checkbox">
+                                        <span class="checkmark"></span>
+                                    </label>
+                                </td>
+                                <td><img src="https://covers.openlibrary.org/b/id/12749873-L.jpg" alt="Book Cover"></td>
+                                <td>To Kill a Mockingbird</td>
+                                <td>Harper Lee</td>
+                                <td>Fiction</td>
+                                <td>Mar 10, 2025</td>
+                                <td><span class="status-badge approved">Approved</span></td>
+                                <td>
+                                    <div class="table-actions">
+                                        <button class="action-btn btn-view" data-id="2" title="View Details">
+                                            <i class="fas fa-eye"></i>
+                                        </button>
+                                        <button class="action-btn btn-reject" data-id="2" title="Reject Book">
+                                            <i class="fas fa-times"></i>
+                                        </button>
+                                    </div>
+                                </td>
+                            </tr>
+                            <tr data-id="3" data-status="rejected">
+                                <td>
+                                    <label class="checkbox-container">
+                                        <input type="checkbox" class="book-checkbox">
+                                        <span class="checkmark"></span>
+                                    </label>
+                                </td>
+                                <td><img src="https://covers.openlibrary.org/b/id/12547191-L.jpg" alt="Book Cover"></td>
+                                <td>1984</td>
+                                <td>George Orwell</td>
+                                <td>Science Fiction</td>
+                                <td>Mar 8, 2025</td>
+                                <td><span class="status-badge rejected">Rejected</span></td>
+                                <td>
+                                    <div class="table-actions">
+                                        <button class="action-btn btn-view" data-id="3" title="View Details">
+                                            <i class="fas fa-eye"></i>
+                                        </button>
+                                        <button class="action-btn btn-approve" data-id="3" title="Approve Book">
+                                            <i class="fas fa-check"></i>
+                                        </button>
+                                    </div>
+                                </td>
+                            </tr>
+                            <!-- More table rows would be generated here -->
+                        </tbody>
+                    </table>
+                </div>
+
+                <!-- Pagination -->
+                <div class="pagination">
+                    <button class="pagination-btn" disabled><i class="fas fa-chevron-left"></i></button>
+                    <button class="pagination-btn active">1</button>
+                    <button class="pagination-btn">2</button>
+                    <button class="pagination-btn">3</button>
+                    <span class="pagination-ellipsis">...</span>
+                    <button class="pagination-btn">10</button>
+                    <button class="pagination-btn"><i class="fas fa-chevron-right"></i></button>
+                </div>
+            </div>
+        </main>
+    </div>
+
+    <!-- Book Details Modal -->
+    <div id="book-details-modal" class="modal">
+        <div class="modal-content">
+            <div class="modal-header">
+                <h2>Book Details</h2>
+                <button class="close-modal"><i class="fas fa-times"></i></button>
+            </div>
+            <div class="modal-body">
+                <div class="book-details-container">
+                    <div class="book-details-cover">
+                        <img id="modal-book-cover" src="https://covers.openlibrary.org/b/id/8091016-L.jpg" alt="Book Cover">
+                        <div id="modal-book-status" class="book-status pending">Pending</div>
+                    </div>
+                    <div class="book-details-info">
+                        <h3 id="modal-book-title">The Great Gatsby</h3>
+                        <div class="details-grid">
+                            <div class="detail-item">
+                                <span class="detail-label"><i class="fas fa-user"></i> Author</span>
+                                <span id="modal-book-author" class="detail-value">F. Scott Fitzgerald</span>
+                            </div>
+                            <div class="detail-item">
+                                <span class="detail-label"><i class="fas fa-bookmark"></i> Genre</span>
+                                <span id="modal-book-genre" class="detail-value">Fiction</span>
+                            </div>
+                            <div class="detail-item">
+                                <span class="detail-label"><i class="fas fa-barcode"></i> ISBN</span>
+                                <span id="modal-book-isbn" class="detail-value">9780743273565</span>
+                            </div>
+                            <div class="detail-item">
+                                <span class="detail-label"><i class="fas fa-building"></i> Publisher</span>
+                                <span id="modal-book-publisher" class="detail-value">Scribner</span>
+                            </div>
+                            <div class="detail-item">
+                                <span class="detail-label"><i class="fas fa-calendar-day"></i> Publication Date</span>
+                                <span id="modal-book-pub-date" class="detail-value">April 10, 1925</span>
+                            </div>
+                            <div class="detail-item">
+                                <span class="detail-label"><i class="fas fa-file-alt"></i> Pages</span>
+                                <span id="modal-book-pages" class="detail-value">180</span>
+                            </div>
+                            <div class="detail-item">
+                                <span class="detail-label"><i class="fas fa-user-edit"></i> Submitted By</span>
+                                <span id="modal-book-submitter" class="detail-value">user123@example.com</span>
+                            </div>
+                            <div class="detail-item">
+                                <span class="detail-label"><i class="fas fa-clock"></i> Submitted On</span>
+                                <span id="modal-book-submit-date" class="detail-value">March 12, 2025</span>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+                
+                <div class="book-description">
+                    <h4><i class="fas fa-info-circle"></i> Description</h4>
+                    <p id="modal-book-description">The Great Gatsby is a 1925 novel by American writer F. Scott Fitzgerald. Set in the Jazz Age on Long Island, near New York City, the novel depicts first-person narrator Nick Carraway's interactions with mysterious millionaire Jay Gatsby and Gatsby's obsession to reunite with his former lover, Daisy Buchanan.</p>
+                </div>
+
+                <div class="book-review-section">
+                    <h4><i class="fas fa-comment-alt"></i> Admin Review</h4>
+                    <textarea id="admin-review" placeholder="Enter your review or reason for approval/rejection..."></textarea>
+                </div>
+            </div>
+            <div class="modal-footer">
+                <div id="modal-pending-actions">
+                    <button id="modal-approve-btn" class="btn btn-success"><i class="fas fa-check"></i> Approve Book</button>
+                    <button id="modal-reject-btn" class="btn btn-danger"><i class="fas fa-times"></i> Reject Book</button>
+                </div>
+                <div id="modal-approved-actions" style="display: none;">
+                    <button id="modal-reject-approved-btn" class="btn btn-danger"><i class="fas fa-times"></i> Reject Book</button>
+                </div>
+                <div id="modal-rejected-actions" style="display: none;">
+                    <button id="modal-approve-rejected-btn" class="btn btn-success"><i class="fas fa-check"></i> Approve Book</button>
+                </div>
+            </div>
         </div>
-    </header>
-    <div class="sidebar">
-      <ul>
-          <li><a href="Adminhistory.html">History</a></li>
-         <li> <a href="Admindashboard.html">Admin Dashboard</a></li>
-         <li><a href="Approvedusers.html">Approved Users</a></li>
-         <li><a href="shop-login.html">Log Out</a></li>
-         <li><a href="Pendinguser.html">Pending Users</a></li>
-         <li><a href="Pendingbooks.html">Pending Books</a></li>
+    </div>
 
-      </ul>
-  </div>
-    <main>
-        <section class="pending-books">
-            <h1>Pending Books</h1>
-            
-            <table>
-                <thead>
-                    <tr>
-                        <th>Book ID</th>
-                        <th>Title</th>
-                        <th>Category</th>
-                        <th>Book Type</th>
-                        <th>Request Date</th>
-                        <th>Actions</th>
-                    </tr>
-                </thead>
-                <tbody>
-                    <tr>
-                        <td>001</td>
-                        <td>Sample Book 1</td>
-                        <td>Fiction</td>
-                        <td>PDF</td>
-                        <td>2025-03-10</td>
-                        <td>
-                            <button class="approve-button">Approve</button>
-                            <button class="reject-button">Reject</button>
-                        </td>
-                    </tr>
-                    <tr>
-                        <td>002</td>
-                        <td>Sample Book 2</td>
-                        <td>Non-Fiction</td>
-                        <td>ePub</td>
-                        <td>2025-03-09</td>
-                        <td>
-                            <button class="approve-button">Approve</button>
-                            <button class="reject-button">Reject</button>
-                        </td>
-                    </tr>
-                    <tr>
-                        <td>003</td>
-                        <td>Sample Book 3</td>
-                        <td>Science</td>
-                        <td>Audio</td>
-                        <td>2025-03-08</td>
-                        <td>
-                            <button class="approve-button">Approve</button>
-                            <button class="reject-button">Reject</button>
-                        </td>
-                    </tr>
-                </tbody>
-            </table>
-        </section>
-        
-    </main>
-    <script src="script.js">
-        // script.js
-document.addEventListener('DOMContentLoaded', () => {
-    const approveButtons = document.querySelectorAll('.approve-button');
-    const rejectButtons = document.querySelectorAll('.reject-button');
+    <!-- Confirmation Modal -->
+    <div id="confirmation-modal" class="modal">
+        <div class="modal-content confirmation-content">
+            <div class="modal-header">
+                <h2 id="confirmation-title">Confirm Action</h2>
+                <button class="close-modal"><i class="fas fa-times"></i></button>
+            </div>
+            <div class="modal-body">
+                <div class="confirmation-icon">
+                    <i class="fas fa-question-circle"></i>
+                </div>
+                <p id="confirmation-message">Are you sure you want to perform this action?</p>
+            </div>
+            <div class="modal-footer">
+                <button id="confirm-cancel" class="btn btn-secondary">Cancel</button>
+                <button id="confirm-action" class="btn btn-primary">Confirm</button>
+            </div>
+        </div>
+    </div>
 
-    approveButtons.forEach(button => {
-        button.addEventListener('click', () => {
-            alert('Book approved successfully!');
-        });
-    });
+    <!-- Toast Notifications Container -->
+    <div id="toast-container"></div>
 
-    rejectButtons.forEach(button => {
-        button.addEventListener('click', () => {
-            alert('Book rejected!');
-        });
-    });
-});
-
-    </script>
+    <script src="pending-books.js"></script>
 </body>
-<style>
-    /* styles.css */
-body {
-  font-family: Arial, sans-serif;
-  margin: 0;
-  padding: 0;
-  background-color: #f9f9f9;
-}
-
-header {
-  background-color: white;
-  color: blue;
-  padding: 10px 20px;
-  display: flex;
-  justify-content: space-between;
-  align-items: center;
-  box-shadow: 0 2px 4px rgba(0, 0, 0, 0.1);
-}
-
-.navbar {
-  display: flex;
-  align-items: center;
-}
-
-.navbar .logo {
-  font-size: 1.5rem;
-  margin-right: 20px;
-}
-
-.navbar .search-bar button:hover {
-  background-color: #cc7000;
-}
-
-.navbar nav {
-  display: flex;
-  align-items: center;
-  margin-left: 20px;
-}
-
-.navbar nav a {
-  text-decoration: none;
-  color: blue;
-  margin: 0 20px;
-  padding: 5px 10px; /* Adds padding within each link */
-  font-size: 1rem; /* Adjust the font size if needed */
-}
-
-
-.navbar nav a:hover {
-  background-color: #f0f0f0; /* Optional: Highlight link on hover */
-  border-radius: 5px; /* Optional: Add rounded corners on hover */
-}
-
-
-main {
-  padding: 20px;
-  display: flex;
-  flex-direction: column;
-  gap: 20px;
-}
-
-.pending-books h1 {
-  margin-bottom: 20px;
-  text-align: center;
-  font-weight: bold;
-}
-
-table {
-  width: 100%;
-  border-collapse: collapse;
-  margin-top: 20px;
-  background-color: white;
-  box-shadow: 0 2px 5px rgba(0, 0, 0, 0.1);
-  border-radius: 8px;
-}
-
-thead {
-  background-color: #eaa45e;
-  color: white;
-}
-
-th, td {
-  padding: 10px;
-  border: 1px solid #ddd;
-  text-align: center;
-}
-
-.approve-button {
-  background-color: #27ae60;
-  color: white;
-  border: none;
-  padding: 5px 10px;
-  border-radius: 4px;
-  cursor: pointer;
-}
-
-.approve-button:hover {
-  background-color: #229954;
-}
-
-.reject-button {
-  background-color: #e74c3c;
-  color: white;
-  border: none;
-  padding: 5px 10px;
-  border-radius: 4px;
-  cursor: pointer;
-}
-
-.reject-button:hover {
-  background-color: #c0392b;
-}
-
-.sidebar {
-  background-color: #fff;
-  color: blue;
-  width: 200px;
-  padding: 20px;
-}
-
-.sidebar ul {
-  list-style: none;
-  padding: 0;
-}
-
-.sidebar ul li {
-  margin-bottom: 10px;
-}
-
-.sidebar ul li a {
-  text-decoration: none;
-  color: blue;
-}
-
-
-</style>
 </html>
+

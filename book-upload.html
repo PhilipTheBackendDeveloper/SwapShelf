@@ -3,7 +3,25 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Book Upload</title>
+    <link rel="icon" type="image/x-icon" href="images/favicon.png"/>
+	
+	<!-- PAGE TITLE HERE -->
+	<title>BookConnect Book Store Ecommerce Website</title>
+	
+	<!-- MOBILE SPECIFIC -->
+	<meta name="viewport" content="width=device-width, initial-scale=1">
+	
+	<!-- STYLESHEETS -->
+	<link rel="stylesheet" type="text/css" href="css/style.css">
+	<link rel="stylesheet" type="text/css" href="icons/fontawesome/css/all.min.css">
+	<link rel="stylesheet" type="text/css" href="vendor/swiper/swiper-bundle.min.css">
+	<link rel="stylesheet" type="text/css" href="vendor/animate/animate.css">
+	<link rel="stylesheet" type="text/css" href="vendor/bootstrap-select/dist/css/bootstrap-select.min.css">	
+	<!-- GOOGLE FONTS-->
+	<link rel="preconnect" href="https://fonts.googleapis.com/">
+	<link rel="preconnect" href="https://fonts.gstatic.com/" crossorigin>
+	<link href="https://fonts.googleapis.com/css2?family=Open+Sans:wght@300;400;500;600;700;800&amp;family=Poppins:wght@100;200;300;400;500;600;700;800;900&amp;display=swap" rel="stylesheet">
+	<link rel="stylesheet" href="path-to-your-flaticon.css">
     
 </head>
 <body>
@@ -13,12 +31,32 @@
         <div class="logo-header logo-dark">
   <a href="index.html"><img src="images/logo.png" alt="logo"></a>
 </div> 
-            <nav>
-                <a href="index-3.html">Home</a>
-                <a href="books-grid-view.html">Browse</a>
-                <a href="Registration.html">Sign In Now</a>
-                <a href="my-profile.html">Profile</a>
-            </nav>
+<div class="header-nav navbar-collapse collapse justify-content-start" id="navbarNavDropdown">
+  <div class="logo-header logo-dark">
+    <a href="index.html"><img src="images/logo.png" alt=""></a>
+  </div>
+  <form class="search-input">
+    <div class="input-group">
+      <input type="text" class="form-control" aria-label="Text input with dropdown button" placeholder="Search Books Here">
+      <button class="btn" type="button"><i class="flaticon-loupe"></i></button>
+    </div>
+  </form>
+  <ul class="nav navbar-nav">
+    <li><a href="index.html">Home</a></li>
+    <li><a href="books-grid-view.html">Browse Books </a></li>
+    <li><a href="about-us.html">About </a></li>
+    <li><a href="contact-us.html">Contact Us</a></li>
+  </ul>
+  </ul>
+  <div class="dz-social-icon">
+    <ul>
+      <li><a class="fab fa-facebook-f" target="_blank" href="#"></a></li>
+      <li><a class="fab fa-twitter" target="_blank" href="https://twitter.com/dexignzones"></a></li>
+      <li><a class="fab fa-linkedin-in" target="_blank" href="https://www.linkedin.com/showcase/3686700/admin/"></a></li>
+      <li><a class="fab fa-instagram" target="_blank" href="https://www.instagram.com/website_templates__/"></a></li>
+    </ul>
+  </div>
+</div>
         </div>
       </div>
     </header>
@@ -77,6 +115,7 @@
     
 </body>
 <script>
+
 // Get the book type dropdown and the file upload field
 const bookTypeDropdown = document.getElementById('type');
 const fileUploadField = document.getElementById('file-upload');
@@ -98,7 +137,16 @@ if (bookTypeDropdown.value === 'epub') {
     fileUploadField.style.display = 'none';
     fileUploadField.previousElementSibling.style.display = 'none';
 }
-
+<script src="js/jquery.min.js"></script><!-- JQUERY MIN JS -->
+<script src="vendor/bootstrap/dist/js/bootstrap.bundle.min.js"></script><!-- BOOTSTRAP MIN JS -->
+<script src="vendor/bootstrap-select/dist/js/bootstrap-select.min.js"></script><!-- BOOTSTRAP SELECT MIN JS -->
+<script src="vendor/counter/waypoints-min.js"></script><!-- WAYPOINTS JS -->
+<script src="vendor/counter/counterup.min.js"></script><!-- COUNTERUP JS -->
+<script src="vendor/wow/wow.min.js"></script><!-- WOW JS -->
+<script src="vendor/swiper/swiper-bundle.min.js"></script><!-- SWIPER JS --> 
+<script src="js/dz.carousel.js"></script><!-- DZ CAROUSEL JS -->
+<script src="js/dz.ajax.js"></script><!-- AJAX -->
+<script src="js/custom.js"></script><!-- CUSTOM JS -->
 </script>
 <style>
     /* styles.css */

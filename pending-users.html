@@ -1,0 +1,452 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>BookConnect | Pending User Requests</title>
+    <link rel="stylesheet" href="admin-styles.css">
+    <link rel="stylesheet" href="pending-users-styles.css">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
+    <link href="https://fonts.googleapis.com/css2?family=Poppins:wght@300;400;500;600;700&display=swap" rel="stylesheet">
+</head>
+<body>
+    <div class="admin-layout">
+        <!-- Sidebar -->
+        <aside class="sidebar">
+            <div class="logo-container">
+               
+                <h2>BookConnect</h2>
+            </div>
+            
+            <nav class="sidebar-nav">
+                <div class="nav-section">
+                    <h3>Dashboard</h3>
+                    <ul>
+                        <li><a href="admin-dashboard.html"><i class="fas fa-tachometer-alt"></i> Overview</a></li>
+                        <li><a href="admin-analytics.html"><i class="fas fa-chart-line"></i> Analytics</a></li>
+                    </ul>
+                </div>
+                
+                <div class="nav-section">
+                    <h3>User Management</h3>
+                    <ul>
+                        <li class="active"><a href="pending-users.html"><i class="fas fa-user-clock"></i> Pending Users</a></li>
+                        <li><a href="approve-users.html"><i class="fas fa-user-check"></i> Active Users</a></li>
+                        <li><a href="admin-history.html"><i class="fas fa-history"></i> User History</a></li>
+                    </ul>
+                </div>
+                
+                <div class="nav-section">
+                    <h3>Content</h3>
+                    <ul>
+                        <li><a href="pending-books.html"><i class="fas fa-book"></i> Pending Books</a></li>
+                        <li><a href="policy-management.html"><i class="fas fa-file-alt"></i> Policies</a></li>
+                    </ul>
+                </div>
+            </nav>
+            
+            <div class="sidebar-footer">
+                <a href="shop-login.html"><i class="fas fa-sign-out-alt"></i> Log Out</a>
+            </div>
+        </aside>
+
+        <!-- Main Content -->
+        <main class="main-content">
+            <!-- Header -->
+            <header class="header">
+                <div class="header-left">
+                    <button id="sidebar-toggle" class="menu-toggle">
+                        <i class="fas fa-bars"></i>
+                    </button>
+                    <h1>Pending User Requests</h1>
+                </div>
+                
+                <div class="header-right">
+                    <div class="search-container">
+                        <input type="text" id="search-input" placeholder="Search users...">
+                        <button id="search-button"><i class="fas fa-search"></i></button>
+                    </div>
+                    
+                    <div class="admin-profile">
+                        <img src="images/admin-avatar.jpg" alt="Admin" class="avatar">
+                        <span>Admin</span>
+                        <i class="fas fa-chevron-down"></i>
+                    </div>
+                </div>
+            </header>
+
+            <!-- Content Area -->
+            <div class="content">
+                <!-- Summary Cards -->
+                <div class="summary-cards">
+                    <div class="card summary-card">
+                        <div class="card-icon pending">
+                            <i class="fas fa-user-clock"></i>
+                        </div>
+                        <div class="card-content">
+                            <h3>Pending Users</h3>
+                            <p class="card-value">12</p>
+                        </div>
+                    </div>
+                    
+                    <div class="card summary-card">
+                        <div class="card-icon approved">
+                            <i class="fas fa-user-check"></i>
+                        </div>
+                        <div class="card-content">
+                            <h3>Approved Today</h3>
+                            <p class="card-value">5</p>
+                        </div>
+                    </div>
+                    
+                    <div class="card summary-card">
+                        <div class="card-icon rejected">
+                            <i class="fas fa-user-times"></i>
+                        </div>
+                        <div class="card-content">
+                            <h3>Rejected Today</h3>
+                            <p class="card-value">2</p>
+                        </div>
+                    </div>
+                </div>
+
+                <!-- Users Table Card -->
+                <div class="card table-card">
+                    <div class="card-header">
+                        <h2>User Requests</h2>
+                        <div class="card-actions">
+                            <div class="dropdown">
+                                <button class="btn btn-outline">
+                                    <i class="fas fa-filter"></i> Filter
+                                </button>
+                                <div class="dropdown-menu">
+                                    <a href="#" class="dropdown-item">All Requests</a>
+                                    <a href="#" class="dropdown-item">Today</a>
+                                    <a href="#" class="dropdown-item">This Week</a>
+                                    <a href="#" class="dropdown-item">This Month</a>
+                                </div>
+                            </div>
+                            
+                            <button id="approve-all" class="btn btn-primary">
+                                <i class="fas fa-check-double"></i> Approve Selected
+                            </button>
+                        </div>
+                    </div>
+                    
+                    <div class="table-responsive">
+                        <table class="data-table">
+                            <thead>
+                                <tr>
+                                    <th>
+                                        <input type="checkbox" id="select-all">
+                                    </th>
+                                    <th>User</th>
+                                    <th>Email</th>
+                                    <th>Request Date</th>
+                                    <th>Status</th>
+                                    <th>Actions</th>
+                                </tr>
+                            </thead>
+                            <tbody>
+                                <tr>
+                                    <td>
+                                        <input type="checkbox" class="user-select">
+                                    </td>
+                                    <td class="user-cell">
+                                        <img src="images/user1.jpg" alt="John Doe" class="user-avatar">
+                                        <div>
+                                            <p class="user-name">John Doe</p>
+                                            <p class="user-id">ID: 001</p>
+                                        </div>
+                                    </td>
+                                    <td>johndoe@example.com</td>
+                                    <td>Mar 15, 2025</td>
+                                    <td><span class="badge pending">Pending</span></td>
+                                    <td class="actions">
+                                        <button class="btn-icon view" data-id="001" title="View Details">
+                                            <i class="fas fa-eye"></i>
+                                        </button>
+                                        <button class="btn-icon approve" data-id="001" title="Approve User">
+                                            <i class="fas fa-check"></i>
+                                        </button>
+                                        <button class="btn-icon reject" data-id="001" title="Reject User">
+                                            <i class="fas fa-times"></i>
+                                        </button>
+                                    </td>
+                                </tr>
+                                <tr>
+                                    <td>
+                                        <input type="checkbox" class="user-select">
+                                    </td>
+                                    <td class="user-cell">
+                                        <img src="images/user2.jpg" alt="Jane Smith" class="user-avatar">
+                                        <div>
+                                            <p class="user-name">Jane Smith</p>
+                                            <p class="user-id">ID: 002</p>
+                                        </div>
+                                    </td>
+                                    <td>janesmith@example.com</td>
+                                    <td>Mar 14, 2025</td>
+                                    <td><span class="badge pending">Pending</span></td>
+                                    <td class="actions">
+                                        <button class="btn-icon view" data-id="002" title="View Details">
+                                            <i class="fas fa-eye"></i>
+                                        </button>
+                                        <button class="btn-icon approve" data-id="002" title="Approve User">
+                                            <i class="fas fa-check"></i>
+                                        </button>
+                                        <button class="btn-icon reject" data-id="002" title="Reject User">
+                                            <i class="fas fa-times"></i>
+                                        </button>
+                                    </td>
+                                </tr>
+                                <tr>
+                                    <td>
+                                        <input type="checkbox" class="user-select">
+                                    </td>
+                                    <td class="user-cell">
+                                        <img src="images/user3.jpg" alt="Mike Johnson" class="user-avatar">
+                                        <div>
+                                            <p class="user-name">Mike Johnson</p>
+                                            <p class="user-id">ID: 003</p>
+                                        </div>
+                                    </td>
+                                    <td>mikejohnson@example.com</td>
+                                    <td>Mar 13, 2025</td>
+                                    <td><span class="badge pending">Pending</span></td>
+                                    <td class="actions">
+                                        <button class="btn-icon view" data-id="003" title="View Details">
+                                            <i class="fas fa-eye"></i>
+                                        </button>
+                                        <button class="btn-icon approve" data-id="003" title="Approve User">
+                                            <i class="fas fa-check"></i>
+                                        </button>
+                                        <button class="btn-icon reject" data-id="003" title="Reject User">
+                                            <i class="fas fa-times"></i>
+                                        </button>
+                                    </td>
+                                </tr>
+                                <tr>
+                                    <td>
+                                        <input type="checkbox" class="user-select">
+                                    </td>
+                                    <td class="user-cell">
+                                        <img src="images/user4.jpg" alt="Sarah Williams" class="user-avatar">
+                                        <div>
+                                            <p class="user-name">Sarah Williams</p>
+                                            <p class="user-id">ID: 004</p>
+                                        </div>
+                                    </td>
+                                    <td>sarahw@example.com</td>
+                                    <td>Mar 12, 2025</td>
+                                    <td><span class="badge pending">Pending</span></td>
+                                    <td class="actions">
+                                        <button class="btn-icon view" data-id="004" title="View Details">
+                                            <i class="fas fa-eye"></i>
+                                        </button>
+                                        <button class="btn-icon approve" data-id="004" title="Approve User">
+                                            <i class="fas fa-check"></i>
+                                        </button>
+                                        <button class="btn-icon reject" data-id="004" title="Reject User">
+                                            <i class="fas fa-times"></i>
+                                        </button>
+                                    </td>
+                                </tr>
+                                <tr>
+                                    <td>
+                                        <input type="checkbox" class="user-select">
+                                    </td>
+                                    <td class="user-cell">
+                                        <img src="images/user5.jpg" alt="David Lee" class="user-avatar">
+                                        <div>
+                                            <p class="user-name">David Lee</p>
+                                            <p class="user-id">ID: 005</p>
+                                        </div>
+                                    </td>
+                                    <td>davidlee@example.com</td>
+                                    <td>Mar 11, 2025</td>
+                                    <td><span class="badge pending">Pending</span></td>
+                                    <td class="actions">
+                                        <button class="btn-icon view" data-id="005" title="View Details">
+                                            <i class="fas fa-eye"></i>
+                                        </button>
+                                        <button class="btn-icon approve" data-id="005" title="Approve User">
+                                            <i class="fas fa-check"></i>
+                                        </button>
+                                        <button class="btn-icon reject" data-id="005" title="Reject User">
+                                            <i class="fas fa-times"></i>
+                                        </button>
+                                    </td>
+                                </tr>
+                            </tbody>
+                        </table>
+                    </div>
+                    
+                    <div class="card-footer">
+                        <div class="pagination-info">
+                            Showing <span>1-5</span> of <span>12</span> entries
+                        </div>
+                        <div class="pagination">
+                            <button class="pagination-btn" disabled>
+                                <i class="fas fa-chevron-left"></i>
+                            </button>
+                            <button class="pagination-btn active">1</button>
+                            <button class="pagination-btn">2</button>
+                            <button class="pagination-btn">3</button>
+                            <button class="pagination-btn">
+                                <i class="fas fa-chevron-right"></i>
+                            </button>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </main>
+    </div>
+
+    <!-- User Details Modal -->
+    <div id="user-details-modal" class="modal">
+        <div class="modal-content">
+            <div class="modal-header">
+                <h2>User Details</h2>
+                <button class="close-modal">
+                    <i class="fas fa-times"></i>
+                </button>
+            </div>
+            <div class="modal-body">
+                <div class="user-profile">
+                    <img src="images/user1.jpg" alt="User" class="profile-image" id="modal-user-img">
+                    <div class="profile-info">
+                        <h3 id="modal-user-name">John Doe</h3>
+                        <p id="modal-user-email">johndoe@example.com</p>
+                        <p id="modal-user-location">
+                            <i class="fas fa-map-marker-alt"></i> New York, USA
+                        </p>
+                    </div>
+                </div>
+                
+                <div class="user-details">
+                    <div class="detail-row">
+                        <div class="detail-item">
+                            <span class="detail-label">User ID</span>
+                            <span class="detail-value" id="modal-user-id">001</span>
+                        </div>
+                        <div class="detail-item">
+                            <span class="detail-label">Registration Date</span>
+                            <span class="detail-value" id="modal-reg-date">Mar 15, 2025</span>
+                        </div>
+                    </div>
+                    <div class="detail-row">
+                        <div class="detail-item">
+                            <span class="detail-label">Phone</span>
+                            <span class="detail-value" id="modal-user-phone">+1 (555) 123-4567</span>
+                        </div>
+                        <div class="detail-item">
+                            <span class="detail-label">IP Address</span>
+                            <span class="detail-value" id="modal-user-ip">192.168.1.1</span>
+                        </div>
+                    </div>
+                </div>
+                
+                <div class="user-bio">
+                    <h4>About</h4>
+                    <p id="modal-user-bio">I'm an avid reader with a passion for science fiction and fantasy novels. I'm excited to join BookConnect to exchange books with fellow enthusiasts and discover new authors.</p>
+                </div>
+                
+                <div class="user-interests">
+                    <h4>Interests</h4>
+                    <div class="interest-tags" id="modal-user-interests">
+                        <span class="interest-tag">Science Fiction</span>
+                        <span class="interest-tag">Fantasy</span>
+                        <span class="interest-tag">Mystery</span>
+                        <span class="interest-tag">Biography</span>
+                    </div>
+                </div>
+            </div>
+            <div class="modal-footer">
+                <button class="btn btn-outline" id="modal-close-btn">Close</button>
+                <button class="btn btn-danger" id="modal-reject-btn">
+                    <i class="fas fa-times"></i> Reject
+                </button>
+                <button class="btn btn-primary" id="modal-approve-btn">
+                    <i class="fas fa-check"></i> Approve
+                </button>
+            </div>
+        </div>
+    </div>
+
+    <!-- Approve Modal -->
+    <div id="approve-modal" class="modal">
+        <div class="modal-content">
+            <div class="modal-header">
+                <h2>Approve User</h2>
+                <button class="close-modal">
+                    <i class="fas fa-times"></i>
+                </button>
+            </div>
+            <div class="modal-body">
+                <p>Are you sure you want to approve <strong id="approve-user-name">this user</strong>?</p>
+                <div class="form-group">
+                    <label class="checkbox-container">
+                        <input type="checkbox" id="approve-notify" checked>
+                        <span class="checkmark"></span>
+                        Send welcome email notification
+                    </label>
+                </div>
+            </div>
+            <div class="modal-footer">
+                <button class="btn btn-outline" id="approve-cancel-btn">Cancel</button>
+                <button class="btn btn-primary" id="approve-confirm-btn">Confirm Approval</button>
+            </div>
+        </div>
+    </div>
+
+    <!-- Reject Modal -->
+    <div id="reject-modal" class="modal">
+        <div class="modal-content">
+            <div class="modal-header">
+                <h2>Reject User</h2>
+                <button class="close-modal">
+                    <i class="fas fa-times"></i>
+                </button>
+            </div>
+            <div class="modal-body">
+                <p>Are you sure you want to reject <strong id="reject-user-name">this user</strong>?</p>
+                
+                <div class="form-group">
+                    <label for="rejection-reason">Reason for rejection:</label>
+                    <select id="rejection-reason" class="form-control">
+                        <option value="incomplete">Incomplete Information</option>
+                        <option value="duplicate">Duplicate Account</option>
+                        <option value="suspicious">Suspicious Activity</option>
+                        <option value="policy">Policy Violation</option>
+                        <option value="other">Other</option>
+                    </select>
+                </div>
+                
+                <div class="form-group">
+                    <label for="rejection-notes">Additional notes (optional):</label>
+                    <textarea id="rejection-notes" class="form-control" placeholder="Provide additional details about the rejection..."></textarea>
+                </div>
+                
+                <div class="form-group">
+                    <label class="checkbox-container">
+                        <input type="checkbox" id="reject-notify" checked>
+                        <span class="checkmark"></span>
+                        Send rejection email notification
+                    </label>
+                </div>
+            </div>
+            <div class="modal-footer">
+                <button class="btn btn-outline" id="reject-cancel-btn">Cancel</button>
+                <button class="btn btn-danger" id="reject-confirm-btn">Confirm Rejection</button>
+            </div>
+        </div>
+    </div>
+
+    <!-- Toast Notifications -->
+    <div id="toast-container"></div>
+
+    <script src="pending-users.js"></script>
+</body>
+</html>
+
