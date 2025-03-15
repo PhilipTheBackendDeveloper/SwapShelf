@@ -1,0 +1,275 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Pending User Requests</title>
+    
+</head>
+<body>
+    <header>
+        <div class="navbar">
+            <!-- Website Logo -->
+<div class="logo-header logo-dark">
+  <a href="index.html"><img src="images/logo.png" alt="logo"></a>
+</div> 
+
+<nav>
+  <a href="Admindashboard.html">Admin Dashboard</a>
+  <a href="shop-login.html">Log Out</a>
+  <a href="Approvedusers.html">Active Users</a>
+</nav>
+        </div>
+    </header>
+    <div class="sidebar">
+      <ul>
+          <li><a href="Adminhistory.html">History</a></li>
+         <li> <a href="Admindashboard.html">Admin Dashboard</a></li>
+         <li><a href="Approvedusers.html">Approved Users</a></li>
+         <li><a href="shop-login.html">Log Out</a></li>
+         <li><a href="Pendinguser.html">Pending Users</a></li>
+         <li><a href="Pendingbooks.html">Pending Books</a></li>
+
+      </ul>
+  </div>
+    <main>
+        <section class="pending-users">
+            <h1>Pending User Requests</h1>
+            <div class="search-bar">
+                <input type="text" placeholder="Search for users...">
+                <button>Search</button>
+            </div>
+            <table>
+                <thead>
+                    <tr>
+                        <th>User ID</th>
+                        <th>Username</th>
+                        <th>Email</th>
+                        <th>Request Date</th>
+                        <th>Actions</th>
+                    </tr>
+                </thead>
+                <tbody>
+                    <tr>
+                        <td>001</td>
+                        <td>John Doe</td>
+                        <td>johndoe@example.com</td>
+                        <td>2025-03-01</td>
+                        <td>
+                            <button class="approve-button">Approve</button>
+                            <button class="reject-button">Reject</button>
+                        </td>
+                    </tr>
+                    <tr>
+                        <td>002</td>
+                        <td>Jane Smith</td>
+                        <td>janesmith@example.com</td>
+                        <td>2025-03-02</td>
+                        <td>
+                            <button class="approve-button">Approve</button>
+                            <button class="reject-button">Reject</button>
+                        </td>
+                    </tr>
+                    <tr>
+                        <td>003</td>
+                        <td>Mike Johnson</td>
+                        <td>mikejohnson@example.com</td>
+                        <td>2025-03-03</td>
+                        <td>
+                            <button class="approve-button">Approve</button>
+                            <button class="reject-button">Reject</button>
+                        </td>
+                    </tr>
+                </tbody>
+            </table>
+        </section>
+        
+    </main>
+
+
+    <script >
+        // script.js
+document.addEventListener('DOMContentLoaded', () => {
+    const approveButtons = document.querySelectorAll('.approve-button');
+    const rejectButtons = document.querySelectorAll('.reject-button');
+
+    approveButtons.forEach(button => {
+        button.addEventListener('click', () => {
+            alert('User approved successfully!');
+        });
+    });
+
+    rejectButtons.forEach(button => {
+        button.addEventListener('click', () => {
+            alert('User rejected!');
+        });
+    });
+});
+
+    </script>
+</body>
+
+
+<style>
+    /* styles.css */
+body {
+  font-family: Arial, sans-serif;
+  margin: 0;
+  padding: 0;
+  background-color: #f9f9f9;
+  display: flex;
+  flex-direction: column;
+  height: 100vh;
+}
+
+header {
+  background-color: white;
+  padding: 10px 20px;
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  box-shadow: 0 2px 4px rgba(0, 0, 0, 0.1);
+}
+
+.navbar {
+  display: flex;
+  align-items: center;
+}
+
+.navbar .logo {
+  font-size: 1.5rem;
+  margin-right: 20px;
+}
+
+.navbar nav a {
+  text-decoration: none;
+  color: blue;
+  margin: 0 20px;
+  padding: 5px 10px; /* Adds padding within each link */
+  font-size: 1rem; /* Adjust the font size if needed */
+}
+
+.navbar nav a:hover {
+  background-color: #f0f0f0; /* Optional: Highlight link on hover */
+  border-radius: 5px; /* Optional: Add rounded corners on hover */
+}
+
+
+main {
+  padding: 20px;
+  flex: 1;
+  display: flex;
+  flex-direction: column;
+  gap: 20px;
+}
+
+.pending-users h1 {
+  text-align: center;
+  margin-bottom: 20px;
+  font-weight: bold;
+}
+
+.search-bar {
+  display: flex;
+  justify-content: center;
+  margin-bottom: 20px;
+  padding: 10px;
+  background-color: white;
+  border-radius: 8px;
+  box-shadow: 0 1px 4px rgba(0, 0, 0, 0.1);
+}
+
+.search-bar input {
+  padding: 10px;
+  width: 300px;
+  border: 1px solid #ddd;
+  border-radius: 4px;
+  box-sizing: border-box;
+}
+
+.search-bar button {
+  padding: 10px 20px;
+  margin-left: 10px;
+  background-color: #eaa45e;
+  color: white;
+  border: none;
+  border-radius: 4px;
+  cursor: pointer;
+}
+
+.search-bar button:hover {
+  background-color: #21618c;
+}
+
+
+.sidebar {
+  background-color: #fff;
+  color: blue;
+  width: 200px;
+  padding: 20px;
+}
+
+.sidebar ul {
+  list-style: none;
+  padding: 0;
+}
+
+.sidebar ul li {
+  margin-bottom: 10px;
+}
+
+.sidebar ul li a {
+  text-decoration: none;
+  color: blue;
+}
+
+
+table {
+  width: 100%;
+  border-collapse: collapse;
+  margin-top: 20px;
+  background: white;
+  box-shadow: 0 2px 5px rgba(0, 0, 0, 0.1);
+  border-radius: 8px;
+}
+
+thead {
+  background-color: #eaa45e;
+  color: white;
+}
+
+th, td {
+  padding: 10px;
+  text-align: center;
+  border: 1px solid #ddd;
+}
+
+.approve-button {
+  background-color: #27ae60;
+  color: white;
+  border: none;
+  padding: 5px 10px;
+  border-radius: 4px;
+  cursor: pointer;
+}
+
+.approve-button:hover {
+  background-color: #229954;
+}
+
+.reject-button {
+  background-color: #e74c3c;
+  color: white;
+  border: none;
+  padding: 5px 10px;
+  border-radius: 4px;
+  cursor: pointer;
+}
+
+.reject-button:hover {
+  background-color: #c0392b;
+}
+
+
+</style>
+</html>

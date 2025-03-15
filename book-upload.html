@@ -1,0 +1,247 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Book Upload</title>
+    
+</head>
+<body>
+    <header>
+      <div class="navbar">
+        <!-- Website Logo -->
+        <div class="logo-header logo-dark">
+  <a href="index.html"><img src="images/logo.png" alt="logo"></a>
+</div> 
+            <nav>
+                <a href="index-3.html">Home</a>
+                <a href="books-grid-view.html">Browse</a>
+                <a href="Registration.html">Sign In Now</a>
+                <a href="my-profile.html">Profile</a>
+            </nav>
+        </div>
+      </div>
+    </header>
+    <main>
+        <h1>Book Upload</h1>
+        <form class="book-upload-form">
+            <fieldset>
+                <legend>Book Details</legend>
+                <label for="book-title">Book Title:</label>
+                <input type="text" id="book-title" name="book-title" required>
+                
+                <label for="book-author">Book Author:</label>
+                <input type="text" id="book-author" name="book-author" required>
+                
+                <label for="book-description">Book Description:</label>
+                <textarea id="book-description" name="book-description" rows="4" required></textarea>
+            </fieldset>
+            <fieldset>
+                <legend>Book Category</legend>
+                <label for="category">Select Category:</label>
+                <select id="category" name="category">
+                    <option value="fiction">Fiction</option>
+                    <option value="non-fiction">Non-Fiction</option>
+                    <option value="science">Science</option>
+                    <option value="history">History</option>
+                </select>
+            </fieldset>
+            <fieldset>
+                <legend>Book Type</legend>
+                <label for="type">Select Book Type:</label>
+                <select id="type" name="type">
+                    <option value="pdf">PDF(soft copy)</option>
+                    <option value="epub">Hard copy</option>
+                </select>
+            </fieldset>
+            <fieldset>
+                <legend>Image Upload</legend>
+                <input type="file" id="image-upload" name="image-upload" accept="image/*">
+            </fieldset>
+            <fieldset>
+                <legend>File Upload</legend>
+                <input type="file" id="file-upload" name="file-upload" accept=".pdf,.epub,.mp3">
+            </fieldset>
+            <button type="submit">Upload Book</button>
+        </form>
+        <footer>
+          <div class="footer-links">
+            <a href="Admindashboard.html">Admin Dashboard</a>
+            <a href="Adminhistory.html">History</a>
+            <a href="Approvedusers.html">Approved Users</a>
+            <a href="shop-login.html">Log Out</a>
+          </div>
+        </footer>
+        
+    </main>
+    
+</body>
+<script>
+// Get the book type dropdown and the file upload field
+const bookTypeDropdown = document.getElementById('type');
+const fileUploadField = document.getElementById('file-upload');
+
+// Add an event listener to the dropdown
+bookTypeDropdown.addEventListener('change', () => {
+    // Check the selected value
+    if (bookTypeDropdown.value === 'epub') { // "epub" represents Hard copy
+        fileUploadField.style.display = 'none'; // Hide file upload
+        fileUploadField.previousElementSibling.style.display = 'none'; // Hide label
+    } else {
+        fileUploadField.style.display = 'block'; // Show file upload
+        fileUploadField.previousElementSibling.style.display = 'block'; // Show label
+    }
+});
+
+// Initially hide file upload if "Hard copy" is selected by default
+if (bookTypeDropdown.value === 'epub') {
+    fileUploadField.style.display = 'none';
+    fileUploadField.previousElementSibling.style.display = 'none';
+}
+
+</script>
+<style>
+    /* styles.css */
+body {
+  font-family: Arial, sans-serif;
+  margin: 0;
+  padding: 0;
+  background-color: #f4f4f4;
+}
+
+header {
+  background-color: white;
+  padding: 10px 20px;
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+}
+
+.navbar {
+  display: flex;
+  align-items: center;
+}
+
+.navbar .logo {
+  font-size: 1.5rem;
+  margin-right: 20px;
+}
+
+.navbar nav a {
+  color: blue;
+  text-decoration: none;
+  margin: 0 20px;
+  padding: 5px 10px; /* Adds padding within each link */
+  font-size: 1rem; /* Adjust the font size if needed */
+}
+
+
+
+.navbar nav a:hover {
+  background-color: #f0f0f0; /* Optional: Highlight link on hover */
+  border-radius: 5px; /* Optional: Add rounded corners on hover */
+}
+
+main {
+  padding: 20px;
+}
+
+h1 {
+  text-align: center;
+  color:black;
+  margin-bottom: 10px;
+}
+
+.book-upload-form {
+  max-width: 800px;
+  margin: 0 auto;
+  background: white;
+  padding: 20px;
+  border-radius: 8px;
+  box-shadow: 0 2px 4px rgba(0, 0, 0, 0.1);
+}
+
+fieldset {
+  margin-bottom: 15px;
+  border: 1px solid #ddd;
+  padding: 10px;
+  border-radius: 5px;
+}
+
+legend {
+  font-weight: bold;
+  margin-bottom: 5px;
+}
+
+label {
+  display: block;
+  margin-bottom: 5px;
+}
+
+input, select, textarea, button {
+  width: 100%;
+  padding: 10px;
+  margin-bottom: 10px;
+  border: 1px solid #ccc;
+  border-radius: 4px;
+  box-sizing: border-box;
+}
+
+input:invalid, textarea:invalid {
+  border-color: red;
+}
+
+@media (max-width: 768px) {
+  input, select, textarea, button {
+    width: 100%;
+    margin-bottom: 15px;
+  }
+
+  .navbar nav a {
+    font-size: 0.9rem;
+    margin: 5px;
+  }
+}
+
+
+button {
+  background-color: #eaa45e;
+  color: white;
+  border: none;
+  cursor: pointer;
+  padding: 10px 20px;
+}
+
+button:hover {
+  background-color: blue;
+}
+
+
+footer {
+  background-color: #f1f1f1; /* Light background color for footer */
+  padding: 20px;
+  text-align: center;
+  position: relative; /* Use "fixed" if you want it to stay always visible */
+  width: 100%;
+  border-top: 1px solid #ddd;
+  margin-top: 20px;
+}
+
+.footer-links a {
+  color: blue;
+  text-decoration: none;
+  margin: 0 15px; /* Space between the links */
+  padding: 5px;
+  font-size: 1rem;
+}
+
+.footer-links a:hover {
+  text-decoration: underline;
+  background-color: #f0f0f0;
+  border-radius: 5px;
+}
+
+
+
+</style>
+</html>

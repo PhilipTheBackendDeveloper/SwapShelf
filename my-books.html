@@ -1,0 +1,262 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Book Connect - Book Management</title>
+
+</head>
+<body>
+    <header>
+        <div class="header-container">
+            <div class="logo">Book Connect Logo</div>
+            <button class="logout-button">Log Out</button>
+        </div>
+    </header>
+    <main>
+        <div class="search-bar">
+            <input type="text" placeholder="Search for books...">
+            <button>Search</button>
+        </div>
+        <section class="book-management">
+            <!-- My Books Section -->
+            <div class="section">
+                <h2>My Books</h2>
+                <h3>Possessed Books</h3>
+                <table>
+                    <thead>
+                        <tr>
+                            <th>Book Cover</th>
+                            <th>Book Title</th>
+                            <th>Author</th>
+                            <th>Actions</th>
+                        </tr>
+                    </thead>
+                    <tbody>
+                        <tr>
+                            <td><img src="book-placeholder.jpg" alt="Book Cover"></td>
+                            <td>Book Title 1</td>
+                            <td>Author 1</td>
+                            <td><button class="delete-button">Delete</button></td>
+                        </tr>
+                        <tr>
+                            <td><img src="book-placeholder.jpg" alt="Book Cover"></td>
+                            <td>Book Title 2</td>
+                            <td>Author 2</td>
+                            <td><button class="delete-button">Delete</button></td>
+                        </tr>
+                    </tbody>
+                </table>
+            </div>
+            <!-- Books I've Shared Section -->
+            <div class="section">
+                <h2>Books I've Shared</h2>
+                <h3>Lent Books</h3>
+                <table>
+                    <thead>
+                        <tr>
+                            <th>Book Cover</th>
+                            <th>Book Title</th>
+                            <th>Borrower</th>
+                            <th>Due Date</th>
+                        </tr>
+                    </thead>
+                    <tbody>
+                        <tr>
+                            <td colspan="4">No books lent</td>
+                        </tr>
+                    </tbody>
+                </table>
+            </div>
+            <!-- Books I've Exchanged Section -->
+            <div class="section">
+                <h2>Books I've Exchanged</h2>
+                <h3>Exchanged Books</h3>
+                <table>
+                    <thead>
+                        <tr>
+                            <th>Book Cover</th>
+                            <th>Book Title</th>
+                            <th>Exchanged Partner</th>
+                            <th>Exchange Date</th>
+                        </tr>
+                    </thead>
+                    <tbody>
+                        <tr>
+                            <td colspan="4">No books exchanged</td>
+                        </tr>
+                    </tbody>
+                </table>
+                <h3>Books to Exchange</h3>
+                <table>
+                    <thead>
+                        <tr>
+                            <th>Book Cover</th>
+                            <th>Book Title</th>
+                            <th>Actions</th>
+                        </tr>
+                    </thead>
+                    <tbody>
+                        <tr>
+                            <td><img src="book-placeholder.jpg" alt="Book Cover"></td>
+                            <td>Book Title 3</td>
+                            <td><button class="exchange-button">Exchange</button></td>
+                        </tr>
+                        <tr>
+                            <td><img src="book-placeholder.jpg" alt="Book Cover"></td>
+                            <td>Book Title 4</td>
+                            <td><button class="exchange-button">Exchange</button></td>
+                        </tr>
+                    </tbody>
+                </table>
+            </div>
+        </section>
+    </main>
+</body>
+<style>
+    /* styles.css */
+body {
+  font-family: Arial, sans-serif;
+  margin: 0;
+  padding: 0;
+  background-color: #f9f9f9;
+}
+
+header {
+  background-color: #2c3e50;
+  color: white;
+  padding: 10px 20px;
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  box-shadow: 0 2px 4px rgba(0, 0, 0, 0.1);
+}
+
+.logout-button {
+  background-color: #e74c3c;
+  color: white;
+  border: none;
+  padding: 10px 15px;
+  border-radius: 4px;
+  cursor: pointer;
+}
+
+.logout-button:hover {
+  background-color: #c0392b;
+}
+
+.search-bar {
+  padding: 20px;
+  text-align: center;
+  background-color: white;
+  box-shadow: 0 1px 4px rgba(0, 0, 0, 0.1);
+  border-radius: 8px;
+}
+
+.search-bar input {
+  padding: 10px;
+  width: 300px;
+  border: 1px solid #ddd;
+  border-radius: 4px;
+  box-sizing: border-box;
+}
+
+.search-bar button {
+  padding: 10px 20px;
+  background-color: #2980b9;
+  color: white;
+  border: none;
+  border-radius: 4px;
+  margin-left: 10px;
+  cursor: pointer;
+}
+
+.search-bar button:hover {
+  background-color: #21618c;
+}
+
+.book-management {
+  padding: 20px;
+  display: flex;
+  flex-direction: column;
+  gap: 20px;
+}
+
+.section {
+  margin-bottom: 30px;
+  background-color: white;
+  padding: 20px;
+  border-radius: 8px;
+  box-shadow: 0 1px 4px rgba(0, 0, 0, 0.1);
+}
+
+h2, h3 {
+  color: #333;
+  margin-bottom: 10px;
+}
+
+table {
+  width: 100%;
+  border-collapse: collapse;
+  margin-top: 10px;
+}
+
+table, th, td {
+  border: 1px solid #ddd;
+}
+
+th, td {
+  padding: 10px;
+  text-align: left;
+}
+
+img {
+  width: 50px;
+  height: auto;
+  border-radius: 4px;
+}
+
+button {
+  padding: 8px 12px;
+  background-color: #27ae60;
+  color: white;
+  border: none;
+  border-radius: 4px;
+  cursor: pointer;
+}
+
+button:hover {
+  background-color: #229954;
+}
+
+.delete-button {
+  background-color: #e74c3c;
+}
+
+.delete-button:hover {
+  background-color: #c0392b;
+}
+
+
+</style>
+<script>
+    // script.js
+document.addEventListener('DOMContentLoaded', () => {
+    const deleteButtons = document.querySelectorAll('.delete-button');
+    const exchangeButtons = document.querySelectorAll('.exchange-button');
+
+    deleteButtons.forEach(button => {
+        button.addEventListener('click', () => {
+            alert('Delete functionality coming soon!');
+        });
+    });
+
+    exchangeButtons.forEach(button => {
+        button.addEventListener('click', () => {
+            alert('Exchange functionality coming soon!');
+        });
+    });
+});
+
+</script>
+</html>
