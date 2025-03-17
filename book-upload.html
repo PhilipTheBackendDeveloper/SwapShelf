@@ -25,41 +25,86 @@
     
 </head>
 <body>
-    <header>
-      <div class="navbar">
-        <!-- Website Logo -->
-        <div class="logo-header logo-dark">
-  <a href="index.html"><img src="images/logo.png" alt="logo"></a>
-</div> 
-<div class="header-nav navbar-collapse collapse justify-content-start" id="navbarNavDropdown">
-  <div class="logo-header logo-dark">
-    <a href="index.html"><img src="images/logo.png" alt=""></a>
-  </div>
-  <form class="search-input">
-    <div class="input-group">
-      <input type="text" class="form-control" aria-label="Text input with dropdown button" placeholder="Search Books Here">
-      <button class="btn" type="button"><i class="flaticon-loupe"></i></button>
-    </div>
-  </form>
-  <ul class="nav navbar-nav">
-    <li><a href="index.html">Home</a></li>
-    <li><a href="books-grid-view.html">Browse Books </a></li>
-    <li><a href="about-us.html">About </a></li>
-    <li><a href="contact-us.html">Contact Us</a></li>
-  </ul>
-  </ul>
-  <div class="dz-social-icon">
-    <ul>
-      <li><a class="fab fa-facebook-f" target="_blank" href="#"></a></li>
-      <li><a class="fab fa-twitter" target="_blank" href="https://twitter.com/dexignzones"></a></li>
-      <li><a class="fab fa-linkedin-in" target="_blank" href="https://www.linkedin.com/showcase/3686700/admin/"></a></li>
-      <li><a class="fab fa-instagram" target="_blank" href="https://www.instagram.com/website_templates__/"></a></li>
-    </ul>
-  </div>
-</div>
-        </div>
-      </div>
-    </header>
+ <!-- Header -->
+<header class="site-header mo-left header style-1">
+	<!-- Main Header -->
+	<div class="header-info-bar">
+		<div class="container clearfix">
+			<!-- Website Logo -->
+			<div class="logo-header logo-dark">
+				<a href="index.html"><img src="images/logo.png" alt="logo"></a>
+			</div>
+			
+			
+			
+			<!-- header search nav -->
+
+		</div>
+	</div>
+	<!-- Main Header End -->
+	
+	<!-- Main Header -->
+	<div class="sticky-header main-bar-wraper navbar-expand-lg">
+		<div class="main-bar clearfix">
+			<div class="container clearfix">
+				<!-- Website Logo -->
+				<div class="logo-header logo-dark">
+					<a href="index.html"><img src="images/logo.png" alt="logo"></a>
+				</div>
+				
+				<!-- Nav Toggle Button -->
+				<button class="navbar-toggler collapsed navicon justify-content-end" type="button" data-bs-toggle="collapse" data-bs-target="#navbarNavDropdown" aria-controls="navbarNavDropdown" aria-expanded="false" aria-label="Toggle navigation">
+					<span></span>
+					<span></span>
+					<span></span>
+				</button>
+				
+				<!-- EXTRA NAV -->
+				<div class="extra-nav">
+					<div class="extra-cell">
+						<a href="contact-us.html" class="btn btn-primary btnhover">Sign In Now</a>	
+					</div>
+				</div>
+				<div class="extra-nav-01">
+					<div class="extra-cell-01">
+						<a href="contact-us.html" class="btn btn-primary btnhover">Log In</a>	
+					</div>
+				</div>
+				
+				<!-- Main Nav -->
+				<div class="header-nav navbar-collapse collapse justify-content-start" id="navbarNavDropdown">
+					<div class="logo-header logo-dark">
+						<a href="index.html"><img src="images/logo.png" alt=""></a>
+					</div>
+					<form class="search-input">
+						<div class="input-group">
+							<input type="text" class="form-control" aria-label="Text input with dropdown button" placeholder="Search Books Here">
+							<button class="btn" type="button"><i class="flaticon-loupe"></i></button>
+						</div>
+					</form>
+					<ul class="nav navbar-nav">
+						<li><a href="index.html">Home</a></li>
+						<li><a href="books-grid-view.html">Browse Books </a></li>
+						<li><a href="about-us.html">About </a></li>
+						<li><a href="contact-us.html">Contact Us</a></li>
+					</ul>
+					</ul>
+					<div class="dz-social-icon">
+						<ul>
+							<li><a class="fab fa-facebook-f" target="_blank" href="#"></a></li>
+							<li><a class="fab fa-twitter" target="_blank" href="https://twitter.com/dexignzones"></a></li>
+							<li><a class="fab fa-linkedin-in" target="_blank" href="https://www.linkedin.com/showcase/3686700/admin/"></a></li>
+							<li><a class="fab fa-instagram" target="_blank" href="https://www.instagram.com/website_templates__/"></a></li>
+						</ul>
+					</div>
+				</div>
+			</div>
+		</div>
+	</div>
+	<!-- Main Header End -->
+	
+</header>
+<!-- Header End -->
     <main>
         <h1>Book Upload</h1>
         <form class="book-upload-form">
@@ -137,6 +182,8 @@ if (bookTypeDropdown.value === 'epub') {
     fileUploadField.style.display = 'none';
     fileUploadField.previousElementSibling.style.display = 'none';
 }
+
+</script>
 <script src="js/jquery.min.js"></script><!-- JQUERY MIN JS -->
 <script src="vendor/bootstrap/dist/js/bootstrap.bundle.min.js"></script><!-- BOOTSTRAP MIN JS -->
 <script src="vendor/bootstrap-select/dist/js/bootstrap-select.min.js"></script><!-- BOOTSTRAP SELECT MIN JS -->
@@ -147,7 +194,6 @@ if (bookTypeDropdown.value === 'epub') {
 <script src="js/dz.carousel.js"></script><!-- DZ CAROUSEL JS -->
 <script src="js/dz.ajax.js"></script><!-- AJAX -->
 <script src="js/custom.js"></script><!-- CUSTOM JS -->
-</script>
 <style>
     /* styles.css */
 body {
@@ -163,31 +209,6 @@ header {
   display: flex;
   justify-content: space-between;
   align-items: center;
-}
-
-.navbar {
-  display: flex;
-  align-items: center;
-}
-
-.navbar .logo {
-  font-size: 1.5rem;
-  margin-right: 20px;
-}
-
-.navbar nav a {
-  color: blue;
-  text-decoration: none;
-  margin: 0 20px;
-  padding: 5px 10px; /* Adds padding within each link */
-  font-size: 1rem; /* Adjust the font size if needed */
-}
-
-
-
-.navbar nav a:hover {
-  background-color: #f0f0f0; /* Optional: Highlight link on hover */
-  border-radius: 5px; /* Optional: Add rounded corners on hover */
 }
 
 main {

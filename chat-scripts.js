@@ -206,7 +206,7 @@ document.addEventListener("DOMContentLoaded", () => {
   
         replyEl.innerHTML = `
           <div class="message-avatar">
-            <img src="https://via.placeholder.com/40" alt="Michael Chen">
+            <img src="images/profile3.jpg" alt="Michael Chen">
           </div>
           <div class="message-content">
             <div class="message-bubble">
