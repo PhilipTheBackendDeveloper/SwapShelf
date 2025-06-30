@@ -8,7 +8,7 @@ document.addEventListener("DOMContentLoaded", () => {
         adminSidebar.classList.toggle("active")
       })
     }
-  
+
     // Select All Users
     const selectAllCheckbox = document.getElementById("select-all-users")
     const userCheckboxes = document.querySelectorAll(".user-checkbox")
