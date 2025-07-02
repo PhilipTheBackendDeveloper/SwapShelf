@@ -1,7 +1,7 @@
 /* JavaScript Document */
 jQuery(window).on('load', function() {
     'use strict';
-	
+
 	
 	// service-silder-swiper
 	if(jQuery('.main-swiper').length > 0){
