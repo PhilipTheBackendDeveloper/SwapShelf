@@ -1,4 +1,11 @@
-
+/*!
+ * jQuery Final Countdown
+ *
+ * @author Pragmatic Mates, http://pragmaticmates.com
+ * @version 1.1.1
+ * @license GPL 2
+ * @link https://github.com/PragmaticMates/jquery-final-countdown
+ */
 
 (function ($) {
     var settings;
